@@ -207,17 +207,142 @@
                 <h3>My Role</h3>
                 <p>I integrated our PDM software (Windchill) with SolidWorks to manage metadata like vendor names and
                     costs. I interpreted and wrote scripts to parse SolidWorks assembly data into text files, which
-                    could then be imported into formatted Excel templates. This allowed for automatic generation of
-                    indented BOMs and cost calculations.</p>
+                    could then be imported into formatted Excel templates.</p>
+
+                <p>This allowed for automatic generation of indented BOMs and cost calculations (COGS).</p>
 
                 <figure>
                     <img src="assets/images/image18.png" alt="BOM Excel Template">
+                    <img src="assets/images/image19.png" alt="BOM Template Example">
                     <figcaption>Figure 14: Automated BOM Excel template output.</figcaption>
+                </figure>
+
+                <p>I also developed an inventory tracking template that compares existing inventory against new BOM
+                    requirements, flagging changes and calculate surplus/deficits.</p>
+
+                <figure>
+                    <img src="assets/images/image20.png" alt="SolidWorks Export Tab">
+                    <figcaption>Figure 15: SolidWorks export tab highlighting changes (green=new, red=old,
+                        turquoise=mismatch).</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="assets/images/image21.png" alt="Master Tracking Tab">
+                    <figcaption>Figure 16: Master tracking tab showing surplus or deficit.</figcaption>
                 </figure>
 
                 <h3>Project Outcome</h3>
                 <p>The new process significantly reduced errors and time spent on manual data entry, providing accurate,
-                    real-time cost and inventory tracking for engineering teams.</p>
+                    real-time cost and inventory tracking for engineering teams. It has been adopted company-wide for
+                    projects of all sizes.</p>
+            </div>
+        </section>
+
+        <!-- Project 5: Lap.Ox -->
+        <section class="project" id="lap-ox">
+            <h2>ViOptix Laparoscopic "Lap.Ox" Implementation</h2>
+            <div class="project-meta">
+                <span><strong>Role:</strong> Mechanical Engineer</span>
+                <span><strong>Date:</strong> June 2023 – June 2025</span>
+                <span><strong>Company:</strong> Triple Ring Technologies / ViOptix</span>
+            </div>
+            <div class="project-content">
+                <h3>Problem Statement</h3>
+                <p>Clinicians requested a laparoscopic version of the Intra.Ox device. The new design required a durable
+                    unit and a disposable sterility barrier, facing challenges with optical sterilization and strict
+                    design timelines for FDA approval.</p>
+
+                <h3>My Role</h3>
+                <p>I led the part and assembly design through three iterations (Prototype, Pre-DVT, DVT). I managed the
+                    inventory tracking for builds and co-wrote Manufacturing Process Instructions (MPIs).</p>
+
+                <p>For the DVT phase, I acted as the technical interface for our contract manufacturers (Molex and
+                    Evolve), managing the transfer of the BOM and assembly processes for 100 durables and 300
+                    disposables.</p>
+
+                <figure>
+                    <img src="assets/images/image22.png" alt="Durable DVT CAD">
+                    <img src="assets/images/image23.png" alt="Disposable Cross Section CAD">
+                    <figcaption>Figure 17: Durable (left) and disposable cross-section (right) DVT CAD representation.
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="assets/images/image24.png" alt="Disposable Cross Section">
+                    <figcaption>Figure 18: Disposable cross-section in CAD.</figcaption>
+                </figure>
+
+                <h3>Project Outcome</h3>
+                <p>We successfully hit all major milestones. As of late 2024, we have calibrated and tested 150
+                    disposables and 60 durables for clinical use. The project is on track for FDA submission and volume
+                    production handover to contract manufacturers.</p>
+            </div>
+        </section>
+
+        <!-- Project 6: Windchill -->
+        <section class="project" id="windchill">
+            <h2>Windchill and SolidWorks Laptop Setup IT Procedure</h2>
+            <div class="project-meta">
+                <span><strong>Role:</strong> Author / Trainer</span>
+                <span><strong>Date:</strong> October 2022 – November 2024</span>
+                <span><strong>Company:</strong> Triple Ring Technologies</span>
+            </div>
+            <div class="project-content">
+                <h3>Problem Statement</h3>
+                <p>Setting up Windchill PDM on new laptops was complex and prone to user error, leading to configuration
+                    issues. IT lacked the specific Windchill knowledge to support engineering setups effectively.</p>
+
+                <figure>
+                    <img src="assets/images/image25.png" alt="Windchill Microsoft Files">
+                    <img src="assets/images/image26.png" alt="Windchill CAD Files">
+                    <figcaption>Figure 19: Windchill repositories for Microsoft files (top) and CAD files (bottom).
+                    </figcaption>
+                </figure>
+
+                <h3>My Role</h3>
+                <p>I wrote a comprehensive guidance document for IT to standardize the setup process for different user
+                    types (Microsoft-only vs. CAD users). I also developed and conducted a training curriculum for new
+                    employees.</p>
+
+                <figure>
+                    <img src="assets/images/image27.png" alt="New Employee Setup Diagram">
+                    <img src="assets/images/image28.png" alt="Existing Employee Setup Diagram">
+                    <figcaption>Figure 20: Setup workflow diagrams for new and existing employees.</figcaption>
+                </figure>
+
+                <h3>Project Outcome</h3>
+                <p>The guidance document became official IT procedure, ensuring 100% successful setups. My training
+                    sessions reduced the time I spent troubleshooting basic user issues by approximately 50%.</p>
+            </div>
+        </section>
+
+        <!-- Project 7: Mechatronics -->
+        <section class="project" id="mechatronics">
+            <h2>Mechatronics Robot "Fergie"</h2>
+            <div class="project-meta">
+                <span><strong>Role:</strong> Mechanical Designer & Integrator</span>
+                <span><strong>Date:</strong> August – December 2025</span>
+                <span><strong>School:</strong> UPenn (Mechatronics Systems)</span>
+            </div>
+            <div class="project-content">
+                <h3>Problem Statement</h3>
+                <p>Build an autonomous robot to compete in a game requiring navigation, obstacle avoidance, and object
+                    manipulation within a $150 budget.</p>
+
+                <h3>My Role</h3>
+                <p>I designed the mechanical system in SolidWorks, featuring a three-layer acrylic chassis with
+                    strategic component mounting and wire management. I also implemented the VIVE coordinate navigation
+                    code, developing a "three-in-a-row" verification method to eliminate sensor noise and ensure
+                    accurate positioning.</p>
+
+                <figure>
+                    <img src="assets/images/image29.png" alt="Fergie Robot">
+                    <figcaption>Figure 21: Final Fergie Robot, Isometric View.</figcaption>
+                </figure>
+
+                <h3>Project Outcome</h3>
+                <p>The robot successfully completed manual and autonomous tasks, including wall-following and button
+                    pressing. We achieved a grade of 46/50 on the project.</p>
             </div>
         </section>
 
