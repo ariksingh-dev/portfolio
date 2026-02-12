@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViOptix Intra.Ox Disposable O-Ring Design | Arik Singh</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="project-header">
+        <div class="container">
+            <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+            <h1>Summer internship project, ViOptix Intra.Ox Disposable O-Ring Design</h1>
+        </div>
+    </header>
+
+    <main class="container project-detail">
+        <div class="project-meta">
+            <p><strong>Date:</strong> June–August 2018</p>
+        </div>
+
+        <section class="content-section">
+            <h2>Problem statement</h2>
+            <p>In 2018, when I first joined Triple Ring for an internship my junior year of college, the company was in
+                the midst of establishing a strong relationship with a company called ViOptix, which was housed inside
+                our building. ViOptix specializes in medical equipment that can measure oxygenation levels in tissue
+                (StO2), which is very similar to a pulse oximeter (what a patient wears on their finger at the hospital
+                that tells the nurse whether your blood is oxygen-rich or oxygen-poor) but is used specifically on
+                tissue post-surgery to determine whether or not tissue needs to be removed prior to suturing up a wound.
+            </p>
+            <p>At the time, Triple Ring was working on a handheld version of their existing benchtop technology, which
+                was called the T.Ox (for “tissue oximeter”, see Figure 4 for details). We named the handheld version the
+                Intra.Ox, which was split into three key assemblies.</p>
+
+            <figure>
+                <img src="assets/images/image6.png" alt="Figure 4">
+                <figcaption>Figure 4: T.Ox device details</figcaption>
+            </figure>
+
+            <p>A “durable” which drives the core electronics and optics of the device, collects readings through optical
+                properties and reports them back to the device user on the screen. We called this device the “durable”
+                because it could be used up to 100 times, making it more economically viable (see Figure 5 for CAD
+                representation of the durable in our SolidWorks system).</p>
+
+            <figure>
+                <img src="assets/images/image7.png" alt="Figure 5">
+                <figcaption>Figure 5: Intra.Ox Durable CAD model</figcaption>
+            </figure>
+
+            <p>The device also consists of two “disposables.”: A custom battery pack, which holds four AA batteries and
+                can only be used for one surgery that is attached to the durable each time and then discarded
+                post-surgery, and a disposable, called the “sheath,” which is a casing/enclosure that goes around the
+                durable and battery pack (see Figure 6). The purpose of this sheath is to keep the durable protected
+                from any germs or bacteria it might otherwise interface with without the sheath. In other words, the
+                sheath was designed to absorb the brunt of the bacteria, blood, and germs that are typically found in
+                the ER so that the durable could be safely removed at the end of the procedure and be re-used the next
+                day (with a new sheath and battery pack) without having to worry about it being contaminated.</p>
+
+            <figure>
+                <img src="assets/images/image8.png" alt="Figure 6 part 1">
+                <img src="assets/images/image9.png" alt="Figure 6 part 2">
+                <figcaption>Figure 6: Intra.Ox Disposable Sheath (left) and battery pack (right)</figcaption>
+            </figure>
+        </section>
+
+        <section class="content-section">
+            <h2>My role</h2>
+            <p>One of the key design features of the sheath is the custom O-Ring. One of the first things I learned at
+                Triple Ring was why O-rings can function the way they do, even at high fluid pressures. The beauty of an
+                O-ring is that it is designed to be squished and deformed from a circular cross section to an oval. This
+                intentional compression absorbs local surface imperfections and discontinuities on the two “rigid”
+                bodies that are compressing it as shown in Figure 7. As a result, fluids (both gas and liquid) have a
+                hard time breaking the O-Ring barrier because there is no physical “escape route.” Typically, with two
+                rigid bodies (for example, two pieces of plastic) compressed together without a soft rubber O-Ring in
+                between, the local surface imperfections offer a path of escape for fluid, or a “leak.” It doesn’t
+                matter how small the path of escape is or if it’s visible to the naked eye, if there is a pressure
+                differential, fluid will find its way out and leak.</p>
+
+            <figure>
+                <img src="assets/images/image10.png" alt="Figure 7">
+                <figcaption>Figure 7: O-Ring compression diagram</figcaption>
+            </figure>
+
+            <p>Unlike typical O-Ring design, which ranges on a hardness scale from 30 to 100 shore A, we knew our design
+                was going to be slightly softer (somewhere between 10 and 30 shore A) for several reasons. First, we
+                calculated that the pressure differential between inside and outside the disposable sheath could be 1
+                PSI maximum, driven by temperature fluctuations in the room and the overall temperature change of the
+                durable device during “warm up” (when the device is turned on). Because we didn’t have to hold a
+                high-pressure differential, we knew we could afford to go softer and still hold a seal. Unfortunately,
+                on the flip side, because one of the human factor requirements was that a weak nurse needed to be able
+                to close the sheath lid with less than 4 lbs. of hand force, we had to design an O-ring that was
+                compliant enough so that our latch mechanism would close with less than 4 lbs. of hand force. As a
+                result, we decided to leverage a seal design that we modeled off a Pelican™ Case, as shown in Figure 8.
+                The idea was to create a local compression point on both sides of the O-Ring, which would allow the seal
+                to hold without the lid needing to be closed with too much hand force.</p>
+
+            <figure>
+                <img src="assets/images/image11.png" alt="Figure 8">
+                <figcaption>Figure 8: O-Ring cross-section, localized compression</figcaption>
+            </figure>
+
+            <p>Although the overall shape of the O-Ring was not circular, we used a set of circular “fixtures” to
+                oversimplify what we were trying to solve for.</p>
+            <p>We had to determine the stiffness of the O-ring so that it’s not too stiff and makes the lid too
+                difficult to close especially under maximum material condition. At that same time, the O-ring could not
+                be so compliant that it could not seal under least material condition.</p>
+            <p>Also built into the least and maximum material conditions and the tolerance stack up was choosing our
+                custom O-ring’s cross-sectional diameter, as well as the O-ring seal design itself. Ultimately, my
+                testing and data revealed that if we were to choose a 5 mm O-ring diameter (which the tolerance stack
+                math was suggesting would give us between 10% and 30% local compression on the extremes of the tolerance
+                stack up), 15 shore A was the right stiffness for the O-ring. Unfortunately, making material below 30
+                shore A can be “volatile” in the sense that it is harder to control the stiffness.</p>
+            <p>Through working with large O-ring companies like Apple Rubber, we discovered that most O-rings above 30
+                shore A are manufactured and held to ± 1 shore A (that is, if you buy 10,000 off-the-shelf O-rings at 35
+                shore A from Apple Rubber, all 10,000 are guaranteed to between 34 and 36 shore A). Once you drop down
+                into the 10–20 shore A range, the tolerance typically drops to ± 5 shore A. We ended up working with a
+                vendor called RD Rubber in Los Angeles that would design our custom O-ring mold and would shoot
+                production level parts for us (roughly 1000 a year). Towards the end of my internship when we were
+                getting ready to order our final design for a batch of design verification sheath disposables, we
+                developed a process with RD Rubber such that they could determine right after a batch of 2 -part liquid
+                silicone rubber is mixed what the stiffness was going to be before the material cured inside the mold
+                (using shore A hardness measuring equipment). We leveraged this equipment so that, through empirical
+                testing, each lot of O-rings was molded somewhere between 13 and 17 shore A, which was enough to meet
+                the design requirement for the Intra.Ox.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Project outcome</h2>
+            <p>When I returned to Triple Ring a year later for a full-time job, the final sheath disposable design
+                (including my O-ring) had passed FDA clearance and was being manufactured at two assembly houses—or
+                contract manufacturers (CMs)—that ViOptix had worked with in the past. While I was away at school that
+                year, my Triple Ring colleagues helped pass on the build instructions, vendor and BOM information, and
+                key test equipment and fixtures required for assembly to these CMs. By the time I had returned to Triple
+                Ring, both CMs had become fully self-sufficient, no longer relying on Triple Ring for parts, fixturing,
+                software, and verification equipment. To this day, ViOptix makes about 100 durables a year, which go to
+                various hospitals around the country for free. ViOptix also makes around 2000 disposable sheaths and
+                battery packs each year. They sell these to each hospital, knowing that if a given hospital is doing 300
+                surgeries a year, they will need to purchase at least 300 battery packs and 300 sheaths.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Arik Singh. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM and Inventory Tracking Process Development | Arik Singh</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="project-header">
+        <div class="container">
+            <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+            <h1>Bill of materials (BOM) and inventory tracking process development, Triple Ring Technologies</h1>
+        </div>
+    </header>
+
+    <main class="container project-detail">
+        <div class="project-meta">
+            <p><strong>Date:</strong> June 2022–December 2023</p>
+        </div>
+
+        <section class="content-section">
+            <h2>Problem statement</h2>
+            <p>At Triple Ring Technologies, we use a software called SolidWorks to design parts, put together
+                assemblies, and make drawings. For mechanical engineers operating in any design space, SolidWorks is the
+                gold standard. An underutilized tool of the program is the ability to take a large assembly file
+                (typically split into smaller sub-assembly files with many custom and off-the-shelf parts comprising the
+                building blocks of a product) and output a bill of materials (BOM). For years, even before I joined
+                Triple Ring, much of our BOM process was manual. Engineers would have to update Excel BOM tables every
+                time they would add a screw or change a part number. Additionally, much of Triple Ring’s old inventory
+                tracking process (which involves making sure engineers have ordered enough of each part number to build
+                X units) involved manually updating Excel spreadsheets as well.</p>
+            <p>Our goal was to create a process where BOM tables and inventory tracking spreadsheets would automatically
+                update based on live changes to the SolidWorks CAD (e.g., a new part number is added to the BOM).</p>
+        </section>
+
+        <section class="content-section">
+            <h2>My role</h2>
+            <p>In the summer of 2022, I was given the task of working with our intern to improve the BOM process.</p>
+            <p>My first order of business was integrating our PDM software, Windchill, with SolidWorks to create a
+                series of variables that would be crucial for creating BOMs. These variables include vendor name, vendor
+                part number, and cost; these can be filled in on any given part or assembly file (including OTS screws,
+                custom parts, and custom assemblies). This information becomes SolidWorks metadata, which can be
+                outputted in a BOM-friendly format to Excel.</p>
+            <p>I discovered that we could develop a SolidWorks script that could effectively parse large SolidWorks
+                assembly information into an indented and flat BOM excel file. Unfortunately, in doing so, engineers
+                would have to rely on the default SolidWorks-to-Excel settings, which are not user-friendly. I also
+                discovered that we could use a text file to convert from SolidWorks to Excel, acting as a medium of
+                sorts. This text file medium gave me the flexibility to leverage Excel settings in addition to
+                SolidWorks’. In turn, we created an inventory tracker and indented BOM Excel templates that provide the
+                necessary information to the reader in a simple and effective format.</p>
+            <p>Once a script was established for producing the indented and flat text files, an Excel template was
+                created for project-specific indented BOMs. This Excel template takes in the indented text files and
+                outputs a BOM that is easy to read and well-formatted, and it can give clients the overall cost and
+                goods of making a unit, including labor (often called cost of goods and services, or COGS as shown in
+                Figure 14). This template was straightforward to implement because it relies solely on the current
+                indented BOM text file and nothing else.</p>
+
+            <figure>
+                <img src="assets/images/image18.png" alt="Figure 14 part 1">
+                <img src="assets/images/image19.png" alt="Figure 14 part 2">
+                <figcaption>Figure 14: BOM Template example</figcaption>
+            </figure>
+
+            <p>Conversely, the inventory tracking template took a little longer to create and test. The difficulty of
+                the inventory tracker is the history of the BOM and what already exists in inventory is relevant in
+                addition to the latest flat BOM text file.</p>
+            <p>In this template, the idea is to compare the existing list of parts needed with the new list of parts
+                needed that SolidWorks is reporting based on the most recent updates by the engineering team. The first
+                script in this template will tell the user if there are any new part numbers, any part numbers that are
+                old and have been removed from the CAD, or if the quantity/revision of any part number has changed.
+                These results are reflected in the SolidWorks export tab as shown in Figure 15.</p>
+
+            <figure>
+                <img src="assets/images/image20.png" alt="Figure 15">
+                <figcaption>Figure 15: SolidWorks export tab (green = new, red = old, turquoise and purple represent a
+                    mismatch between the new SolidWorks export and the master inventory tracking tab)</figcaption>
+            </figure>
+
+            <p>A second script will reconcile these differences on the master tracking tab. After a complete sequence
+                (first and second script both performed), the tracker will inform the engineering team, via a variable
+                called surplus/deficit, whether or not there are any part numbers on the tracker in which Triple Ring
+                needs to order more in order to complete the requested number of builds (e.g., do we have enough parts
+                to build 3 units, as shown in Figure 16).</p>
+
+            <figure>
+                <img src="assets/images/image21.png" alt="Figure 16">
+                <figcaption>Figure 16: Master tracking tab, surplus or deficit column highlighted yellow</figcaption>
+            </figure>
+
+            <p>Unlike the BOM template, which has an element of well-thought-out formatting and can be shared with the
+                client and sometimes the FDA, the inventory tracker template is exclusively for the internal Triple Ring
+                engineering team. The goal is to use this document as a live tracking tool to make sure that every
+                single part number is accounted for and purchased in order to complete a build.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Project outcome</h2>
+            <p>The project was a resounding success. At first, we sampled the BOM and inventory tracking templates on a
+                pair of devices with a relatively small build of materials. On both projects, the BOMs were no more than
+                40 lines long. While a case could be made that these tools were not saving time for smaller BOMs such as
+                these, we were using both projects as a proof of concept that these methods would work with our workflow
+                and existing processes.</p>
+            <p>Due to the success of our proof-of-concept BOMs and trackers, we decided to open the tools companywide to
+                all projects, including a recent project we have been working on with a BOM of over 1200-line items.
+                Just like on the smaller scale, the BOM template and the inventory tracking tools can work with larger
+                BOMs and can instantly get the end user what they need.</p>
+            <p>Now, nearly three-quarters of the active Triple Ring projects are using both the intended BOM and
+                inventory tracker spreadsheets I created as necessary project tools for both completing projects in a
+                timely manner and designing products with full traceability.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Arik Singh. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

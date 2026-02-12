@@ -15,337 +15,74 @@
         <div class="container">
             <h1>Arik Singh</h1>
             <p>Mechanical Engineering Portfolio</p>
-            <!-- Navigation could go here -->
         </div>
     </header>
 
     <main class="container">
+        <div class="project-grid">
+            <!-- Project 1 -->
+            <a href="project1.html" class="project-card">
+                <div class="card-image" style="background-image: url('assets/images/image1.png');"></div>
+                <div class="card-content">
+                    <h3>Independent Study: Acoustofluidics</h3>
+                    <p class="meta">UCSD | 2015</p>
+                </div>
+            </a>
 
-        <!-- Project 1: UCSD Independent Study -->
-        <section class="project" id="acoustofluidics">
-            <h2>Independent Study: Maximum Particle Velocity in Acoustofluidics</h2>
-            <div class="project-meta">
-                <span><strong>Role:</strong> Researcher</span>
-                <span><strong>Date:</strong> January – June 2015</span>
-                <span><strong>Organization:</strong> UCSD (Professor James Friend)</span>
-            </div>
-            <div class="project-content">
-                <h3>Problem Statement</h3>
-                <p>I joined Professor Friend’s lab in 2017 after taking his class on advanced analytical methods for
-                    solving non-linear ODEs. Professor Friend noticed a trend across his high-frequency vibration
-                    experiments: the maximum particle velocity in a solid vibration wave never exceeded 1 meter per
-                    second, regardless of frequency. We believed this to be a fundamental property of nature.</p>
+            <!-- Project 2 -->
+            <a href="project2.html" class="project-card">
+                <div class="card-image" style="background-image: url('assets/images/image6.png');"></div>
+                <div class="card-content">
+                    <h3>ViOptix Intra.Ox Disposable O-Ring Design</h3>
+                    <p class="meta">Triple Ring / ViOptix | 2018</p>
+                </div>
+            </a>
 
-                <h3>My Role</h3>
-                <p>Professor Friend and I dug into the fundamental equations and discovered a theoretical velocity limit
-                    for each material where it would experience cyclical yield stress and fail. We called this
-                    "v<sub>max</sub>".</p>
+            <!-- Project 3 -->
+            <a href="project3.html" class="project-card">
+                <div class="card-image" style="background-image: url('assets/images/image12.jpeg');"></div>
+                <div class="card-content">
+                    <h3>Auris Health Viewer Console</h3>
+                    <p class="meta">Triple Ring / Auris Health | 2019-2020</p>
+                </div>
+            </a>
 
-                <figure>
-                    <img src="assets/images/image1.png" alt="Equation for Vmax">
-                    <figcaption>Figure 1: Solving for v<sub>max</sub> as a function of yield stress, elastic modulus,
-                        and density.</figcaption>
-                </figure>
+            <!-- Project 4 -->
+            <a href="project4.html" class="project-card">
+                <div class="card-image" style="background-image: url('assets/images/image18.png');"></div>
+                <div class="card-content">
+                    <h3>BOM and Inventory Tracking Process</h3>
+                    <p class="meta">Triple Ring Technologies | 2022-2023</p>
+                </div>
+            </a>
 
-                <p>I used MATLAB to simulate tens of thousands of random material samples for 11 different materials
-                    (metals, plastics, ceramics, etc.) using Monte Carlo analysis. We introduced imperfection factors
-                    (Ψ) to model real-world flaws.</p>
+            <!-- Project 5 -->
+            <a href="project5.html" class="project-card">
+                <div class="card-image" style="background-image: url('assets/images/image22.png');"></div>
+                <div class="card-content">
+                    <h3>ViOptix Laparoscopic "Lap.Ox"</h3>
+                    <p class="meta">Triple Ring / ViOptix | 2023-2025</p>
+                </div>
+            </a>
 
-                <figure>
-                    <img src="assets/images/image2.png" alt="Psi imperfection factors">
-                    <!-- image3.png might also be part of this figure or related -->
-                    <figcaption>Figure 2: Solving for v<sub>lim</sub> (limiting velocity) as a function of
-                        v<sub>max</sub> and imperfection factors.</figcaption>
-                </figure>
+            <!-- Project 6 -->
+            <a href="project6.html" class="project-card">
+                <div class="card-image" style="background-image: url('assets/images/image25.png');"></div>
+                <div class="card-content">
+                    <h3>Windchill and SolidWorks IT Procedure</h3>
+                    <p class="meta">Triple Ring Technologies | 2022-2024</p>
+                </div>
+            </a>
 
-                <p>We found that the likelihood of failure around the 1 m/s threshold was consistently high (around 50%
-                    or greater) across all materials.</p>
-
-                <figure>
-                    <img src="assets/images/image4.png" alt="Probability of failure graph">
-                    <img src="assets/images/image5.png" alt="Probability of failure graph 2">
-                    <figcaption>Figure 3: Velocity at probability of failure of 50%. Plot of maximum particle velocity
-                        versus probability of failure for 11 materials.</figcaption>
-                </figure>
-
-                <h3>Project Outcome</h3>
-                <p>My Monte Carlo model became the basis for a paper published in the Journal of the Acoustical Society
-                    of America (JASA). After I graduated, the work was continued by Naiqing Zhang, and the project was a
-                    resounding success.</p>
-            </div>
-        </section>
-
-        <!-- Project 2: ViOptix Internship -->
-        <section class="project" id="vioptix">
-            <h2>ViOptix Intra.Ox Disposable O-Ring Design</h2>
-            <div class="project-meta">
-                <span><strong>Role:</strong> Mechanical Engineering Intern</span>
-                <span><strong>Date:</strong> June – August 2018</span>
-                <span><strong>Company:</strong> Triple Ring Technologies / ViOptix</span>
-            </div>
-            <div class="project-content">
-                <h3>Problem Statement</h3>
-                <p>Triple Ring was developing a handheld tissue oximeter called the "Intra.Ox" for ViOptix. The device
-                    helps surgeons determine if tissue is oxygenated enough to survive post-surgery.</p>
-
-                <figure>
-                    <img src="assets/images/image6.png" alt="Intra.Ox Device">
-                    <figcaption>Figure 4: T.Ox device details (Intra.Ox predecessor/context).</figcaption>
-                </figure>
-
-                <p>The system consisted of a reusable "durable" unit and disposable components (battery pack and
-                    sheath). The sheath needed to protect the durable from contamination in the operating room.</p>
-
-                <figure>
-                    <img src="assets/images/image7.png" alt="Durable Unit CAD">
-                    <figcaption>Figure 5: Intra.Ox Durable CAD model.</figcaption>
-                </figure>
-
-                <figure>
-                    <img src="assets/images/image8.png" alt="Disposable Sheath">
-                    <img src="assets/images/image9.png" alt="Battery Pack">
-                    <figcaption>Figure 6: Intra.Ox Disposable Sheath (left) and battery pack (right).</figcaption>
-                </figure>
-
-                <h3>My Role</h3>
-                <p>I was responsible for designing the custom O-ring for the disposable sheath. The challenge was to
-                    create a seal that was soft enough to be closed by a nurse with less than 4 lbs of force, but
-                    reliable enough to prevent leaks under low pressure differentials.</p>
-
-                <figure>
-                    <img src="assets/images/image10.png" alt="O-Ring Compression Diagram">
-                    <figcaption>Figure 7: O-Ring compression diagram showing how deformation creates a seal.
-                    </figcaption>
-                </figure>
-
-                <p>We modeled the seal design off a Pelican™ Case to create local compression points. I determined that
-                    a 15 Shore A hardness was optimal. We worked with RD Rubber to develop a manufacturing process that
-                    ensured the custom O-rings met our strict stiffness requirements (13-17 Shore A).</p>
-
-                <figure>
-                    <img src="assets/images/image11.png" alt="O-Ring Cross Section">
-                    <figcaption>Figure 8: O-Ring cross-section showing localized compression.</figcaption>
-                </figure>
-
-                <h3>Project Outcome</h3>
-                <p>The design passed FDA clearance. ViOptix now manufactures approximately 2,000 disposable sheaths
-                    annually, and the device is used in hospitals across the country.</p>
-            </div>
-        </section>
-
-        <!-- Project 3: Auris Health -->
-        <section class="project" id="auris">
-            <h2>Auris Health Viewer Console</h2>
-            <div class="project-meta">
-                <span><strong>Role:</strong> Mechanical Engineer</span>
-                <span><strong>Date:</strong> August 2019 – August 2020</span>
-                <span><strong>Company:</strong> Triple Ring Technologies (Client: Auris Health)</span>
-            </div>
-            <div class="project-content">
-                <h3>Problem Statement</h3>
-                <p>Auris Health hired Triple Ring to help design and manufacture the viewer console for their robotic
-                    surgical system, intended to compete with the Da Vinci robot. The goal was to create a lighter,
-                    smaller, and sleeker console.</p>
-
-                <figure>
-                    <img src="assets/images/image12.jpeg" alt="Da Vinci Robot">
-                    <figcaption>Figure 9: Da Vinci Robotic Surgical System (Competitor Reference).</figcaption>
-                </figure>
-
-                <h3>My Role</h3>
-                <p>This was my first full-time project. I managed the Bill of Materials (BOM) and coordinated with
-                    vendors for complex parts, including the optical housings which required precise machining and
-                    anodizing.</p>
-
-                <figure>
-                    <img src="assets/images/image13.png" alt="Left Optical Housing">
-                    <img src="assets/images/image14.png" alt="Right Optical Housing">
-                    <figcaption>Figure 10: Left and right optical housings with lens stacks installed.</figcaption>
-                </figure>
-
-                <p>I co-wrote the Manufacturing Process Instructions (MPI) using CAD exploded views and later, real-life
-                    photos from the first builds.</p>
-
-                <figure>
-                    <img src="assets/images/image15.png" alt="MPI Exploded View">
-                    <figcaption>Figure 11: Example of MPI steps created using CAD.</figcaption>
-                </figure>
-
-                <p>We built multiple iterations (Alpha, Beta) and 7 Design Verification Testing (DVT) units. We utilized
-                    Vantablack coating from Surrey NanoSystems to minimize light reflection within the console.</p>
-
-                <figure>
-                    <img src="assets/images/image16.jpeg" alt="Vantablack">
-                    <figcaption>Figure 12: Vantablack coating reference.</figcaption>
-                </figure>
-
-                <h3>Project Outcome</h3>
-                <p>We successfully delivered 7 DVT units that met optical specifications. However, following Auris
-                    Health's acquisition by Johnson & Johnson, the project faced integration challenges and was
-                    eventually deprioritized by the new parent company.</p>
-
-                <figure>
-                    <img src="assets/images/image17.png" alt="Final Auris Console">
-                    <figcaption>Figure 13: Final DVT Auris Viewer Console mounted to workbench.</figcaption>
-                </figure>
-            </div>
-        </section>
-
-        <!-- Project 4: BOM Process -->
-        <section class="project" id="bom-process">
-            <h2>BOM and Inventory Tracking Process Development</h2>
-            <div class="project-meta">
-                <span><strong>Role:</strong> Mechanical Engineer</span>
-                <span><strong>Date:</strong> June 2022 – December 2023</span>
-                <span><strong>Company:</strong> Triple Ring Technologies</span>
-            </div>
-            <div class="project-content">
-                <h3>Problem Statement</h3>
-                <p>Use SolidWorks to automate the creation of Bill of Materials (BOM) and inventory tracking, replacing
-                    a prone-to-error manual Excel process.</p>
-
-                <h3>My Role</h3>
-                <p>I integrated our PDM software (Windchill) with SolidWorks to manage metadata like vendor names and
-                    costs. I interpreted and wrote scripts to parse SolidWorks assembly data into text files, which
-                    could then be imported into formatted Excel templates.</p>
-
-                <p>This allowed for automatic generation of indented BOMs and cost calculations (COGS).</p>
-
-                <figure>
-                    <img src="assets/images/image18.png" alt="BOM Excel Template">
-                    <img src="assets/images/image19.png" alt="BOM Template Example">
-                    <figcaption>Figure 14: Automated BOM Excel template output.</figcaption>
-                </figure>
-
-                <p>I also developed an inventory tracking template that compares existing inventory against new BOM
-                    requirements, flagging changes and calculate surplus/deficits.</p>
-
-                <figure>
-                    <img src="assets/images/image20.png" alt="SolidWorks Export Tab">
-                    <figcaption>Figure 15: SolidWorks export tab highlighting changes (green=new, red=old,
-                        turquoise=mismatch).</figcaption>
-                </figure>
-
-                <figure>
-                    <img src="assets/images/image21.png" alt="Master Tracking Tab">
-                    <figcaption>Figure 16: Master tracking tab showing surplus or deficit.</figcaption>
-                </figure>
-
-                <h3>Project Outcome</h3>
-                <p>The new process significantly reduced errors and time spent on manual data entry, providing accurate,
-                    real-time cost and inventory tracking for engineering teams. It has been adopted company-wide for
-                    projects of all sizes.</p>
-            </div>
-        </section>
-
-        <!-- Project 5: Lap.Ox -->
-        <section class="project" id="lap-ox">
-            <h2>ViOptix Laparoscopic "Lap.Ox" Implementation</h2>
-            <div class="project-meta">
-                <span><strong>Role:</strong> Mechanical Engineer</span>
-                <span><strong>Date:</strong> June 2023 – June 2025</span>
-                <span><strong>Company:</strong> Triple Ring Technologies / ViOptix</span>
-            </div>
-            <div class="project-content">
-                <h3>Problem Statement</h3>
-                <p>Clinicians requested a laparoscopic version of the Intra.Ox device. The new design required a durable
-                    unit and a disposable sterility barrier, facing challenges with optical sterilization and strict
-                    design timelines for FDA approval.</p>
-
-                <h3>My Role</h3>
-                <p>I led the part and assembly design through three iterations (Prototype, Pre-DVT, DVT). I managed the
-                    inventory tracking for builds and co-wrote Manufacturing Process Instructions (MPIs).</p>
-
-                <p>For the DVT phase, I acted as the technical interface for our contract manufacturers (Molex and
-                    Evolve), managing the transfer of the BOM and assembly processes for 100 durables and 300
-                    disposables.</p>
-
-                <figure>
-                    <img src="assets/images/image22.png" alt="Durable DVT CAD">
-                    <img src="assets/images/image23.png" alt="Disposable Cross Section CAD">
-                    <figcaption>Figure 17: Durable (left) and disposable cross-section (right) DVT CAD representation.
-                    </figcaption>
-                </figure>
-
-                <figure>
-                    <img src="assets/images/image24.png" alt="Disposable Cross Section">
-                    <figcaption>Figure 18: Disposable cross-section in CAD.</figcaption>
-                </figure>
-
-                <h3>Project Outcome</h3>
-                <p>We successfully hit all major milestones. As of late 2024, we have calibrated and tested 150
-                    disposables and 60 durables for clinical use. The project is on track for FDA submission and volume
-                    production handover to contract manufacturers.</p>
-            </div>
-        </section>
-
-        <!-- Project 6: Windchill -->
-        <section class="project" id="windchill">
-            <h2>Windchill and SolidWorks Laptop Setup IT Procedure</h2>
-            <div class="project-meta">
-                <span><strong>Role:</strong> Author / Trainer</span>
-                <span><strong>Date:</strong> October 2022 – November 2024</span>
-                <span><strong>Company:</strong> Triple Ring Technologies</span>
-            </div>
-            <div class="project-content">
-                <h3>Problem Statement</h3>
-                <p>Setting up Windchill PDM on new laptops was complex and prone to user error, leading to configuration
-                    issues. IT lacked the specific Windchill knowledge to support engineering setups effectively.</p>
-
-                <figure>
-                    <img src="assets/images/image25.png" alt="Windchill Microsoft Files">
-                    <img src="assets/images/image26.png" alt="Windchill CAD Files">
-                    <figcaption>Figure 19: Windchill repositories for Microsoft files (top) and CAD files (bottom).
-                    </figcaption>
-                </figure>
-
-                <h3>My Role</h3>
-                <p>I wrote a comprehensive guidance document for IT to standardize the setup process for different user
-                    types (Microsoft-only vs. CAD users). I also developed and conducted a training curriculum for new
-                    employees.</p>
-
-                <figure>
-                    <img src="assets/images/image27.png" alt="New Employee Setup Diagram">
-                    <img src="assets/images/image28.png" alt="Existing Employee Setup Diagram">
-                    <figcaption>Figure 20: Setup workflow diagrams for new and existing employees.</figcaption>
-                </figure>
-
-                <h3>Project Outcome</h3>
-                <p>The guidance document became official IT procedure, ensuring 100% successful setups. My training
-                    sessions reduced the time I spent troubleshooting basic user issues by approximately 50%.</p>
-            </div>
-        </section>
-
-        <!-- Project 7: Mechatronics -->
-        <section class="project" id="mechatronics">
-            <h2>Mechatronics Robot "Fergie"</h2>
-            <div class="project-meta">
-                <span><strong>Role:</strong> Mechanical Designer & Integrator</span>
-                <span><strong>Date:</strong> August – December 2025</span>
-                <span><strong>School:</strong> UPenn (Mechatronics Systems)</span>
-            </div>
-            <div class="project-content">
-                <h3>Problem Statement</h3>
-                <p>Build an autonomous robot to compete in a game requiring navigation, obstacle avoidance, and object
-                    manipulation within a $150 budget.</p>
-
-                <h3>My Role</h3>
-                <p>I designed the mechanical system in SolidWorks, featuring a three-layer acrylic chassis with
-                    strategic component mounting and wire management. I also implemented the VIVE coordinate navigation
-                    code, developing a "three-in-a-row" verification method to eliminate sensor noise and ensure
-                    accurate positioning.</p>
-
-                <figure>
-                    <img src="assets/images/image29.png" alt="Fergie Robot">
-                    <figcaption>Figure 21: Final Fergie Robot, Isometric View.</figcaption>
-                </figure>
-
-                <h3>Project Outcome</h3>
-                <p>The robot successfully completed manual and autonomous tasks, including wall-following and button
-                    pressing. We achieved a grade of 46/50 on the project.</p>
-            </div>
-        </section>
-
+            <!-- Project 7 -->
+            <a href="project7.html" class="project-card">
+                <div class="card-image" style="background-image: url('assets/images/image29.png');"></div>
+                <div class="card-content">
+                    <h3>Mechatronics Robot "Fergie"</h3>
+                    <p class="meta">UPenn | 2025</p>
+                </div>
+            </a>
+        </div>
     </main>
 
     <footer>

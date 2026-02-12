@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Independent Study: Acoustofluidics | Arik Singh</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="project-header">
+        <div class="container">
+            <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+            <h1>Independent Study: Maximum Particle Velocity in Acoustofluidics</h1>
+        </div>
+    </header>
+
+    <main class="container project-detail">
+        <div class="project-meta">
+            <p><strong>Project:</strong> Independent study at UCSD, 2 quarters. Write a paper with Professor James
+                Friend called “An investigation of maximum particle velocity as a universal invariant—Defined by a
+                statistical measure of failure or plastic energy loss for acoustofluidics applications”</p>
+            <p><strong>Date:</strong> January–June 2015</p>
+        </div>
+
+        <section class="content-section">
+            <h2>Problem statement</h2>
+            <p>I first joined Professor Friend’s lab in 2017, right after I took his class on advanced analytical
+                methods for solving non-linear ODEs using MATLAB. I was the only undergraduate in his lab, so there was
+                a limited number of projects he could assign me due to my limited expertise.</p>
+            <p>Over the years, Professor Friend noticed a trend across his experiments, which typically dealt with
+                vibrations through robotics that happened at high frequencies. What he discovered was that if you solve
+                for the maximum particle velocity inside a vibration wave in a solid (typically longitudinal but also
+                can be transverse or shear waves), it never exceeds 1 meter per second regardless of the frequency of
+                vibration. We believed this to be a fundamental property in nature, regardless of the material
+                properties of the solid that is vibrating.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>My role</h2>
+            <p>Professor Friend and I dug into some of the fundamental equations that might be driving this effect, and
+                we discovered there is a theoretical velocity limit for each material in which it will experience
+                cyclical yield stress and will inevitably “fail” and break. We called this theoretical limit “vmax”, as
+                it was a unique material property that could be calculated as shown in Figure 1.</p>
+
+            <figure>
+                <img src="assets/images/image1.png" alt="Figure 1">
+                <figcaption>Figure 1: Solving for vmax as a function of yield stress (σy), elastic modulus (E), and
+                    density (ρ)</figcaption>
+            </figure>
+
+            <p>To determine the range of vmax values in nature (in meters per second), we settled on 11 materials that
+                range all over the spectrum of solids (metals, plastics, rubbers, etc.)—wood, diamond, copper, PVC,
+                PMMA, steel, aluminum, polypropylene, concrete, glass, lithium niobate (a synthetic salt)— and
+                calculated their vmax values. Unsurprisingly, most vmax values ranged from 0.1 to 10 meters per second,
+                with diamond being at 100 meters per second due to its unique material properties (high yield stress
+                relative to density and elastic modulus). However, we concluded that because vmax is an ideal
+                interpretation of the velocity limit, real life material samples often have imperfections that can cause
+                stress concentrations and induce crack propagation or material failure well before the particle velocity
+                reaches vmax.</p>
+            <p>To address the effects of these imperfections on each sample’s theoretical maximum particle velocity, we
+                assigned factors in reducing maximum particle velocity (“psi” (Ψ)) and used Monte Carlo analysis to
+                randomize their values based on potential cracks and imperfections in each material sample. The Ψ
+                factors were based on the wave type (shear, transverse, longitudinal), frequency (real life effects of
+                high frequency are not built into vmax model), flaws, ductile and brittle failure, and fatigue failure.
+                We then solved for the velocity at which failure is guaranteed from the material-defined value vmax to a
+                limiting particle velocity, vlim for the jth material sample (created about 10,000 samples per raw
+                material). In other words, for a particular case defined by the type of acoustic wave and the shape of
+                the structure that carries it, vlim (not vmax) defines the threshold between material integrity and
+                failure. The Ψ equations are shown in Figure 2.</p>
+
+            <figure>
+                <img src="assets/images/image2.png" alt="Figure 2 part 1">
+                <img src="assets/images/image3.png" alt="Figure 2 part 2">
+                <figcaption>Figure 2: Solving for vlim as a function of vmax and Ψ1 – Ψ5</figcaption>
+            </figure>
+
+            <p>Using MATLAB, I simulated tens of thousands of random material “samples” for the 11 materials we had
+                chosen as a baseline for our Monte Carlo model.</p>
+            <p>Each individual sample (sample j) of material X was assigned a vlim value that was based on the
+                material’s vmax and the jth sample’s Ψ1 - Ψ5 values.</p>
+            <p>What we found across the board was the likelihood in a random sample of any material, including diamond,
+                was around 50% or greater around 1 m/s threshold in all 11 materials (within 1 order of magnitude).
+                What’s interesting about diamond is that despite its high theoretical vmax limit, the effects of
+                imperfections and stress concentrations were stronger on diamond that any other material on our list,
+                which is why the likelihood of failure in diamond is still 50% at 3 m/s as shown in Figure 3.</p>
+
+            <figure>
+                <img src="assets/images/image4.png" alt="Figure 3 part 1">
+                <img src="assets/images/image5.png" alt="Figure 3 part 2">
+                <figcaption>Figure 3: Velocity at probability of failure of 50%, plot maximum particle velocity in a
+                    solid wave versus the probability of failure for all 11 materials</figcaption>
+            </figure>
+        </section>
+
+        <section class="content-section">
+            <h2>Project outcome</h2>
+            <p>Since I was only able to work on this project for two quarters with Professor Friend, I was only able to
+                establish the main Monte Carlo model that would later be used to solve for the probability of 50%
+                failure of each of the 11 materials we had selected. When I graduated, I handed off my MATLAB model to
+                Professor Friend’s graduate student, Naiqing Zhang.</p>
+            <p>Naiqing spent the next year working with Professor Friend on the graphs, presentation, and structure of
+                the paper. He also added a section about the immediate relevance of our discovery in the world of
+                acoustofluidics and helped Professor Friend with the theoretical derivation in the appendix.</p>
+            <p>About two years after I graduated, Professor Friend called me to congratulate me on the work I did years
+                earlier to get this paper published. Professor Friend and Naiqing were able to leverage their
+                acoustofluidics contacts at the Journal of the Acoustical Society of America (JASA) to get the paper
+                published the project was a resounding success.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Arik Singh. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechatronics Robot, 1 semester. Build a fully integrated robot with motors, wheels, and sensors for a class
+        project. | Arik Singh</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="project-header">
+        <div class="container">
+            <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+            <h1>Mechatronics Robot, 1 semester. Build a fully integrated robot with motors, wheels, and sensors for a
+                class project.</h1>
+        </div>
+    </header>
+
+    <main class="container project-detail">
+        <div class="project-meta">
+            <p><strong>Date:</strong> August–December 2025</p>
+        </div>
+
+        <section class="content-section">
+            <h2>Problem statement</h2>
+            <p>One of the requirements for my Integrated Product Design Master’s degree at University of Pennsylvania is
+                to take the Design of Mechatronics Systems class. The final project in this class is to build a robot to
+                compete in a League of Legends inspired game. The robot must be able to complete various autonomous and
+                manual tasks in certain time frames (such as button pressing, locating x/y coordinates on a playing
+                court, and attacking robots built by the class’s teaching assistants).</p>
+            <p>At a minimum, each team’s robot must be able to use PID motor control to travel at constant speed and
+                turn to precise angles, sensors to detect obstacles and walls, VIVE circuits to detect live x/y
+                coordinates and orientation, and servos to power weapons for attacking other robots. Each team is
+                responsible for choosing and sourcing the right components, building the VIVE and obstacle sensing
+                circuits, integrating and writing Arduino and C code which can be interacted with on a website interface
+                over Wi-Fi, integrating a health-tracking LED circuit built by the professor, and staying under an
+                allotted budget of $150.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>My role</h2>
+            <p>Each team consisted of three students. My team built a robot consisting of a two-wheel differential drive
+                (PID based) with two ball casters in the back (four points of contact with the ground). We used two
+                high-torque, low-speed motors because our robot was quite heavy and we wanted to be able to get up the
+                ramp on the playing court. The low-speed motors also allowed us to prevent overshoot with things like
+                our PID, wall following, and VIVE travel functions. The idea was to make our robot, which we named
+                “Fergie” (after the singer), a slow, steady tank that could overpower other vehicles it collided with.
+                We also added a concave surface on the front of our second layer (the concave part sticks out relative
+                to our first and third layer) so that it could locate and hit buttons a little more easily. For the
+                wall/obstacle sensing, we settled on using four time of flight sensors (front, back, left, right).
+                Additionally, we developed a weapon that rotates from 0 to 90 degrees; every time you hit the weapon
+                button on our website, the weapon would swing three times within a matter of about 1.5 seconds. The
+                weapon also had a “hook” feature at the end of it because we were hoping to be able to grab other team’s
+                whisker switches and get multiple 15-point deductions per weapon button press. Lastly, we built a VIVE
+                coordinate system using resistors, op-amps, and two photodiodes. The photodiodes would read x1, y1 and
+                x2, y2. Fergie would then compute the average of the two to find the active coordinate for our robot’s
+                pivot point (we called this x_current, y_current). It would also compute arctan((y2-y1)/(x2-x1)) to find
+                our robot’s current orientation on the playing court. We used these values to get our robot to desired
+                coordinates in various autonomous modes.</p>
+            <p>Because I was more familiar with SolidWorks than my other team members, I did Fergie’s mechanical design.
+                This consisted of designing a three-layered system (each layer was laser cut out of acrylic, with
+                mechanical standoffs between layers) where I made decisions on where to mount the motors, motor driver,
+                power sources (one four pack of AA batteries, two 3S LiPO batteries, and a USB C power bank to power the
+                microcontroller) , microcontroller (ESP32-S3), servo/weapon, a “whisker” switch (how other teams attack
+                our robot for points) and various protoboards with custom circuits on them. Most importantly, I had to
+                strategically add slots and cutouts for wire path management and strain relief/mitigation. Our final
+                output can be seen below in Figure 21.</p>
+
+            <figure>
+                <img src="assets/images/image29.png" alt="Figure 21">
+                <figcaption>Figure 21: Final Fergie Robot, Isometric View, December 2025</figcaption>
+            </figure>
+
+            <p>Another key task I helped with was the final integration of our VIVE coordinate traveling code. The robot
+                had to be able to arrive at any x, y coordinate on the court autonomously, meaning without assistance
+                from our website’s joystick buttons. Our VIVE traveling system (get Fergie to coordinate x_desired,
+                y_desired when the robot is currently at x_current, y_current) was based on the current (average)
+                coordinate of our vehicle as well as our current robot’s orientation. At first, the vehicle figured out
+                the x part of the travel. The code would calculate: Does Fergie need to go in +x or -x to get to
+                x_desired? It would then turn to 0 or 180 degrees respectively before traveling forward. It would then
+                travel straight along x until x_current matched x_desired within some tolerance bound. It then focused
+                on the y part of the travel. Once again, the code would calculate: Does Fergie need to go in +y or -y to
+                get to y_desired? It would then turn to 90 or 270 degrees respectively. It would then travel straight
+                along y until y_current matches y_desired within some tolerance bound. Upon first implementation, what
+                we found was that this code kind of works, but what was happening was that the robot would stop short of
+                the final desired location at least half the time. We studied the results of what the code was doing
+                (via a serial.print debug method in the Arduino serial monitor). We found the root of the intended vs
+                actual performance discrepancy on this part of the electrical design and code was the noise we
+                experienced on the VIVE readings.</p>
+            <p>For context, when we tested the VIVE circuit statically at first (robot NOT moving), we were getting
+                really accurate x and y coordinates. However, once we started to test dynamically (robot IS moving),
+                those readings became a little bit noisy (not super surprising, readings are bound to become noisier if
+                they are not consistently taking place in the same location and are dynamically changing). As a result,
+                what would happen is that the robot would reach a coordinate semi-close to the desired location, it
+                would compute one “good” current x, y coordinate that was within tolerance, and it would completely stop
+                moving even if the next few computed points were outside the tolerance. We then updated the code to say:
+                okay, in order to completely stop and essentially say Fergie is at x_desired, y_desired, I need the VIVE
+                system to report back three successful x, y coordinates (in a row) that are ALL within tolerance of the
+                desired x, y coordinate. This was extremely effective because even if there was one “noisy” point that
+                looked to be within tolerance, the robot would have to keep moving until it successfully computed a
+                series of points in a row that are all within tolerance of x_desired, y_desired, thereby giving us the
+                confidence that we were at our intended coordinate. Essentially, adding this “three in a row” check made
+                our method noise-proof, and I was able to implement this portion of the code into our final code
+                structure.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Project outcome</h2>
+            <p>Before competing in the class-wide competition (which was for fun and optional), each team had to
+                demonstrate to the professor that its robot could accomplish various autonomous and manual tasks within
+                certain time frames. The manual portion (meaning we could use our joystick) consisted of driving up the
+                ramp and attacking a moving bot (designed by the teaching assistants) three times. The autonomous tasks
+                were to: cover three x, y locations (using VIVE) within 90 seconds, travel closely along the full outer
+                wall of the playing court (using our time of flight sensors and some “wall following” code that one of
+                my teammates worked on) within one minute, and pressing various buttons (including one at the top of the
+                ramp) in three minutes.</p>
+            <p>We first were evaluated on the manual tasks. We got up the ramp successfully via the joystick, in large
+                part due to our high-torque motors. When we went up against the teaching assistant bot, where we were
+                able to hit its whisker switch three times in about 45 seconds. The credit here goes to my teammate
+                Kevin who drove the joystick on our website via his laptop. He lined up our robot in a nice position,
+                freezing the teaching assistant bot from being able to move. Next, he pressed the weapon button twice;
+                our servo arm swung six times, doing damage to the opposing whisker switch on four of the six swipes
+                (success!).</p>
+            <p>Next came the autonomous evaluation. At first, the professor asked us to go to three x, y VIVE
+                coordinates he had chosen (within 90 seconds). We successfully located the first two coordinates but
+                struggled to reach the third one on time (probably because our robot was traveling very slowly). On the
+                wall-following portion, Fergie moved like a slow but steady tortoise, achieving the full wall follow in
+                55 seconds (five seconds to spare, we were given one minute to achieve this task). On the button
+                pressing portion, Fergie successfully hit all the buttons except the one at the top of the ramp. For
+                some reason our robot got confused when autonomously going up the ramp, and it stalled out by running
+                into the right side of the ramp where it got stuck. We never got a chance to debug why this occurred, as
+                this would have taken a day or two to evaluate what happened in real life vs our intention in the code
+                we wrote.</p>
+            <p>In the end, our team got 46 out of 50 points, a perfectly satisfactory grade for us. We decided to skip
+                the competition (since it was optional), and watched the other teams compete.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Arik Singh. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

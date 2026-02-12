@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auris Health Viewer Console | Arik Singh</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="project-header">
+        <div class="container">
+            <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+            <h1>Auris Health</h1>
+        </div>
+    </header>
+
+    <main class="container project-detail">
+        <div class="project-meta">
+            <p><strong>Date:</strong> August 2019–August 2020</p>
+        </div>
+
+        <section class="content-section">
+            <h2>Problem statement</h2>
+            <p>In early 2019, when Auris Health was still a startup company in Redwood City, they hired Triple Ring
+                Technologies to help with the design and manufacturing of the viewer console of their clinical device,
+                which was going to compete with the Da Vinci robot (shown in Figure 9).</p>
+
+            <figure>
+                <img src="assets/images/image12.jpeg" alt="Figure 9">
+                <figcaption>Figure 9: Da Vinci Robotic Surgical System</figcaption>
+            </figure>
+
+            <p>The Da Vinci Robotic Surgical System is an industry standard medical device made by Intuitive Surgical
+                (also located in the Bay Area) which can perform a remote surgery. In other words, a doctor can stand on
+                one side of the room with the robot on the other side (with a camera driving what they are seeing inside
+                the patient). They then actuate various de facto surgical tools in front of them (for example, fake
+                snippers and needles). Their hand motions trigger the robot performing the surgery on behalf of the
+                doctors’ hand motions (via mirroring their actions), which has proven to be safer and cause fewer
+                human-related errors.</p>
+            <p>Auris assigned Triple Ring the viewer console portion of the device because it requires complicated
+                opto-mechanical part design and tricky manufacturing steps that need to be developed. The idea behind
+                the console is it takes a snake camera with two lenses that goes into the patient and projects an image
+                back to the doctor. Through a series of mirrors and lenses, the doctor can see a 3D view of what is
+                going on inside the patient, which helps with depth perception when they are using their surgical tools.
+                Also, Auris was interested in gaining a competitive advantage over Intuitive Surgical and requested we
+                do our homework to design a console that was lighter, smaller, and sleeker than the Da Vinci’s console.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>My role</h2>
+            <p>This was the first project assigned to me at Triple Ring as a full-time employee. When I joined the
+                project, we had used a contractor named Rob Campbell to design the most complicated optomechanical
+                parts, ranging from optical housings with complicated machining operations and optical black anodizing
+                finishing requirements. However, it was all designed as a CAD (SolidWorks) assembly; no parts had been
+                ordered yet.</p>
+            <p>The first steps were creating a manual bill of materials (BOM) of what Rob had designed into SolidWorks
+                and a list of custom lens manufacturers and machine shops we’d be working with to deliver units (which
+                ultimately ended up being 9 units in three iterations) to our client.</p>
+            <p>We discovered early that the left and right optical housings, which drive almost all of the other parts
+                we were ordering, were also going to be the trickiest to manage due to their complex machining
+                operations (see Figure 10).</p>
+
+            <figure>
+                <img src="assets/images/image13.png" alt="Figure 10 part 1">
+                <img src="assets/images/image14.png" alt="Figure 10 part 2">
+                <figcaption>Figure 10: Left housing (left), and right housing (right), with their lens stacks installed
+                </figcaption>
+            </figure>
+
+            <p>We met in person with multiple machine shops to discuss the order of operations for machining these parts
+                and for fit checking the lens stack manually before sending the parts for anodizing. These parts
+                typically had an 8-week lead time once they were ordered. During the 8 weeks these parts were on order,
+                we would use that time to develop what we call manufacturing process instructions (or an MPI), which
+                explain how to put the unit together once you have ordered everything listed on the BOM to build one
+                unit.</p>
+            <p>The first time we write an MPI at Triple Ring, we usually have to use the SolidWorks CAD and rely on
+                exploded views to explain how to put the unit together, as shown in Figure 11.</p>
+
+            <figure>
+                <img src="assets/images/image15.png" alt="Figure 11">
+                <figcaption>Figure 11: Write MPI steps using CAD</figcaption>
+            </figure>
+
+            <p>This is why building the first unit (of any assembly at Triple Ring, but particularly early-stage
+                prototypes) is so important. It gives the engineer the opportunity to replace CAD screenshots with
+                real-life photos while also discovering assembly steps that need future improvements. On this project,
+                my supervisor, Todd Harris used his professional Nikon camera. Todd has an optical background, which was
+                why he was the overall Triple Ring technical lead for the project, and he co-wrote the MPI with me.</p>
+            <p>We built one of each of the first two iterations of the console, Alpha and Beta. Eventually, we were
+                contracted to build seven more design verification testing units, or DVT units, of which four were going
+                to be sent off to a company in the UK called Surrey NanoSystems. Surrey NanoSystems specialized in an
+                optical black coating called Vanta Black (see Figure 12), which absorbs 99.965% of light, an optical
+                performance that was better than purely optical black anodized machined aluminum.</p>
+            <p>Because we had built and iterated on the unit twice, by the time we were ready to order parts for DVT, we
+                had already iterated on the overall design (parts, assembly, assembly sequence) twice to accommodate for
+                design for manufacturing, design for assembly, cable management, electromagnetic interference (EMI)
+                mitigation, thermal management, industrial design factors and human factors. With respect to the
+                3D-printed parts that housed the machined aluminum, for example, there were industrial design
+                requirements about how aesthetically pleasing it had to look (color and finish) while also accommodating
+                the range of human head sizes, which feature different nose sizes and center-of-eye to center-of-eye
+                distances.</p>
+
+            <figure>
+                <img src="assets/images/image16.jpeg" alt="Figure 12">
+                <figcaption>Figure 12: Vantablack</figcaption>
+            </figure>
+        </section>
+
+        <section class="content-section">
+            <h2>Project outcome</h2>
+            <p>When we created the contract for Auris for 7 DVT units, we wrote what was called a Statement of Work,
+                which is what Triple Ring uses to define the scope, budget, and timeline of a given project.
+                Unfortunately, around the time we were ready to order parts for these 7 units, COVID hit and Auris
+                Health was acquired by Johnson & Johnson (J&J). Triple Ring did a good job managing the project
+                throughout the early days of the pandemic. For example, Harris and I only came into the office (masks
+                on) on days where we knew we needed to complete portions of the DVT build. Most of our other tasks
+                (which revolved around the SolidWorks design and the respective documentation) could be performed
+                remotely. Unfortunately, the transition from working with Auris directly to working with Auris under the
+                J&J umbrella was not smooth.</p>
+            <p>Not only did we need to interface with personnel from J&J that drove our weekly technical meeting with
+                the client, but our J&J contacts had very little understanding of the technical challenges of this
+                portion of the device or the Triple Ring and Auris design and device history records which drove much of
+                the design intent and systems engineering up to that point in the project.</p>
+            <p>Unfortunately, while Triple Ring succeeded in delivering 7 DVT devices that were in specification of the
+                required optical performance of the device (see Figure 13 for what the final unit looked like), Johnson
+                & Johnson struggled to drive the project beyond that point, unable to integrate our console into a
+                larger assembly context or to scale up and compete with the Da Vinci, which is already fully scaled up
+                in production and has been the industry standard for 20+ years.</p>
+
+            <figure>
+                <img src="assets/images/image17.png" alt="Figure 13">
+                <figcaption>Figure 13: Final DVT Auris Viewer Console mounted to workbench</figcaption>
+            </figure>
+
+            <p>In fact, it was recently revealed publicly in court through a $1 billion dollar settlement with Auris
+                that J&J blamed the missed milestone goals on technical problems with the Auris console while also
+                arguing that they had the authority to use Auris' products in any way that advanced J&J's overall
+                robotics program (something that became apparent to Triple Ring early on, which is why we chose not to
+                pursue the next phase of this project despite the plan to build 9 more units).</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Arik Singh. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

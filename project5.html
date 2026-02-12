@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViOptix Laparoscopic "Lap.Ox" Implementation | Arik Singh</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="project-header">
+        <div class="container">
+            <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+            <h1>ViOptix laparoscopic implementation of the Intra.Ox device. Also known as “Lap.Ox”</h1>
+        </div>
+    </header>
+
+    <main class="container project-detail">
+        <div class="project-meta">
+            <p><strong>Date:</strong> June 2023–June 2025</p>
+        </div>
+
+        <section class="content-section">
+            <h2>Problem statement</h2>
+            <p>Since bringing the Intra.Ox through FDA approval and into the marketplace, ViOptix has identified a user
+                need from many of the clinics and doctors that they work with. Due to the different geometry involved in
+                laparoscopic surgeries, clinicians were requesting that ViOptix develop a laparoscopic implementation of
+                the Intra.Ox disposable/durable design (which would later be named the Lap.Ox). Similar to the Intra.Ox,
+                this device features a disposable sheath enclosure and a durable (batteries are inserted into the
+                durable this time instead of using a custom battery pack). However, various concessions in the design of
+                the laparoscopic tube and optical polishing steps dictate that this device would have different core
+                design and assembly process than the Intra.Ox.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>My role</h2>
+            <p>At first, ViOptix and Triple Ring investigated a sterilization process that uses H2O2 (run by a company
+                called Steris) that is available inside most hospitals and would render the need for a disposable
+                enclosure obsolete. Unfortunately, through years of testing, it was discovered that this sterilization
+                method has an adverse and unpredictable effect on the optics of our device and could not be considered a
+                viable long-term solution for the Lap.Ox product.</p>
+            <p>Instead, the disposable/durable concept remained crucial to the Lap.Ox design. We hypothesized internally
+                that, in order to reach FDA 510k special approval on this device by the middle of 2025 (client
+                expectation), Triple Ring would have to go through three iterations of the design quickly and order the
+                last set of parts to arrive no later than June 2024.</p>
+            <p>The first design was 3D-printed and assembled in house by me and my coworker, Jordan Sweer. The assembly
+                was fully disposable and could only be used once (i.e., durable with N=1 uses). Jordan Sweer and I
+                learned from this first assembly and through data collection to develop the second iteration of the
+                design, which we called pre-design verification testing, or pre-DVT.</p>
+            <p>In this phase of the project, my responsibility was part and assembly design. Due to the long lead time
+                of injection molded plastics and printed circuit boards, the SolidWorks geometry had to be finalized,
+                scrutinized, and ordered promptly to stay on schedule with the project. I was also responsible for doing
+                the inventory tracking for both the durable and disposable parts, making sure we had enough parts to
+                build 20 of each.</p>
+            <p>Once again, Jordan Sweer and I assembled the devices (durables and disposables separately), writing a set
+                of durable and disposable manufacturing process instructions (MPIs) in the process. While Jordan Sweer
+                used these first 20 units for optical testing to establish thermal cycling parameters and optical
+                corrections during device calibration, I worked on finalizing both MPIs. Eventually, due to the volume
+                and technical difficulty of the durable and disposable assemblies, Triple Ring would have to pass on the
+                assembly to contract manufacturers. A CAD representation of the durable and disposable are shown in
+                Figure 17 and Figure 18.</p>
+
+            <figure>
+                <img src="assets/images/image22.png" alt="Figure 17 part 1">
+                <img src="assets/images/image23.png" alt="Figure 17 part 2">
+                <figcaption>Figure 17: Durable (left), disposable cross-section (right) DVT CAD representation
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="assets/images/image24.png" alt="Figure 18">
+                <figcaption>Figure 18: Disposable cross-section in CAD</figcaption>
+            </figure>
+
+            <p>During the third iteration of the design, which we call the DVT units, we were responsible for building
+                100 durables and 300 disposables for the client. Due to the optical nature of the disposable assembly,
+                we contracted Molex (FiberGuide LLC) to build the 300 disposables. Because the durable assembly is less
+                technically challenging, Triple Ring enlisted our local contract manufacturer (CM), Evolve, to build
+                these 100 units.</p>
+            <p>While I did bear the responsibility for updating the geometry for this third iteration as well as
+                ordering enough parts to achieve our build quantities on time, my main job in this phase of the project
+                was to act as the interface for both CMs. Because Jordan Sweer and I were the assembly experts, it was
+                our responsibility to pass on any knowledge (including tips and tricks) that was not otherwise
+                documented in our MPIs. It was also our responsibility to be available to debug assembly issues for
+                either CM should they arise and help them hunt the issue to ground. Eventually, after the DVT builds are
+                tested and submitted to the FDA for clearance, the client intends to scale up to 1000 durables a year
+                and 10,000 disposables a year for production. In order to get to this phase of the product, Triple Ring
+                needs to work with both contract manufacturers to offload the BOM and purchasing aspects of building
+                these units for clients, including the management of a complex supply chain with many long lead time
+                parts. In the world of contract manufacturing, this is called a “turnkey” product because the CM is able
+                to buy parts and assemble units for our client in an entirely self-sufficient manner. Because I am the
+                author of both the durable and disposable Lap.Ox BOMs, it will be my responsibility to manage the BOM
+                handoff for the production phase.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Project outcome</h2>
+            <p>Over the course of the last 18 months, we have hit every major milestone requested by the client, and in
+                fact, sometimes were able to exceed expectations. In the pre-DVT phase of the project, Triple Ring was
+                able to build a nicely polished unit for ViOptix’s CEO Scott Coleridge to show off at his board meeting
+                for live StO2 oxygen measurements.</p>
+            <p>In the current phase, due to the growing pains from switching the assembly operations from Triple Ring to
+                Molex and Evolve, we are running slightly behind schedule procuring the 100 durables and 300
+                disposables. That being said, of the durable and disposable units that we have received so far, we have
+                performed optical, mechanical, electrical, software, and destructive testing on a large portion.
+                Thankfully, all units thus far have performed within our defined systems engineering specifications for
+                the Lap.Ox. As of November 1, 2024, we have 150 disposables that have passed calibration and testing and
+                are ready for clinical use. Additionally, we have 60 durables that have passed calibration and testing
+                and are also ready for clinical use.</p>
+            <p>The DVT phase of this project has been successful in offloading the assembly cost and labor to both
+                contract manufacturers. However, due to the time crunch of a fast-approaching FDA submission for this
+                product, Triple Ring decided to calibrate the durables and disposables in-house with an established
+                process. The intent is to further improve and tweak both calibration processes so that by the time we
+                reach the production phase (ViOptix is asking for an output of 10,000 disposables and 1000 durables),
+                the calibration process can be transferred over to both contract manufacturers. This would make it
+                possible for both CMs to deliver turnkey products that are fully calibrated and ready for use in the
+                field, in addition to being assembled and tested for power draw.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Arik Singh. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
