@@ -31,3 +31,18 @@ git push origin main
 Your website will be live at `https://ariksingh-dev.github.io/portfolio/`.
 
 
+
+## Troubleshooting
+
+If you see a **404 Error**:
+
+1.  **Wait**: It can take up to 10 minutes for the site to go live after the first push.
+2.  **Check Repository Settings**:
+    - Go to **Settings** > **Pages** on GitHub.
+    - Ensure **Source** is set to `Deploy from a branch`.
+    - Ensure **Branch** is set to `main` and folder is `/(root)`.
+    - Click **Save** (even if it looks correct, clicking save again can trigger a build).
+3.  **Check Actions**:
+    - Go to the **Actions** tab in your repository.
+    - You should see a workflow running (e.g., "pages build and deployment").
+    - If it failed, click on it to see the error.
