@@ -246,3 +246,46 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+
+/* Project Text Color Overrides */
+/* Project 1: Black (Default) */
+.project-black .content-section p,
+.project-black .content-section li {
+    color: #000000;
+}
+
+/* Project 2: Blue */
+.project-blue .content-section p,
+.project-blue .content-section li {
+    color: #0056b3;
+}
+
+/* Project 3: Red */
+.project-red .content-section p,
+.project-red .content-section li {
+    color: #d32f2f;
+}
+
+/* Project 4: Purple */
+.project-purple .content-section p,
+.project-purple .content-section li {
+    color: #6a1b9a;
+}
+
+/* Project 5: Green */
+.project-green .content-section p,
+.project-green .content-section li {
+    color: #2e7d32;
+}
+
+/* Project 6: Orange */
+.project-orange .content-section p,
+.project-orange .content-section li {
+    color: #ef6c00;
+}
+
+/* Project 7: Grey */
+.project-grey .content-section p,
+.project-grey .content-section li {
+    color: #616161;
+}
