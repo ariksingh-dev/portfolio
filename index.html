@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arik Singh | Portfolio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Arik Singh</h1>
+            <p>Mechanical Engineering Portfolio</p>
+            <!-- Navigation could go here -->
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Project 1: UCSD Independent Study -->
+        <section class="project" id="acoustofluidics">
+            <h2>Independent Study: Maximum Particle Velocity in Acoustofluidics</h2>
+            <div class="project-meta">
+                <span><strong>Role:</strong> Researcher</span>
+                <span><strong>Date:</strong> January – June 2015</span>
+                <span><strong>Organization:</strong> UCSD (Professor James Friend)</span>
+            </div>
+            <div class="project-content">
+                <h3>Problem Statement</h3>
+                <p>I joined Professor Friend’s lab in 2017 after taking his class on advanced analytical methods for
+                    solving non-linear ODEs. Professor Friend noticed a trend across his high-frequency vibration
+                    experiments: the maximum particle velocity in a solid vibration wave never exceeded 1 meter per
+                    second, regardless of frequency. We believed this to be a fundamental property of nature.</p>
+
+                <h3>My Role</h3>
+                <p>Professor Friend and I dug into the fundamental equations and discovered a theoretical velocity limit
+                    for each material where it would experience cyclical yield stress and fail. We called this
+                    "v<sub>max</sub>".</p>
+
+                <figure>
+                    <img src="assets/images/image1.png" alt="Equation for Vmax">
+                    <figcaption>Figure 1: Solving for v<sub>max</sub> as a function of yield stress, elastic modulus,
+                        and density.</figcaption>
+                </figure>
+
+                <p>I used MATLAB to simulate tens of thousands of random material samples for 11 different materials
+                    (metals, plastics, ceramics, etc.) using Monte Carlo analysis. We introduced imperfection factors
+                    (Ψ) to model real-world flaws.</p>
+
+                <figure>
+                    <img src="assets/images/image2.png" alt="Psi imperfection factors">
+                    <!-- image3.png might also be part of this figure or related -->
+                    <figcaption>Figure 2: Solving for v<sub>lim</sub> (limiting velocity) as a function of
+                        v<sub>max</sub> and imperfection factors.</figcaption>
+                </figure>
+
+                <p>We found that the likelihood of failure around the 1 m/s threshold was consistently high (around 50%
+                    or greater) across all materials.</p>
+
+                <figure>
+                    <img src="assets/images/image4.png" alt="Probability of failure graph">
+                    <img src="assets/images/image5.png" alt="Probability of failure graph 2">
+                    <figcaption>Figure 3: Velocity at probability of failure of 50%. Plot of maximum particle velocity
+                        versus probability of failure for 11 materials.</figcaption>
+                </figure>
+
+                <h3>Project Outcome</h3>
+                <p>My Monte Carlo model became the basis for a paper published in the Journal of the Acoustical Society
+                    of America (JASA). After I graduated, the work was continued by Naiqing Zhang, and the project was a
+                    resounding success.</p>
+            </div>
+        </section>
+
+        <!-- Project 2: ViOptix Internship -->
+        <section class="project" id="vioptix">
+            <h2>ViOptix Intra.Ox Disposable O-Ring Design</h2>
+            <div class="project-meta">
+                <span><strong>Role:</strong> Mechanical Engineering Intern</span>
+                <span><strong>Date:</strong> June – August 2018</span>
+                <span><strong>Company:</strong> Triple Ring Technologies / ViOptix</span>
+            </div>
+            <div class="project-content">
+                <h3>Problem Statement</h3>
+                <p>Triple Ring was developing a handheld tissue oximeter called the "Intra.Ox" for ViOptix. The device
+                    helps surgeons determine if tissue is oxygenated enough to survive post-surgery.</p>
+
+                <figure>
+                    <img src="assets/images/image6.png" alt="Intra.Ox Device">
+                    <figcaption>Figure 4: T.Ox device details (Intra.Ox predecessor/context).</figcaption>
+                </figure>
+
+                <p>The system consisted of a reusable "durable" unit and disposable components (battery pack and
+                    sheath). The sheath needed to protect the durable from contamination in the operating room.</p>
+
+                <figure>
+                    <img src="assets/images/image7.png" alt="Durable Unit CAD">
+                    <figcaption>Figure 5: Intra.Ox Durable CAD model.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="assets/images/image8.png" alt="Disposable Sheath">
+                    <img src="assets/images/image9.png" alt="Battery Pack">
+                    <figcaption>Figure 6: Intra.Ox Disposable Sheath (left) and battery pack (right).</figcaption>
+                </figure>
+
+                <h3>My Role</h3>
+                <p>I was responsible for designing the custom O-ring for the disposable sheath. The challenge was to
+                    create a seal that was soft enough to be closed by a nurse with less than 4 lbs of force, but
+                    reliable enough to prevent leaks under low pressure differentials.</p>
+
+                <figure>
+                    <img src="assets/images/image10.png" alt="O-Ring Compression Diagram">
+                    <figcaption>Figure 7: O-Ring compression diagram showing how deformation creates a seal.
+                    </figcaption>
+                </figure>
+
+                <p>We modeled the seal design off a Pelican™ Case to create local compression points. I determined that
+                    a 15 Shore A hardness was optimal. We worked with RD Rubber to develop a manufacturing process that
+                    ensured the custom O-rings met our strict stiffness requirements (13-17 Shore A).</p>
+
+                <figure>
+                    <img src="assets/images/image11.png" alt="O-Ring Cross Section">
+                    <figcaption>Figure 8: O-Ring cross-section showing localized compression.</figcaption>
+                </figure>
+
+                <h3>Project Outcome</h3>
+                <p>The design passed FDA clearance. ViOptix now manufactures approximately 2,000 disposable sheaths
+                    annually, and the device is used in hospitals across the country.</p>
+            </div>
+        </section>
+
+        <!-- Project 3: Auris Health -->
+        <section class="project" id="auris">
+            <h2>Auris Health Viewer Console</h2>
+            <div class="project-meta">
+                <span><strong>Role:</strong> Mechanical Engineer</span>
+                <span><strong>Date:</strong> August 2019 – August 2020</span>
+                <span><strong>Company:</strong> Triple Ring Technologies (Client: Auris Health)</span>
+            </div>
+            <div class="project-content">
+                <h3>Problem Statement</h3>
+                <p>Auris Health hired Triple Ring to help design and manufacture the viewer console for their robotic
+                    surgical system, intended to compete with the Da Vinci robot. The goal was to create a lighter,
+                    smaller, and sleeker console.</p>
+
+                <figure>
+                    <img src="assets/images/image12.jpeg" alt="Da Vinci Robot">
+                    <figcaption>Figure 9: Da Vinci Robotic Surgical System (Competitor Reference).</figcaption>
+                </figure>
+
+                <h3>My Role</h3>
+                <p>This was my first full-time project. I managed the Bill of Materials (BOM) and coordinated with
+                    vendors for complex parts, including the optical housings which required precise machining and
+                    anodizing.</p>
+
+                <figure>
+                    <img src="assets/images/image13.png" alt="Left Optical Housing">
+                    <img src="assets/images/image14.png" alt="Right Optical Housing">
+                    <figcaption>Figure 10: Left and right optical housings with lens stacks installed.</figcaption>
+                </figure>
+
+                <p>I co-wrote the Manufacturing Process Instructions (MPI) using CAD exploded views and later, real-life
+                    photos from the first builds.</p>
+
+                <figure>
+                    <img src="assets/images/image15.png" alt="MPI Exploded View">
+                    <figcaption>Figure 11: Example of MPI steps created using CAD.</figcaption>
+                </figure>
+
+                <p>We built multiple iterations (Alpha, Beta) and 7 Design Verification Testing (DVT) units. We utilized
+                    Vantablack coating from Surrey NanoSystems to minimize light reflection within the console.</p>
+
+                <figure>
+                    <img src="assets/images/image16.jpeg" alt="Vantablack">
+                    <figcaption>Figure 12: Vantablack coating reference.</figcaption>
+                </figure>
+
+                <h3>Project Outcome</h3>
+                <p>We successfully delivered 7 DVT units that met optical specifications. However, following Auris
+                    Health's acquisition by Johnson & Johnson, the project faced integration challenges and was
+                    eventually deprioritized by the new parent company.</p>
+
+                <figure>
+                    <img src="assets/images/image17.png" alt="Final Auris Console">
+                    <figcaption>Figure 13: Final DVT Auris Viewer Console mounted to workbench.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Project 4: BOM Process -->
+        <section class="project" id="bom-process">
+            <h2>BOM and Inventory Tracking Process Development</h2>
+            <div class="project-meta">
+                <span><strong>Role:</strong> Mechanical Engineer</span>
+                <span><strong>Date:</strong> June 2022 – December 2023</span>
+                <span><strong>Company:</strong> Triple Ring Technologies</span>
+            </div>
+            <div class="project-content">
+                <h3>Problem Statement</h3>
+                <p>Use SolidWorks to automate the creation of Bill of Materials (BOM) and inventory tracking, replacing
+                    a prone-to-error manual Excel process.</p>
+
+                <h3>My Role</h3>
+                <p>I integrated our PDM software (Windchill) with SolidWorks to manage metadata like vendor names and
+                    costs. I interpreted and wrote scripts to parse SolidWorks assembly data into text files, which
+                    could then be imported into formatted Excel templates. This allowed for automatic generation of
+                    indented BOMs and cost calculations.</p>
+
+                <figure>
+                    <img src="assets/images/image18.png" alt="BOM Excel Template">
+                    <figcaption>Figure 14: Automated BOM Excel template output.</figcaption>
+                </figure>
+
+                <h3>Project Outcome</h3>
+                <p>The new process significantly reduced errors and time spent on manual data entry, providing accurate,
+                    real-time cost and inventory tracking for engineering teams.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Arik Singh. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
