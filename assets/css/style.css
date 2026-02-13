@@ -266,6 +266,17 @@ figcaption {
     font-style: normal;
 }
 
+.image-row {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.image-row img {
+    width: 48%;
+    /* Adjust as needed for gap */
+}
+
 /* Contact Page */
 .contact-section {
     min-height: 60vh;
