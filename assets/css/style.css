@@ -252,10 +252,14 @@ nav a.active {
 
 figure {
     margin: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 figure img {
     border-radius: 4px;
+    margin: 0 auto;
 }
 
 figcaption {
@@ -269,12 +273,20 @@ figcaption {
 .image-row {
     display: flex;
     gap: 20px;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
 }
 
 .image-row img {
-    width: 48%;
-    /* Adjust as needed for gap */
+    width: auto;
+    max-width: 100%;
+    /* Allow variable widths */
+    max-height: 400px;
+    /* Constrain height */
+    object-fit: contain;
+    margin: 0;
+    /* Override global margin for flex items if needed */
 }
 
 /* Contact Page */
