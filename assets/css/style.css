@@ -417,3 +417,48 @@ footer {
         font-size: 1.5rem;
     }
 }
+
+/* More Work Section */
+.more-work-section {
+    padding: 60px 0;
+    background-color: #111;
+    /* Slightly darker than main bg to separate */
+    border-top: 1px solid #333;
+}
+
+.more-work-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.more-work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    /* Add some gap for this section */
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Reuse project-card styles but ensure they fit well */
+.more-work-grid .project-card {
+    aspect-ratio: 4 / 3;
+}
+
+@media (max-width: 900px) {
+    .more-work-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .more-work-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+}
