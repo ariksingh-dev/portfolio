@@ -252,14 +252,18 @@ nav a.active {
 
 figure {
     margin: 3rem 0;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 figure img {
     border-radius: 4px;
     margin: 0 auto;
+    max-width: 100%;
+    height: auto;
 }
 
 figcaption {
@@ -275,18 +279,16 @@ figcaption {
     gap: 20px;
     justify-content: center;
     align-items: center;
-    max-width: 100%;
+    width: 100%;
 }
 
 .image-row img {
     width: auto;
     max-width: 100%;
-    /* Allow variable widths */
-    max-height: 400px;
-    /* Constrain height */
-    object-fit: contain;
+    max-height: 250px;
+    /* Reduced height to make them smaller */
     margin: 0;
-    /* Override global margin for flex items if needed */
+    flex-shrink: 1;
 }
 
 /* Contact Page */
