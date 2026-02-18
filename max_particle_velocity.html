@@ -51,11 +51,11 @@
             <p>Professor Friend and I dug into some of the fundamental equations that might be driving this effect, and
                 we discovered there is a theoretical velocity limit for each material in which it will experience
                 cyclical yield stress and will inevitably “fail” and break. We called this theoretical limit “vmax”, as
-                it was a unique material property that could be calculated as shown in Figure 1.</p>
+                it was a unique material property that could be calculated as shown in Figure "vmax calculation".</p>
 
             <figure>
-                <img src="assets/images/image1.png" alt="Figure 1">
-                <figcaption>Figure 1: Solving for vmax as a function of yield stress (σy), elastic modulus (E), and
+                <img src="assets/images/image1.png" alt="Figure &quot;vmax calculation&quot;">
+                <figcaption>Figure "vmax calculation": Solving for vmax as a function of yield stress (σy), elastic modulus (E), and
                     density (ρ)</figcaption>
             </figure>
 
@@ -77,12 +77,12 @@
                 limiting particle velocity, vlim for the jth material sample (created about 10,000 samples per raw
                 material). In other words, for a particular case defined by the type of acoustic wave and the shape of
                 the structure that carries it, vlim (not vmax) defines the threshold between material integrity and
-                failure. The Ψ equations are shown in Figure 2.</p>
+                failure. The Ψ equations are shown in Figure "vlim equations".</p>
 
             <figure>
-                <img src="assets/images/image2.png" alt="Figure 2 part 1">
-                <img src="assets/images/image3.png" alt="Figure 2 part 2">
-                <figcaption>Figure 2: Solving for vlim as a function of vmax and Ψ1 – Ψ5</figcaption>
+                <img src="assets/images/image2.png" alt="Figure &quot;vlim equations&quot; part 1">
+                <img src="assets/images/image3.png" alt="Figure &quot;vlim equations&quot; part 2">
+                <figcaption>Figure "vlim equations": Solving for vlim as a function of vmax and Ψ1 – Ψ5</figcaption>
             </figure>
 
             <p>Using MATLAB, I simulated tens of thousands of random material “samples” for the 11 materials we had
@@ -93,12 +93,12 @@
                 was around 50% or greater around 1 m/s threshold in all 11 materials (within 1 order of magnitude).
                 What’s interesting about diamond is that despite its high theoretical vmax limit, the effects of
                 imperfections and stress concentrations were stronger on diamond that any other material on our list,
-                which is why the likelihood of failure in diamond is still 50% at 3 m/s as shown in Figure 3.</p>
+                which is why the likelihood of failure in diamond is still 50% at 3 m/s as shown in Figure "failure probability plot".</p>
 
             <figure>
-                <img src="assets/images/image4.png" alt="Figure 3 part 1">
-                <img src="assets/images/image5.png" alt="Figure 3 part 2">
-                <figcaption>Figure 3: Velocity at probability of failure of 50%, plot maximum particle velocity in a
+                <img src="assets/images/image4.png" alt="Figure &quot;failure probability plot&quot; part 1">
+                <img src="assets/images/image5.png" alt="Figure &quot;failure probability plot&quot; part 2">
+                <figcaption>Figure "failure probability plot": Velocity at probability of failure of 50%, plot maximum particle velocity in a
                     solid wave versus the probability of failure for all 11 materials</figcaption>
             </figure>
         </section>
