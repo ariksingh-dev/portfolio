@@ -50,55 +50,68 @@
             <h2>My role</h2>
             <p>Professor Friend and I dug into some of the fundamental equations that might be driving this effect, and
                 we discovered there is a theoretical velocity limit for each material in which it will experience
-                cyclical yield stress and will inevitably “fail” and break. We called this theoretical limit “vmax”, as
+                cyclical yield stress and will inevitably “fail” and break. We called this theoretical limit
+                “v<sub>max</sub>”, as
                 it was a unique material property that could be calculated as shown in Figure "vmax calculation".</p>
 
             <figure>
                 <img src="assets/images/image1.png" alt="Figure &quot;vmax calculation&quot;">
-                <figcaption>Figure "vmax calculation": Solving for vmax as a function of yield stress (σy), elastic modulus (E), and
+                <figcaption>Figure "vmax calculation": Solving for v<sub>max</sub> as a function of yield stress
+                    (σ<sub>y</sub>), elastic modulus (E), and
                     density (ρ)</figcaption>
             </figure>
 
-            <p>To determine the range of vmax values in nature (in meters per second), we settled on 11 materials that
+            <p>To determine the range of v<sub>max</sub> values in nature (in meters per second), we settled on 11
+                materials that
                 range all over the spectrum of solids (metals, plastics, rubbers, etc.)—wood, diamond, copper, PVC,
                 PMMA, steel, aluminum, polypropylene, concrete, glass, lithium niobate (a synthetic salt)— and
-                calculated their vmax values. Unsurprisingly, most vmax values ranged from 0.1 to 10 meters per second,
+                calculated their v<sub>max</sub> values. Unsurprisingly, most v<sub>max</sub> values ranged from 0.1 to
+                10 meters per second,
                 with diamond being at 100 meters per second due to its unique material properties (high yield stress
-                relative to density and elastic modulus). However, we concluded that because vmax is an ideal
+                relative to density and elastic modulus). However, we concluded that because v<sub>max</sub> is an ideal
                 interpretation of the velocity limit, real life material samples often have imperfections that can cause
                 stress concentrations and induce crack propagation or material failure well before the particle velocity
-                reaches vmax.</p>
+                reaches v<sub>max</sub>.</p>
             <p>To address the effects of these imperfections on each sample’s theoretical maximum particle velocity, we
                 assigned factors in reducing maximum particle velocity (“psi” (Ψ)) and used Monte Carlo analysis to
                 randomize their values based on potential cracks and imperfections in each material sample. The Ψ
                 factors were based on the wave type (shear, transverse, longitudinal), frequency (real life effects of
-                high frequency are not built into vmax model), flaws, ductile and brittle failure, and fatigue failure.
-                We then solved for the velocity at which failure is guaranteed from the material-defined value vmax to a
-                limiting particle velocity, vlim for the jth material sample (created about 10,000 samples per raw
+                high frequency are not built into v<sub>max</sub> model), flaws, ductile and brittle failure, and
+                fatigue failure.
+                We then solved for the velocity at which failure is guaranteed from the material-defined value
+                v<sub>max</sub> to a
+                limiting particle velocity, v<sub>lim</sub> for the j<sup>th</sup> material sample (created about 10,000
+                samples per raw
                 material). In other words, for a particular case defined by the type of acoustic wave and the shape of
-                the structure that carries it, vlim (not vmax) defines the threshold between material integrity and
+                the structure that carries it, v<sub>lim</sub> (not v<sub>max</sub>) defines the threshold between
+                material integrity and
                 failure. The Ψ equations are shown in Figure "vlim equations".</p>
 
             <figure>
                 <img src="assets/images/image2.png" alt="Figure &quot;vlim equations&quot; part 1">
                 <img src="assets/images/image3.png" alt="Figure &quot;vlim equations&quot; part 2">
-                <figcaption>Figure "vlim equations": Solving for vlim as a function of vmax and Ψ1 – Ψ5</figcaption>
+                <figcaption>Figure "vlim equations": Solving for v<sub>lim</sub> as a function of v<sub>max</sub> and
+                    Ψ<sub>1</sub> – Ψ<sub>5</sub></figcaption>
             </figure>
 
             <p>Using MATLAB, I simulated tens of thousands of random material “samples” for the 11 materials we had
                 chosen as a baseline for our Monte Carlo model.</p>
-            <p>Each individual sample (sample j) of material X was assigned a vlim value that was based on the
-                material’s vmax and the jth sample’s Ψ1 - Ψ5 values.</p>
+            <p>Each individual sample (sample j) of material X was assigned a v<sub>lim</sub> value that was based on
+                the
+                material’s v<sub>max</sub> and the j<sup>th</sup> sample’s Ψ<sub>1</sub> - Ψ<sub>5</sub> values.</p>
             <p>What we found across the board was the likelihood in a random sample of any material, including diamond,
                 was around 50% or greater around 1 m/s threshold in all 11 materials (within 1 order of magnitude).
-                What’s interesting about diamond is that despite its high theoretical vmax limit, the effects of
+                What’s interesting about diamond is that despite its high theoretical v<sub>max</sub> limit, the effects
+                of
                 imperfections and stress concentrations were stronger on diamond that any other material on our list,
-                which is why the likelihood of failure in diamond is still 50% at 3 m/s as shown in Figure "failure probability plot".</p>
+                which is why the likelihood of failure in diamond is still 50% at 3 <sup>m</sup>/<sub>s</sub> as shown
+                in Figure "failure probability plot".</p>
 
             <figure>
                 <img src="assets/images/image4.png" alt="Figure &quot;failure probability plot&quot; part 1">
                 <img src="assets/images/image5.png" alt="Figure &quot;failure probability plot&quot; part 2">
-                <figcaption>Figure "failure probability plot": Velocity at probability of failure of 50%, plot maximum particle velocity in a
+                <figcaption>Figure "failure probability plot": Velocity at probability of failure of 50%, plot maximum
+                    particle velocity in a
                     solid wave versus the probability of failure for all 11 materials</figcaption>
             </figure>
         </section>

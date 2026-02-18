@@ -65,9 +65,12 @@
                 button on our website, the weapon would swing three times within a matter of about 1.5 seconds. The
                 weapon also had a “hook” feature at the end of it because we were hoping to be able to grab other team’s
                 whisker switches and get multiple 15-point deductions per weapon button press. Lastly, we built a VIVE
-                coordinate system using resistors, op-amps, and two photodiodes. The photodiodes would read x1, y1 and
-                x2, y2. Fergie would then compute the average of the two to find the active coordinate for our robot’s
-                pivot point (we called this x_current, y_current). It would also compute arctan((y2-y1)/(x2-x1)) to find
+                coordinate system using resistors, op-amps, and two photodiodes. The photodiodes would read
+                x<sub>1</sub>, y<sub>1</sub> and
+                x<sub>2</sub>, y<sub>2</sub>. Fergie would then compute the average of the two to find the active
+                coordinate for our robot’s
+                pivot point (we called this x<sub>current</sub>, y<sub>current</sub>). It would also compute
+                arctan((y<sub>2</sub>-y<sub>1</sub>)/(x<sub>2</sub>-x<sub>1</sub>)) to find
                 our robot’s current orientation on the playing court. We used these values to get our robot to desired
                 coordinates in various autonomous modes.</p>
             <p>Because I was more familiar with SolidWorks than my other team members, I did Fergie’s mechanical design.
@@ -87,15 +90,21 @@
 
             <p>Another key task I helped with was the final integration of our VIVE coordinate traveling code. The robot
                 had to be able to arrive at any x, y coordinate on the court autonomously, meaning without assistance
-                from our website’s joystick buttons. Our VIVE traveling system (get Fergie to coordinate x_desired,
-                y_desired when the robot is currently at x_current, y_current) was based on the current (average)
+                from our website’s joystick buttons. Our VIVE traveling system (get Fergie to coordinate
+                x<sub>desired</sub>,
+                y<sub>desired</sub> when the robot is currently at x<sub>current</sub>, y<sub>current</sub>) was based
+                on the current (average)
                 coordinate of our vehicle as well as our current robot’s orientation. At first, the vehicle figured out
                 the x part of the travel. The code would calculate: Does Fergie need to go in +x or -x to get to
-                x_desired? It would then turn to 0 or 180 degrees respectively before traveling forward. It would then
-                travel straight along x until x_current matched x_desired within some tolerance bound. It then focused
+                x<sub>desired</sub>? It would then turn to 0 or 180 degrees respectively before traveling forward. It
+                would then
+                travel straight along x until x<sub>current</sub> matched x<sub>desired</sub> within some tolerance
+                bound. It then focused
                 on the y part of the travel. Once again, the code would calculate: Does Fergie need to go in +y or -y to
-                get to y_desired? It would then turn to 90 or 270 degrees respectively. It would then travel straight
-                along y until y_current matches y_desired within some tolerance bound. Upon first implementation, what
+                get to y<sub>desired</sub>? It would then turn to 90 or 270 degrees respectively. It would then travel
+                straight
+                along y until y<sub>current</sub> matches y<sub>desired</sub> within some tolerance bound. Upon first
+                implementation, what
                 we found was that this code kind of works, but what was happening was that the robot would stop short of
                 the final desired location at least half the time. We studied the results of what the code was doing
                 (via a serial.print debug method in the Arduino serial monitor). We found the root of the intended vs
@@ -108,11 +117,13 @@
                 what would happen is that the robot would reach a coordinate semi-close to the desired location, it
                 would compute one “good” current x, y coordinate that was within tolerance, and it would completely stop
                 moving even if the next few computed points were outside the tolerance. We then updated the code to say:
-                okay, in order to completely stop and essentially say Fergie is at x_desired, y_desired, I need the VIVE
+                okay, in order to completely stop and essentially say Fergie is at x<sub>desired</sub>,
+                y<sub>desired</sub>, I need the VIVE
                 system to report back three successful x, y coordinates (in a row) that are ALL within tolerance of the
                 desired x, y coordinate. This was extremely effective because even if there was one “noisy” point that
                 looked to be within tolerance, the robot would have to keep moving until it successfully computed a
-                series of points in a row that are all within tolerance of x_desired, y_desired, thereby giving us the
+                series of points in a row that are all within tolerance of x<sub>desired</sub>, y<sub>desired</sub>,
+                thereby giving us the
                 confidence that we were at our intended coordinate. Essentially, adding this “three in a row” check made
                 our method noise-proof, and I was able to implement this portion of the code into our final code
                 structure.</p>
