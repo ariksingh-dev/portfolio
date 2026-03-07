@@ -462,3 +462,121 @@ footer {
         padding: 0 20px;
     }
 }
+
+/* Mobile Hamburger Menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 1001; /* Above nav */
+}
+
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--white, #fff);
+}
+
+/* Active Nav Indicator */
+nav a.active[aria-current="page"] {
+    position: relative;
+    color: #fff;
+}
+
+nav a.active[aria-current="page"]::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--white, #fff);
+    border-radius: 2px;
+}
+
+/* Scroll Animations */
+.fade-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, background-color 0.3s;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#back-to-top:hover {
+    background-color: var(--secondary-color, #999);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    
+    nav ul {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        gap: 0;
+        flex-direction: column;
+        background-color: var(--background-color, #1c1c1c);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        height: 100vh;
+        justify-content: center;
+        z-index: 1000;
+    }
+    
+    nav ul li {
+        margin: 20px 0;
+    }
+    
+    nav ul.active {
+        left: 0;
+    }
+
+    /* Hamburger Animation */
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}

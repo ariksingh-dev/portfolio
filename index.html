@@ -6,15 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arik Singh | Portfolio</title>
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <meta name="description"
+        content="Portfolio of Arik Singh, a multidisciplinary designer and engineer specializing in medical devices, mechatronics, and intuitive user experiences.">
+    <meta property="og:title" content="Arik Singh | Portfolio">
+    <meta property="og:description"
+        content="Portfolio of Arik Singh, a multidisciplinary designer and engineer specializing in medical devices, mechatronics, and intuitive user experiences.">
+    <meta property="og:type" content="website">
 </head>
 
 <body>
     <header>
         <div class="container">
             <a href="index.html" class="logo">Arik Singh</a>
+
+            <div class="hamburger" aria-label="Toggle navigation" role="button" tabindex="0">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
             <nav>
                 <ul>
-                    <li><a href="index.html" class="active">Work</a></li>
+                    <li><a href="index.html" class="active" aria-current="page">Work</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -25,7 +38,8 @@
     <main class="gallery-container">
         <div class="project-grid">
             <!-- Project 1 -->
-            <a href="max_particle_velocity.html" class="project-card">
+            <a href="max_particle_velocity.html" class="project-card"
+                aria-label="View project: Maximum Particle Velocity in Solids">
                 <div class="card-image" style="background-image: url('assets/images/project1_title.png');"></div>
                 <div class="project-overlay">
                     <h3>Maximum Particle Velocity in Solids</h3>
@@ -34,7 +48,7 @@
             </a>
 
             <!-- Project 2 -->
-            <a href="intra_ox.html" class="project-card">
+            <a href="intra_ox.html" class="project-card" aria-label="View project: Intra.Ox">
                 <div class="card-image" style="background-image: url('assets/images/project2_title.png');"></div>
                 <div class="project-overlay">
                     <h3>Intra.Ox</h3>
@@ -43,7 +57,7 @@
             </a>
 
             <!-- Project 3 -->
-            <a href="auris_viewer_console.html" class="project-card">
+            <a href="auris_viewer_console.html" class="project-card" aria-label="View project: Viewer Console">
                 <div class="card-image" style="background-image: url('assets/images/project3_title.png');"></div>
                 <div class="project-overlay">
                     <h3>Viewer Console</h3>
@@ -52,7 +66,7 @@
             </a>
 
             <!-- Project 4 -->
-            <a href="BOM_tracking.html" class="project-card">
+            <a href="BOM_tracking.html" class="project-card" aria-label="View project: BOM Tracking">
                 <div class="card-image" style="background-image: url('assets/images/project4_title.png');"></div>
                 <div class="project-overlay">
                     <h3>BOM Tracking</h3>
@@ -61,7 +75,7 @@
             </a>
 
             <!-- Project 5 -->
-            <a href="lap_ox.html" class="project-card">
+            <a href="lap_ox.html" class="project-card" aria-label="View project: Lap.Ox">
                 <div class="card-image" style="background-image: url('assets/images/project5_title.png');"></div>
                 <div class="project-overlay">
                     <h3>Lap.Ox</h3>
@@ -70,7 +84,7 @@
             </a>
 
             <!-- Project 6 -->
-            <a href="IT_setup_procedure.html" class="project-card">
+            <a href="IT_setup_procedure.html" class="project-card" aria-label="View project: IT Laptop Setup Procedure">
                 <div class="card-image" style="background-image: url('assets/images/project6_title.png');"></div>
                 <div class="project-overlay">
                     <h3>IT Laptop Setup Procedure</h3>
@@ -79,7 +93,7 @@
             </a>
 
             <!-- Project 7 -->
-            <a href="fergie_robot.html" class="project-card">
+            <a href="fergie_robot.html" class="project-card" aria-label="View project: Fergie Robot">
                 <div class="card-image" style="background-image: url('assets/images/project7_title.png');"></div>
                 <div class="project-overlay">
                     <h3>"Fergie" Robot</h3>
@@ -94,6 +108,8 @@
             <p>&copy; 2026 Arik Singh. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
