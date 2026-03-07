@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         // Close menu when a link is clicked
-        document.querySelectorAll("nav ul li a").forEach(n => 
+        document.querySelectorAll("nav ul li a").forEach(n =>
             n.addEventListener("click", () => {
                 hamburger.classList.remove("active");
                 navMenu.classList.remove("active");
@@ -60,4 +60,71 @@ document.addEventListener("DOMContentLoaded", () => {
             behavior: "smooth"
         });
     });
+
+    // 4. Light/Dark Mode Toggle
+    const themeToggle = document.getElementById("theme-toggle");
+
+    // Check for saved user preference
+    const savedTheme = localStorage.getItem("portfolio-theme");
+    if (savedTheme === "light") {
+        document.body.classList.add("light-theme");
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+            document.body.classList.toggle("light-theme");
+
+            // Save preference
+            if (document.body.classList.contains("light-theme")) {
+                localStorage.setItem("portfolio-theme", "light");
+            } else {
+                localStorage.setItem("portfolio-theme", "dark");
+            }
+        });
+    }
+
+    // 5. Dynamic Related Projects
+    const projectsList = [
+        { url: "max_particle_velocity.html", title: "Maximum Particle Velocity in Solids", category: "Independent Study", img: "assets/images/project1_title.png" },
+        { url: "intra_ox.html", title: "Intra.Ox", category: "Internship", img: "assets/images/project2_title.png" },
+        { url: "auris_viewer_console.html", title: "Viewer Console", category: "Optomechanical Design", img: "assets/images/project3_title.png" },
+        { url: "BOM_tracking.html", title: "BOM Tracking", category: "Process Improvement", img: "assets/images/project4_title.png" },
+        { url: "lap_ox.html", title: "Lap.Ox", category: "Medical Device Design", img: "assets/images/project5_title.png" },
+        { url: "IT_setup_procedure.html", title: "IT Laptop Setup Procedure", category: "Process Improvement", img: "assets/images/project6_title.png" },
+        { url: "fergie_robot.html", title: '"Fergie" Robot', category: "Mechatronics", img: "assets/images/project7_title.png" }
+    ];
+
+    const dynamicContainer = document.getElementById("dynamic-more-work");
+
+    if (dynamicContainer) {
+        // Get current page filename
+        const currentPage = window.location.pathname.split("/").pop();
+
+        // Filter out current project
+        const availableProjects = projectsList.filter(p => p.url !== currentPage);
+
+        // Shuffle and pick 3
+        const shuffled = availableProjects.sort(() => 0.5 - Math.random());
+        const selectedProjects = shuffled.slice(0, 3);
+
+        // Generate HTML
+        let htmlStr = "";
+        selectedProjects.forEach(proj => {
+            htmlStr += `
+                <a href="${proj.url}" class="project-card fade-hidden" aria-label="View project: ${proj.title}">
+                    <div class="card-image" style="background-image: url('${proj.img}');"></div>
+                    <div class="project-overlay">
+                        <h3>${proj.title}</h3>
+                        <div class="category">${proj.category}</div>
+                    </div>
+                </a>
+            `;
+        });
+
+        dynamicContainer.innerHTML = htmlStr;
+
+        // Re-attach observer for newly injected cards
+        const newCards = dynamicContainer.querySelectorAll(".fade-hidden");
+        newCards.forEach(card => observer.observe(card));
+    }
 });

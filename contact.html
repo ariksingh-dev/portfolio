@@ -7,9 +7,11 @@
     <title>Contact | Arik Singh</title>
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <meta name="description" content="Get in touch with Arik Singh for opportunities in mechanical engineering, product design, and mechatronics.">
+    <meta name="description"
+        content="Get in touch with Arik Singh for opportunities in mechanical engineering, product design, and mechatronics.">
     <meta property="og:title" content="Contact | Arik Singh">
-    <meta property="og:description" content="Get in touch with Arik Singh for opportunities in mechanical engineering, product design, and mechatronics.">
+    <meta property="og:description"
+        content="Get in touch with Arik Singh for opportunities in mechanical engineering, product design, and mechatronics.">
     <meta property="og:type" content="website">
 </head>
 
@@ -17,7 +19,12 @@
     <header>
         <div class="container">
             <a href="index.html" class="logo">Arik Singh</a>
-            
+
+
+            <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">
+                <span class="icon-sun">☀️</span>
+                <span class="icon-moon">🌙</span>
+            </button>
             <div class="hamburger" aria-label="Toggle navigation" role="button" tabindex="0">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -36,11 +43,30 @@
     <main class="container contact-section">
         <img src="assets/images/profile.jpg" alt="Arik Singh" class="profile-photo">
         <h1>Get in Touch</h1>
-        <div class="contact-info">
-            <a href="mailto:ariksingh@gmail.com">ariksingh@gmail.com</a>
-            <div class="contact-phone">310-710-4085</div>
-            <a href="https://www.linkedin.com/in/ariksingh/" target="_blank" rel="noopener noreferrer"
-                style="color: #66b2ff; text-decoration: none; font-weight: 500;">LinkedIn</a>
+        <div class="contact-layout">
+            <div class="contact-details">
+                <a href="mailto:ariksingh@gmail.com" class="contact-link">ariksingh@gmail.com</a>
+                <div class="contact-phone">310-710-4085</div>
+                <a href="https://www.linkedin.com/in/ariksingh/" target="_blank" rel="noopener noreferrer"
+                    class="contact-link linkedin">LinkedIn</a>
+            </div>
+
+            <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required
+                        placeholder="How can I help you?"></textarea>
+                </div>
+                <button type="submit" class="submit-btn" aria-label="Send Message">Send Message</button>
+            </form>
         </div>
     </main>
 

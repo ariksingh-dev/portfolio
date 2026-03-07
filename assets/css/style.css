@@ -1,17 +1,27 @@
 /* Global Styles */
 :root {
     --primary-color: #ffffff;
-    /* White text for high contrast */
     --secondary-color: #999999;
-    /* Grey for secondary text */
     --background-color: #1c1c1c;
-    /* Dark Industrial Grey */
     --surface-color: #2a2a2a;
-    /* Slightly lighter for cards/sections if needed */
     --text-color: #ffffff;
+    --text-muted: #cccccc;
+    --border-color: #333333;
+    --nav-hover: #888888;
     --font-heading: 'Helvetica Neue', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-body: 'Helvetica Neue', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --transition-speed: 0.3s;
+}
+
+body.light-theme {
+    --primary-color: #111111;
+    --secondary-color: #555555;
+    --background-color: #f9f9f9;
+    --surface-color: #ffffff;
+    --text-color: #1a1a1a;
+    --text-muted: #444444;
+    --border-color: #dddddd;
+    --nav-hover: #333333;
 }
 
 * {
@@ -55,7 +65,7 @@ h6 {
     font-family: var(--font-heading);
     font-weight: 700;
     letter-spacing: -0.02em;
-    color: var(--white);
+    color: var(--text-color);
     margin-bottom: 1rem;
 }
 
@@ -72,7 +82,7 @@ h2 {
 
 p {
     margin-bottom: 1.5rem;
-    color: #cccccc;
+    color: var(--text-muted);
     font-weight: 300;
 }
 
@@ -104,7 +114,7 @@ header .container {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--white);
+    color: var(--text-color);
 }
 
 nav ul {
@@ -118,12 +128,12 @@ nav a {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-weight: 500;
-    color: #888;
+    color: var(--nav-hover);
 }
 
 nav a:hover,
 nav a.active {
-    color: #fff;
+    color: var(--text-color);
 }
 
 /* Main Gallery (Index Page) */
@@ -226,7 +236,7 @@ nav a.active {
 }
 
 .meta-item strong {
-    color: #fff;
+    color: var(--text-color);
     display: block;
     font-size: 0.8rem;
     text-transform: uppercase;
@@ -246,7 +256,7 @@ nav a.active {
 
 .content-section h2 {
     margin-top: 3rem;
-    color: #fff;
+    color: var(--text-color);
     font-size: 1.8rem;
 }
 
@@ -269,7 +279,7 @@ figure img {
 figcaption {
     text-align: center;
     font-size: 0.85rem;
-    color: #666;
+    color: var(--secondary-color);
     margin-top: 10px;
     font-style: normal;
 }
@@ -309,16 +319,16 @@ figcaption {
     display: block;
     font-size: 1.5rem;
     margin: 10px 0;
-    color: #fff;
+    color: var(--text-color);
 }
 
 .contact-info a:hover {
-    color: #888;
+    color: var(--secondary-color);
 }
 
 .contact-phone {
     font-size: 1.2rem;
-    color: #888;
+    color: var(--secondary-color);
     margin-top: 10px;
 }
 
@@ -372,8 +382,8 @@ footer {
 .about-text h2 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: var(--white);
-    border-bottom: 1px solid #333;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 1rem;
     display: inline-block;
 }
@@ -421,16 +431,16 @@ footer {
 /* More Work Section */
 .more-work-section {
     padding: 60px 0;
-    background-color: #111;
+    background-color: var(--surface-color);
     /* Slightly darker than main bg to separate */
-    border-top: 1px solid #333;
+    border-top: 1px solid var(--border-color);
 }
 
 .more-work-section h2 {
     text-align: center;
     margin-bottom: 40px;
     font-size: 1.5rem;
-    color: #fff;
+    color: var(--text-color);
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
@@ -467,7 +477,8 @@ footer {
 .hamburger {
     display: none;
     cursor: pointer;
-    z-index: 1001; /* Above nav */
+    z-index: 1001;
+    /* Above nav */
 }
 
 .hamburger .bar {
@@ -476,13 +487,13 @@ footer {
     height: 3px;
     margin: 5px auto;
     transition: all 0.3s ease-in-out;
-    background-color: var(--white, #fff);
+    background-color: var(--text-color);
 }
 
 /* Active Nav Indicator */
 nav a.active[aria-current="page"] {
     position: relative;
-    color: #fff;
+    color: var(--text-color);
 }
 
 nav a.active[aria-current="page"]::after {
@@ -492,7 +503,7 @@ nav a.active[aria-current="page"]::after {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: var(--white, #fff);
+    background-color: var(--text-color);
     border-radius: 2px;
 }
 
@@ -515,8 +526,8 @@ nav a.active[aria-current="page"]::after {
     right: 30px;
     width: 50px;
     height: 50px;
-    background-color: #333;
-    color: #fff;
+    background-color: var(--text-color);
+    color: var(--background-color);
     border: none;
     border-radius: 50%;
     font-size: 1.5rem;
@@ -525,7 +536,7 @@ nav a.active[aria-current="page"]::after {
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s, background-color 0.3s;
     z-index: 999;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -545,7 +556,7 @@ nav a.active[aria-current="page"]::after {
     .hamburger {
         display: block;
     }
-    
+
     nav ul {
         position: fixed;
         left: -100%;
@@ -560,11 +571,11 @@ nav a.active[aria-current="page"]::after {
         justify-content: center;
         z-index: 1000;
     }
-    
+
     nav ul li {
         margin: 20px 0;
     }
-    
+
     nav ul.active {
         left: 0;
     }
@@ -573,10 +584,144 @@ nav a.active[aria-current="page"]::after {
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
     }
+
     .hamburger.active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
+
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+#theme-toggle .icon-sun {
+    display: none;
+}
+
+#theme-toggle .icon-moon {
+    display: block;
+}
+
+body.light-theme #theme-toggle .icon-sun {
+    display: block;
+}
+
+body.light-theme #theme-toggle .icon-moon {
+    display: none;
+}
+
+body.light-theme .hamburger .bar {
+    background-color: var(--text-color);
+}
+
+/* Contact Page Form Layout */
+.contact-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    margin-top: 40px;
+    width: 100%;
+    max-width: 800px;
+    text-align: left;
+    justify-content: center;
+}
+
+.contact-details {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-link {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.contact-link.linkedin {
+    color: #66b2ff;
+}
+
+.contact-phone {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+}
+
+.contact-form {
+    flex: 2;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #66b2ff;
+}
+
+.submit-btn {
+    padding: 15px 30px;
+    background-color: var(--text-color);
+    color: var(--background-color);
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    align-self: flex-start;
+}
+
+.submit-btn:hover {
+    opacity: 0.8;
 }
