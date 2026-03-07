@@ -68,17 +68,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const savedTheme = localStorage.getItem("portfolio-theme");
     if (savedTheme === "light") {
         document.body.classList.add("light-theme");
+        if (themeToggle) themeToggle.setAttribute("title", "Switch to dark mode");
+    } else {
+        if (themeToggle) themeToggle.setAttribute("title", "Switch to light mode");
     }
 
     if (themeToggle) {
         themeToggle.addEventListener("click", () => {
             document.body.classList.toggle("light-theme");
 
-            // Save preference
+            // Save preference & toggle title
             if (document.body.classList.contains("light-theme")) {
                 localStorage.setItem("portfolio-theme", "light");
+                themeToggle.setAttribute("title", "Switch to dark mode");
             } else {
                 localStorage.setItem("portfolio-theme", "dark");
+                themeToggle.setAttribute("title", "Switch to light mode");
             }
         });
     }
@@ -103,9 +108,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // Filter out current project
         const availableProjects = projectsList.filter(p => p.url !== currentPage);
 
-        // Shuffle and pick 3
+        // Shuffle and pick 6
         const shuffled = availableProjects.sort(() => 0.5 - Math.random());
-        const selectedProjects = shuffled.slice(0, 3);
+        const selectedProjects = shuffled.slice(0, 6);
 
         // Generate HTML
         let htmlStr = "";
