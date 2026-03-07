@@ -251,7 +251,7 @@ nav a.active {
 .content-section p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #d0d0d0;
+    color: var(--text-muted);
 }
 
 .content-section h2 {
@@ -601,16 +601,17 @@ nav a.active[aria-current="page"]::after {
     color: var(--text-color);
     font-size: 1.2rem;
     cursor: pointer;
-    padding: 5px;
+    padding: 5px 12px;
     margin-right: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    border-radius: 20px;
 }
 
 #theme-toggle:hover {
-    transform: scale(1.1);
+    background-color: var(--surface-color);
 }
 
 #theme-toggle .icon-sun {
@@ -621,8 +622,38 @@ nav a.active[aria-current="page"]::after {
     display: block;
 }
 
+#theme-toggle:hover .icon-moon {
+    display: none;
+}
+
+#theme-toggle:hover::after {
+    content: '☀️ Switch to Light';
+    display: block;
+    font-size: 0.85rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
 body.light-theme #theme-toggle .icon-sun {
     display: block;
+}
+
+body.light-theme #theme-toggle:hover .icon-sun {
+    display: none;
+}
+
+body.light-theme #theme-toggle:hover::after {
+    content: '🌙 Switch to Dark';
+    display: block;
+    font-size: 0.85rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
 }
 
 body.light-theme #theme-toggle .icon-moon {
