@@ -108,9 +108,8 @@ document.addEventListener("DOMContentLoaded", () => {
         // Filter out current project
         const availableProjects = projectsList.filter(p => p.url !== currentPage);
 
-        // Shuffle and pick 6
-        const shuffled = availableProjects.sort(() => 0.5 - Math.random());
-        const selectedProjects = shuffled.slice(0, 6);
+        // Select all remaining 6 projects in order
+        const selectedProjects = availableProjects;
 
         // Generate HTML
         let htmlStr = "";
