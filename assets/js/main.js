@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const themeToggle = document.getElementById("theme-toggle");
 
     // Check for saved user preference
-    const savedTheme = localStorage.getItem("portfolio-theme");
+    const savedTheme = localStorage.getItem("portfolio-theme-v2");
     if (savedTheme === "light") {
         document.body.classList.add("light-theme");
         if (themeToggle) themeToggle.setAttribute("title", "Switch to dark mode");
@@ -79,10 +79,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Save preference & toggle title
             if (document.body.classList.contains("light-theme")) {
-                localStorage.setItem("portfolio-theme", "light");
+                localStorage.setItem("portfolio-theme-v2", "light");
                 themeToggle.setAttribute("title", "Switch to dark mode");
             } else {
-                localStorage.setItem("portfolio-theme", "dark");
+                localStorage.setItem("portfolio-theme-v2", "dark");
                 themeToggle.setAttribute("title", "Switch to light mode");
             }
         });
