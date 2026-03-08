@@ -398,7 +398,7 @@ footer {
     margin-bottom: 1.5rem;
     font-size: 1.05rem;
     line-height: 1.8;
-    color: #cccccc;
+    color: var(--text-muted);
 }
 
 /* Responsive */
