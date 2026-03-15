@@ -261,7 +261,8 @@ nav a.active {
 }
 
 figure {
-    margin: 3rem 0;
+    margin: 5rem 0;
+    /* Increased margin for more natural breathing room */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -282,12 +283,23 @@ figure img:hover {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
+.figure-ref {
+    color: #e63946;
+    /* Noticeable red in both light and dark modes */
+    font-style: normal;
+    font-weight: normal;
+}
+
 figcaption {
     text-align: center;
-    font-size: 0.85rem;
-    color: var(--secondary-color);
-    margin-top: 10px;
-    font-style: normal;
+    font-size: 0.95rem;
+    color: #e63946;
+    /* Noticeable red */
+    margin-top: 15px;
+    font-style: italic;
+    /* Natural caption style */
+    max-width: 85%;
+    line-height: 1.6;
 }
 
 .image-row {
