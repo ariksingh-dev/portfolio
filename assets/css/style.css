@@ -394,7 +394,7 @@ figcaption {
 
      /* Contact/profile sizing: desktop uses a larger percent so it appears 2x linear (≈4x area).
         Keep mobile portrait/landscape using the existing percent vars so mobile remains unchanged. */
-     --profile-desktop-size: calc(var(--img-vmax-desktop-width) * 4.5);
+    --profile-desktop-size: calc(var(--img-vmax-desktop-width) * 2.5);
      --profile-landscape-size: calc(var(--img-vmax-landscape-width) * 2.25);
      --profile-portrait-size: calc(var(--img-vmax-portrait-width) * 2.25);
 
