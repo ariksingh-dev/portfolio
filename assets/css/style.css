@@ -383,8 +383,8 @@ figcaption {
     --img-vantablack-landscape-width: 65%;
     --img-vantablack-portrait-width: 90%;
 
-    /* Contact profile sizing - desktop increased by ~50% */
-    --profile-desktop-size: 225px; /* was 150px, increased ~50% */
+    /* Contact profile sizing - derived from desktop % variable (1.5x then +50% again = 2.25x) */
+    --profile-desktop-size: calc(var(--img-vmax-desktop-width) * 2.25);
 
     /* Final Viewer Console (Auris) */
     --img-auris-console-desktop-width: 60%;
