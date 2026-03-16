@@ -319,60 +319,88 @@ figcaption {
     flex-shrink: 1;
 }
 
+/* --- Image Sizing Variables ---
+   Adjust these values to fine-tune image sizing across different devices.
+   - desktop:   Standard computer monitors
+   - landscape: Horizontal phone orientation
+   - portrait:  Vertical phone orientation
+----------------------------------- */
+:root {
+    /* M.P.V. (Solving for vmax) */
+    --img-vmax-desktop-width: 18.75%;
+    --img-vmax-landscape-width: 40%;
+    --img-vmax-portrait-width: 80%;
+
+    /* T.Ox Device Features */
+    --img-intraox-desktop-width: 70%; /* Increased from 52.5% */
+    --img-intraox-landscape-width: 75%;
+    --img-intraox-portrait-width: 95%;
+
+    /* Robotic Surgical System (Auris) */
+    --img-auris-sys-desktop-width: 50%;
+    --img-auris-sys-landscape-width: 60%;
+    --img-auris-sys-portrait-width: 90%;
+
+    /* Vantablack Foil */
+    --img-vantablack-desktop-width: 60%;
+    --img-vantablack-landscape-width: 65%;
+    --img-vantablack-portrait-width: 90%;
+
+    /* Final Viewer Console (Auris) */
+    --img-auris-console-desktop-width: 75%;
+    --img-auris-console-landscape-width: 70%;
+    --img-auris-console-portrait-width: 100%;
+
+    /* BOM Template */
+    --img-bom-desktop-height: 550px; /* Increased from 390px */
+    --img-bom-landscape-height: 380px;
+
+    /* DVT CAD Representation (Lap.Ox) */
+    --img-lapox-dvt-desktop-height: 850px; /* Increased from 614.25px */
+    --img-lapox-dvt-landscape-height: 480px;
+
+    /* IT Setup Diagram (Visio) */
+    --img-it-setup-desktop-width: 100%; /* Increased from 98%, removed from image-row */
+    --img-it-setup-landscape-width: 100%;
+}
+
 /* Responsive Image Classes (Desktop Default) */
-.img-vmax {
-    width: 18.75%;
-}
-.img-intraox-features {
-    width: 52.5%;
-}
-.img-auris-system {
-    width: 50%;
-}
-.img-vantablack {
-    width: 60%;
-}
-.img-auris-console {
-    width: 75%;
-}
-.img-bom-template {
-    max-height: 390px;
-}
-.img-lapox-dvt {
-    max-height: 614.25px;
-}
-.img-it-setup {
-    width: 98%;
-    max-height: none;
+.img-vmax { width: var(--img-vmax-desktop-width); }
+.img-intraox-features { width: var(--img-intraox-desktop-width); }
+.img-auris-system { width: var(--img-auris-sys-desktop-width); }
+.img-vantablack { width: var(--img-vantablack-desktop-width); }
+.img-auris-console { width: var(--img-auris-console-desktop-width); }
+
+.img-bom-template { max-height: var(--img-bom-desktop-height); }
+.img-lapox-dvt { max-height: var(--img-lapox-dvt-desktop-height); }
+.img-it-setup { 
+    width: var(--img-it-setup-desktop-width); 
+    max-height: none; 
 }
 
 /* Mobile Landscape (Horizontal) */
 @media (max-height: 500px) and (orientation: landscape) {
-    .img-vmax { width: 40%; }
-    .img-intraox-features { width: 75%; }
-    .img-auris-system { width: 60%; }
-    .img-vantablack { width: 65%; }
-    .img-auris-console { width: 70%; }
+    .img-vmax { width: var(--img-vmax-landscape-width); }
+    .img-intraox-features { width: var(--img-intraox-landscape-width); }
+    .img-auris-system { width: var(--img-auris-sys-landscape-width); }
+    .img-vantablack { width: var(--img-vantablack-landscape-width); }
+    .img-auris-console { width: var(--img-auris-console-landscape-width); }
     
-    .img-bom-template {
-        max-height: 280px;
-    }
-    .img-lapox-dvt {
-        max-height: 380px;
-    }
-    .img-it-setup {
-        width: 95%;
-        max-height: none;
+    .img-bom-template { max-height: var(--img-bom-landscape-height); }
+    .img-lapox-dvt { max-height: var(--img-lapox-dvt-landscape-height); }
+    .img-it-setup { 
+        width: var(--img-it-setup-landscape-width); 
+        max-height: none; 
     }
 }
 
 /* Mobile Portrait (Vertical) */
 @media (max-width: 600px) and (orientation: portrait) {
-    .img-vmax { width: 80%; }
-    .img-intraox-features { width: 95%; }
-    .img-auris-system { width: 90%; }
-    .img-vantablack { width: 90%; }
-    .img-auris-console { width: 100%; }
+    .img-vmax { width: var(--img-vmax-portrait-width); }
+    .img-intraox-features { width: var(--img-intraox-portrait-width); }
+    .img-auris-system { width: var(--img-auris-sys-portrait-width); }
+    .img-vantablack { width: var(--img-vantablack-portrait-width); }
+    .img-auris-console { width: var(--img-auris-console-portrait-width); }
     
     .img-bom-template, .img-lapox-dvt, .img-it-setup {
         max-height: none;
