@@ -261,20 +261,26 @@ nav a.active {
 }
 
 figure {
-    margin: 5rem -300px;
-    /* Negative margin to break out of 800px content-section constraint */
-    width: calc(100% + 600px);
+    margin: 5rem 0;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
-/* Ensure figure doesn't overflow main container on smaller desktop widths */
-@media (max-width: 1400px) {
+/* Break out of 800px content-section constraint on larger screens */
+@media (min-width: 900px) {
     figure {
         margin: 5rem -10vw;
         width: calc(100% + 20vw);
+    }
+}
+
+@media (min-width: 1400px) {
+    figure {
+        margin: 5rem -300px;
+        width: calc(100% + 600px);
     }
 }
 
@@ -338,8 +344,8 @@ figcaption {
 :root {
     /* M.P.V. (Solving for vmax) */
     --img-vmax-desktop-width: 15%; /* Shrunk slightly as container is now wider */
-    --img-vmax-landscape-width: 40%;
-    --img-vmax-portrait-width: 80%;
+    --img-vmax-landscape-width: 28%; /* Reduced by ~30% */
+    --img-vmax-portrait-width: 56%;  /* Reduced by ~30% */
 
     /* T.Ox Device Features */
     --img-intraox-desktop-width: 50%; /* Adjusted for wider container */
@@ -434,6 +440,10 @@ figcaption {
 /* Ensure images embedded in image-rows can escape default max constraints if necessary */
 .image-row .img-vmax-prob { max-height: none; }
 .image-row .img-lapox-dvt { max-height: var(--img-lapox-dvt-desktop-height); }
+.image-row .img-it-setup { 
+    max-height: none; 
+    width: 48%; /* Roughly half the container with some gap */
+}
 
 /* Mobile Landscape (Horizontal) */
 @media (max-height: 500px) and (orientation: landscape) {
