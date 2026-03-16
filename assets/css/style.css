@@ -319,6 +319,75 @@ figcaption {
     flex-shrink: 1;
 }
 
+/* Responsive Image Classes (Desktop Default) */
+.img-vmax {
+    width: 18.75%;
+}
+.img-intraox-features {
+    width: 52.5%;
+}
+.img-auris-system {
+    width: 50%;
+}
+.img-vantablack {
+    width: 60%;
+}
+.img-auris-console {
+    width: 75%;
+}
+.img-bom-template {
+    max-height: 390px;
+}
+.img-lapox-dvt {
+    max-height: 614.25px;
+}
+.img-it-setup {
+    max-height: 700px;
+}
+
+/* Mobile Landscape (Horizontal) */
+@media (max-height: 500px) and (orientation: landscape) {
+    .img-vmax { width: 30%; }
+    .img-intraox-features { width: 45%; }
+    .img-auris-system { width: 45%; }
+    .img-vantablack { width: 50%; }
+    .img-auris-console { width: 50%; }
+    
+    .img-bom-template {
+        max-height: 280px;
+    }
+    .img-lapox-dvt {
+        max-height: 380px;
+    }
+    .img-it-setup {
+        max-height: 380px;
+    }
+}
+
+/* Mobile Portrait (Vertical) */
+@media (max-width: 600px) and (orientation: portrait) {
+    .img-vmax { width: 80%; }
+    .img-intraox-features { width: 95%; }
+    .img-auris-system { width: 90%; }
+    .img-vantablack { width: 90%; }
+    .img-auris-console { width: 100%; }
+    
+    .img-bom-template, .img-lapox-dvt, .img-it-setup {
+        max-height: none;
+        width: 100%;
+    }
+    
+    /* On mobile portrait, stack image row images instead of side-by-side */
+    .image-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .image-row img {
+        width: 100%;
+        max-width: none;
+    }
+}
+
 /* Contact Page */
 .contact-section {
     min-height: 60vh;
