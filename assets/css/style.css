@@ -364,6 +364,15 @@ figcaption {
     --img-vmax-landscape-width: 28%; /* Reduced by ~30% */
     --img-vmax-portrait-width: 56%;  /* Reduced by ~30% */
 
+    /* Numeric factors for calculations (use numbers 0..1 for percent math) */
+    --img-vmax-desktop-factor: 0.09;
+    --img-vmax-landscape-factor: 0.28;
+    --img-vmax-portrait-factor: 0.56;
+
+    /* Pixel anchors: desktop uses container max width (1400px). Mobile switches these to viewport width in media queries. */
+    --pixel-x: 1400px; /* width anchor */
+    --pixel-y: 900px;  /* height anchor (kept for completeness) */
+
     /* T.Ox Device Features */
     --img-intraox-desktop-width: 50%; /* Adjusted for wider container */
     --img-intraox-landscape-width: 75%;
@@ -383,8 +392,11 @@ figcaption {
     --img-vantablack-landscape-width: 65%;
     --img-vantablack-portrait-width: 90%;
 
-    /* Contact profile sizing - derived from desktop % variable (1.5x then +50% again = 2.25x) */
-    --profile-desktop-size: calc(var(--img-vmax-desktop-width) * 2.25);
+     /* Contact/profile sizing: desktop uses a larger percent so it appears 2x linear (≈4x area).
+        Keep mobile portrait/landscape using the existing percent vars so mobile remains unchanged. */
+     --profile-desktop-size: calc(var(--img-vmax-desktop-width) * 4.5);
+     --profile-landscape-size: calc(var(--img-vmax-landscape-width) * 2.25);
+     --profile-portrait-size: calc(var(--img-vmax-portrait-width) * 2.25);
 
     /* Final Viewer Console (Auris) */
     --img-auris-console-desktop-width: 60%;
@@ -398,6 +410,8 @@ figcaption {
 
     /* BOM Template */
     --img-bom-desktop-height: 880px; 
+    /* Scale applied only to desktop contexts; mobile rules override with their own vars */
+    --desktop-scale: 1;
     --img-bom-landscape-height: 380px;
 
     /* DVT CAD Representation (Lap.Ox) */
