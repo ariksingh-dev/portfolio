@@ -383,6 +383,9 @@ figcaption {
     --img-vantablack-landscape-width: 65%;
     --img-vantablack-portrait-width: 90%;
 
+    /* Contact profile sizing - desktop increased by ~50% */
+    --profile-desktop-size: 225px; /* was 150px, increased ~50% */
+
     /* Final Viewer Console (Auris) */
     --img-auris-console-desktop-width: 60%;
     --img-auris-console-landscape-width: 70%;
@@ -499,6 +502,11 @@ figcaption {
         width: var(--img-it-setup-landscape-width); 
         max-height: none; 
     }
+
+    /* Use existing mobile percentage variable for contact profile on landscape */
+    .profile-photo {
+        width: var(--img-vmax-landscape-width);
+    }
 }
 
 /* Mobile Portrait (Vertical) */
@@ -539,6 +547,11 @@ figcaption {
         height: auto;
         object-fit: contain; /* Ensure exact aspect ratio is maintained without stretching */
     }
+
+    /* Use existing mobile percentage variable for contact profile on portrait */
+    .profile-photo {
+        width: var(--img-vmax-portrait-width);
+    }
 }
 
 /* Contact Page */
@@ -573,8 +586,9 @@ figcaption {
 }
 
 .profile-photo {
-    width: 150px;
-    height: 150px;
+    width: var(--profile-desktop-size);
+    height: auto;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 2rem;
