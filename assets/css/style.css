@@ -372,6 +372,41 @@ figcaption {
     /* IT Setup Diagram (Visio) */
     --img-it-setup-desktop-width: 80%; /* Now 80% of entire 1400px monitor width */
     --img-it-setup-landscape-width: 100%;
+
+    /* Max Particle Velocity Probability Plots */
+    --img-vmax-prob-desktop-width: 42%;
+    --img-vmax-prob-landscape-width: 60%;
+    --img-vmax-prob-portrait-width: 100%;
+
+    /* Intra.Ox Durable CAD */
+    --img-intraox-durable-cad-desktop-width: 75%;
+    --img-intraox-durable-cad-landscape-width: 80%;
+    --img-intraox-durable-cad-portrait-width: 100%;
+
+    /* Intra.Ox O-Ring Compress */
+    --img-oring-compress-desktop-width: 50%;
+    --img-oring-compress-landscape-width: 75%;
+    --img-oring-compress-portrait-width: 100%;
+
+    /* Intra.Ox O-Ring Cross Section */
+    --img-oring-cross-desktop-width: 42%; /* Reduced by 40% from 70% */
+    --img-oring-cross-landscape-width: 70%;
+    --img-oring-cross-portrait-width: 100%;
+
+    /* BOM SolidWorks Export */
+    --img-bom-sw-export-desktop-width: 70%;
+    --img-bom-sw-export-landscape-width: 85%;
+    --img-bom-sw-export-portrait-width: 100%;
+
+    /* BOM Master Track */
+    --img-bom-master-track-desktop-width: 70%;
+    --img-bom-master-track-landscape-width: 85%;
+    --img-bom-master-track-portrait-width: 100%;
+
+    /* Fergie Final */
+    --img-fergie-final-desktop-width: 50%;
+    --img-fergie-final-landscape-width: 75%;
+    --img-fergie-final-portrait-width: 100%;
 }
 
 /* Responsive Image Classes (Desktop Default) */
@@ -381,12 +416,24 @@ figcaption {
 .img-vantablack { width: var(--img-vantablack-desktop-width); }
 .img-auris-console { width: var(--img-auris-console-desktop-width); }
 
+.img-vmax-prob { width: var(--img-vmax-prob-desktop-width); }
+.img-intraox-durable-cad { width: var(--img-intraox-durable-cad-desktop-width); }
+.img-oring-compress { width: var(--img-oring-compress-desktop-width); }
+.img-oring-cross { width: var(--img-oring-cross-desktop-width); }
+.img-bom-sw-export { width: var(--img-bom-sw-export-desktop-width); }
+.img-bom-master-track { width: var(--img-bom-master-track-desktop-width); }
+.img-fergie-final { width: var(--img-fergie-final-desktop-width); }
+
 .img-bom-template { max-height: var(--img-bom-desktop-height); }
 .img-lapox-dvt { max-height: var(--img-lapox-dvt-desktop-height); }
 .img-it-setup { 
     width: var(--img-it-setup-desktop-width); 
     max-height: none; 
 }
+
+/* Ensure images embedded in image-rows can escape default max constraints if necessary */
+.image-row .img-vmax-prob { max-height: none; }
+.image-row .img-lapox-dvt { max-height: var(--img-lapox-dvt-desktop-height); }
 
 /* Mobile Landscape (Horizontal) */
 @media (max-height: 500px) and (orientation: landscape) {
@@ -395,6 +442,14 @@ figcaption {
     .img-auris-system { width: var(--img-auris-sys-landscape-width); }
     .img-vantablack { width: var(--img-vantablack-landscape-width); }
     .img-auris-console { width: var(--img-auris-console-landscape-width); }
+
+    .img-vmax-prob { width: var(--img-vmax-prob-landscape-width); }
+    .img-intraox-durable-cad { width: var(--img-intraox-durable-cad-landscape-width); }
+    .img-oring-compress { width: var(--img-oring-compress-landscape-width); }
+    .img-oring-cross { width: var(--img-oring-cross-landscape-width); }
+    .img-bom-sw-export { width: var(--img-bom-sw-export-landscape-width); }
+    .img-bom-master-track { width: var(--img-bom-master-track-landscape-width); }
+    .img-fergie-final { width: var(--img-fergie-final-landscape-width); }
     
     .img-bom-template { max-height: var(--img-bom-landscape-height); }
     .img-lapox-dvt { max-height: var(--img-lapox-dvt-landscape-height); }
@@ -411,6 +466,14 @@ figcaption {
     .img-auris-system { width: var(--img-auris-sys-portrait-width); }
     .img-vantablack { width: var(--img-vantablack-portrait-width); }
     .img-auris-console { width: var(--img-auris-console-portrait-width); }
+
+    .img-vmax-prob { width: var(--img-vmax-prob-portrait-width); }
+    .img-intraox-durable-cad { width: var(--img-intraox-durable-cad-portrait-width); }
+    .img-oring-compress { width: var(--img-oring-compress-portrait-width); }
+    .img-oring-cross { width: var(--img-oring-cross-portrait-width); }
+    .img-bom-sw-export { width: var(--img-bom-sw-export-portrait-width); }
+    .img-bom-master-track { width: var(--img-bom-master-track-portrait-width); }
+    .img-fergie-final { width: var(--img-fergie-final-portrait-width); }
     
     .img-bom-template, .img-lapox-dvt, .img-it-setup {
         max-height: none;
