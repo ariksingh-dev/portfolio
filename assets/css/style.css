@@ -30,7 +30,14 @@ body.light-theme {
     padding: 0;
 }
 
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
 body {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
     font-family: var(--font-body);
     line-height: 1.6;
     color: var(--text-color);
@@ -335,6 +342,16 @@ figcaption {
     flex-shrink: 1;
 }
 
+.image-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+
 /* --- Image Sizing Variables ---
    Adjust these values to fine-tune image sizing across different devices.
    - desktop:   Standard computer monitors
@@ -343,7 +360,7 @@ figcaption {
 ----------------------------------- */
 :root {
     /* M.P.V. (Solving for vmax) */
-    --img-vmax-desktop-width: 15%; /* Shrunk slightly as container is now wider */
+    --img-vmax-desktop-width: 9%; /* Shrunk slightly as container is now wider */
     --img-vmax-landscape-width: 28%; /* Reduced by ~30% */
     --img-vmax-portrait-width: 56%;  /* Reduced by ~30% */
 
@@ -351,6 +368,10 @@ figcaption {
     --img-intraox-desktop-width: 50%; /* Adjusted for wider container */
     --img-intraox-landscape-width: 75%;
     --img-intraox-portrait-width: 95%;
+
+    /* Intra.Ox Disposable Sheath */
+    --img-intraox-sheath-desktop-height: 325px;
+    --img-intraox-sheath-landscape-height: 250px;
 
     /* Robotic Surgical System (Auris) */
     --img-auris-sys-desktop-width: 40%;
@@ -367,8 +388,13 @@ figcaption {
     --img-auris-console-landscape-width: 70%;
     --img-auris-console-portrait-width: 100%;
 
+    /* Auris View Console MPI */
+    --img-auris-mpi-desktop-width: 75%;
+    --img-auris-mpi-landscape-width: 100%;
+    --img-auris-mpi-portrait-width: 100%;
+
     /* BOM Template */
-    --img-bom-desktop-height: 550px; 
+    --img-bom-desktop-height: 880px; 
     --img-bom-landscape-height: 380px;
 
     /* DVT CAD Representation (Lap.Ox) */
@@ -376,11 +402,11 @@ figcaption {
     --img-lapox-dvt-landscape-height: 480px;
 
     /* IT Setup Diagram (Visio) */
-    --img-it-setup-desktop-width: 80%; /* Now 80% of entire 1400px monitor width */
+    --img-it-setup-desktop-width: 24%; /* Now 80% of entire 1400px monitor width */
     --img-it-setup-landscape-width: 100%;
 
     /* Max Particle Velocity Probability Plots */
-    --img-vmax-prob-desktop-width: 42%;
+    --img-vmax-prob-desktop-width: 25%;
     --img-vmax-prob-landscape-width: 60%;
     --img-vmax-prob-portrait-width: 100%;
 
@@ -405,12 +431,12 @@ figcaption {
     --img-bom-sw-export-portrait-width: 100%;
 
     /* BOM Master Track */
-    --img-bom-master-track-desktop-width: 70%;
+    --img-bom-master-track-desktop-width: 91%;
     --img-bom-master-track-landscape-width: 85%;
     --img-bom-master-track-portrait-width: 100%;
 
     /* Fergie Final */
-    --img-fergie-final-desktop-width: 50%;
+    --img-fergie-final-desktop-width: 70%;
     --img-fergie-final-landscape-width: 75%;
     --img-fergie-final-portrait-width: 100%;
 }
@@ -429,8 +455,10 @@ figcaption {
 .img-bom-sw-export { width: var(--img-bom-sw-export-desktop-width); }
 .img-bom-master-track { width: var(--img-bom-master-track-desktop-width); }
 .img-fergie-final { width: var(--img-fergie-final-desktop-width); }
+.img-auris-mpi { width: var(--img-auris-mpi-desktop-width); }
 
 .img-bom-template { max-height: var(--img-bom-desktop-height); }
+.img-intraox-sheath { max-height: var(--img-intraox-sheath-desktop-height); width: auto; }
 .img-lapox-dvt { max-height: var(--img-lapox-dvt-desktop-height); }
 .img-it-setup { 
     width: var(--img-it-setup-desktop-width); 
@@ -439,6 +467,8 @@ figcaption {
 
 /* Ensure images embedded in image-rows can escape default max constraints if necessary */
 .image-row .img-vmax-prob { max-height: none; }
+.image-column .img-vmax-prob { max-height: none; width: var(--img-vmax-prob-desktop-width); }
+.image-row .img-intraox-sheath { max-height: var(--img-intraox-sheath-desktop-height); }
 .image-row .img-lapox-dvt { max-height: var(--img-lapox-dvt-desktop-height); }
 .image-row .img-it-setup { 
     max-height: none; 
@@ -460,8 +490,10 @@ figcaption {
     .img-bom-sw-export { width: var(--img-bom-sw-export-landscape-width); }
     .img-bom-master-track { width: var(--img-bom-master-track-landscape-width); }
     .img-fergie-final { width: var(--img-fergie-final-landscape-width); }
+    .img-auris-mpi { width: var(--img-auris-mpi-landscape-width); }
     
     .img-bom-template { max-height: var(--img-bom-landscape-height); }
+    .img-intraox-sheath { max-height: var(--img-intraox-sheath-landscape-height); }
     .img-lapox-dvt { max-height: var(--img-lapox-dvt-landscape-height); }
     .img-it-setup { 
         width: var(--img-it-setup-landscape-width); 
@@ -484,11 +516,16 @@ figcaption {
     .img-bom-sw-export { width: var(--img-bom-sw-export-portrait-width); }
     .img-bom-master-track { width: var(--img-bom-master-track-portrait-width); }
     .img-fergie-final { width: var(--img-fergie-final-portrait-width); }
+    .img-auris-mpi { width: var(--img-auris-mpi-portrait-width); }
     
-    .img-bom-template, .img-lapox-dvt, .img-it-setup {
+    .img-bom-template, .img-lapox-dvt, .img-it-setup, .img-intraox-sheath {
         max-height: none;
         width: 100%;
         height: auto;
+    }
+    
+    .image-column .img-vmax-prob {
+        width: 100%;
     }
     
     /* Keep side-by-side for .image-row on mobile but allow them to shrink */
