@@ -375,16 +375,19 @@ figcaption {
     .img-bom-template, .img-lapox-dvt, .img-it-setup {
         max-height: none;
         width: 100%;
+        height: auto;
     }
     
-    /* On mobile portrait, stack image row images instead of side-by-side */
+    /* Keep side-by-side for .image-row on mobile but allow them to shrink */
     .image-row {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row;
+        gap: 10px; /* slightly smaller gap on mobile */
     }
     .image-row img {
-        width: 100%;
+        width: calc(50% - 5px); /* Take up exactly half minus gap */
         max-width: none;
+        height: auto;
+        object-fit: contain; /* Ensure exact aspect ratio is maintained without stretching */
     }
 }
 
