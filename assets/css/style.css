@@ -342,16 +342,17 @@ figcaption {
     max-height: 614.25px;
 }
 .img-it-setup {
-    max-height: 700px;
+    width: 98%;
+    max-height: none;
 }
 
 /* Mobile Landscape (Horizontal) */
 @media (max-height: 500px) and (orientation: landscape) {
-    .img-vmax { width: 30%; }
-    .img-intraox-features { width: 45%; }
-    .img-auris-system { width: 45%; }
-    .img-vantablack { width: 50%; }
-    .img-auris-console { width: 50%; }
+    .img-vmax { width: 40%; }
+    .img-intraox-features { width: 75%; }
+    .img-auris-system { width: 60%; }
+    .img-vantablack { width: 65%; }
+    .img-auris-console { width: 70%; }
     
     .img-bom-template {
         max-height: 280px;
@@ -360,7 +361,8 @@ figcaption {
         max-height: 380px;
     }
     .img-it-setup {
-        max-height: 380px;
+        width: 95%;
+        max-height: none;
     }
 }
 
