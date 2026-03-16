@@ -261,19 +261,29 @@ nav a.active {
 }
 
 figure {
-    margin: 5rem 0;
-    /* Increased margin for more natural breathing room */
-    width: 100%;
+    margin: 5rem -300px;
+    /* Negative margin to break out of 800px content-section constraint */
+    width: calc(100% + 600px);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
+/* Ensure figure doesn't overflow main container on smaller desktop widths */
+@media (max-width: 1400px) {
+    figure {
+        margin: 5rem -10vw;
+        width: calc(100% + 20vw);
+    }
+}
+
 figure img {
     border-radius: 4px;
     margin: 0 auto;
     max-width: 100%;
+    /* Keep width bounds explicitly tight for max height items */
+    width: auto;
     height: auto;
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
 }
@@ -327,40 +337,40 @@ figcaption {
 ----------------------------------- */
 :root {
     /* M.P.V. (Solving for vmax) */
-    --img-vmax-desktop-width: 18.75%;
+    --img-vmax-desktop-width: 15%; /* Shrunk slightly as container is now wider */
     --img-vmax-landscape-width: 40%;
     --img-vmax-portrait-width: 80%;
 
     /* T.Ox Device Features */
-    --img-intraox-desktop-width: 70%; /* Increased from 52.5% */
+    --img-intraox-desktop-width: 50%; /* Adjusted for wider container */
     --img-intraox-landscape-width: 75%;
     --img-intraox-portrait-width: 95%;
 
     /* Robotic Surgical System (Auris) */
-    --img-auris-sys-desktop-width: 50%;
+    --img-auris-sys-desktop-width: 40%;
     --img-auris-sys-landscape-width: 60%;
     --img-auris-sys-portrait-width: 90%;
 
     /* Vantablack Foil */
-    --img-vantablack-desktop-width: 60%;
+    --img-vantablack-desktop-width: 50%;
     --img-vantablack-landscape-width: 65%;
     --img-vantablack-portrait-width: 90%;
 
     /* Final Viewer Console (Auris) */
-    --img-auris-console-desktop-width: 75%;
+    --img-auris-console-desktop-width: 60%;
     --img-auris-console-landscape-width: 70%;
     --img-auris-console-portrait-width: 100%;
 
     /* BOM Template */
-    --img-bom-desktop-height: 550px; /* Increased from 390px */
+    --img-bom-desktop-height: 550px; 
     --img-bom-landscape-height: 380px;
 
     /* DVT CAD Representation (Lap.Ox) */
-    --img-lapox-dvt-desktop-height: 850px; /* Increased from 614.25px */
+    --img-lapox-dvt-desktop-height: 850px; 
     --img-lapox-dvt-landscape-height: 480px;
 
     /* IT Setup Diagram (Visio) */
-    --img-it-setup-desktop-width: 100%; /* Increased from 98%, removed from image-row */
+    --img-it-setup-desktop-width: 80%; /* Now 80% of entire 1400px monitor width */
     --img-it-setup-landscape-width: 100%;
 }
 
