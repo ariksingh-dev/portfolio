@@ -90,13 +90,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 5. Dynamic Related Projects
     const projectsList = [
-        { url: "max_particle_velocity.html", title: "Maximum Particle Velocity in Solids", category: "Independent Study", img: "assets/images/project1_title.webp" },
-        { url: "intra_ox.html", title: "Intra.Ox", category: "Internship", img: "assets/images/project2_title.webp" },
-        { url: "auris_viewer_console.html", title: "Viewer Console", category: "Optomechanical Design", img: "assets/images/project3_title.webp" },
-        { url: "BOM_tracking.html", title: "BOM Tracking", category: "Process Improvement", img: "assets/images/project4_title.webp" },
-        { url: "lap_ox.html", title: "Lap.Ox", category: "Medical Device Design", img: "assets/images/project5_title.webp" },
-        { url: "IT_setup_procedure.html", title: "IT Laptop Setup Procedure", category: "Process Improvement", img: "assets/images/project6_title.webp" },
-        { url: "fergie_robot.html", title: '"Fergie" Robot', category: "Mechatronics", img: "assets/images/project7_title.webp" }
+        { url: "max_particle_velocity.html", title: "Maximum Particle Velocity in Solids", category: "Independent Study", img: "assets/images/project1_title.png" },
+        { url: "intra_ox.html", title: "Intra.Ox", category: "Internship", img: "assets/images/project2_title.png" },
+        { url: "auris_viewer_console.html", title: "Viewer Console", category: "Optomechanical Design", img: "assets/images/project3_title.png" },
+        { url: "BOM_tracking.html", title: "BOM Tracking", category: "Process Improvement", img: "assets/images/project4_title.png" },
+        { url: "lap_ox.html", title: "Lap.Ox", category: "Medical Device Design", img: "assets/images/project5_title.png" },
+        { url: "IT_setup_procedure.html", title: "IT Laptop Setup Procedure", category: "Process Improvement", img: "assets/images/project6_title.png" },
+        { url: "fergie_robot.html", title: '"Fergie" Robot', category: "Mechatronics", img: "assets/images/project7_title.png" }
     ];
 
     const dynamicContainer = document.getElementById("dynamic-more-work");
