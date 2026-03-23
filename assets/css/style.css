@@ -8,6 +8,7 @@
     --text-muted: #cccccc;
     --border-color: #333333;
     --nav-hover: #888888;
+    --link-color: #4da6ff;
     --font-heading: 'Helvetica Neue', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-body: 'Helvetica Neue', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --transition-speed: 0.3s;
@@ -22,6 +23,7 @@ body.light-theme {
     --text-muted: #444444;
     --border-color: #dddddd;
     --nav-hover: #333333;
+    --link-color: #0056b3;
 }
 
 * {
@@ -259,6 +261,16 @@ nav a.active {
     font-size: 1.1rem;
     line-height: 1.8;
     color: var(--text-muted);
+}
+
+.content-section p a {
+    color: var(--link-color);
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.content-section p a:hover {
+    color: var(--secondary-color);
 }
 
 .content-section h2 {
