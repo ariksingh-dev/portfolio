@@ -980,7 +980,12 @@ body.light-theme .hamburger .bar {
 }
 
 .contact-link.linkedin {
-    color: #66b2ff;
+    color: var(--link-color);
+    text-decoration: underline;
+}
+
+.contact-link.linkedin:hover {
+    color: var(--secondary-color);
 }
 
 .contact-phone {
