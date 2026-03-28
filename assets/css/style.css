@@ -400,7 +400,7 @@ figcaption {
     --img-auris-sys-portrait-width: 90%;
 
     /* Vantablack Foil */
-    --img-vantablack-desktop-width: 60%;
+    --img-vantablack-desktop-width: 45%;
     --img-vantablack-landscape-width: 65%;
     --img-vantablack-portrait-width: 90%;
 
@@ -470,7 +470,7 @@ figcaption {
     --img-fergie-final-portrait-width: 100%;
 
     /* New Unclassed Conversions */
-    --img-vlim-desktop-width: 100%;
+    --img-vlim-desktop-width: 75%;
     --img-vlim-landscape-width: 100%;
     --img-vlim-portrait-width: 100%;
 
@@ -478,7 +478,7 @@ figcaption {
     --img-windchill-landscape-height: 350px;
     --img-windchill-portrait-height: 350px;
 
-    --img-davinci-desktop-width: 50%;
+    --img-davinci-desktop-width: 25%;
     --img-davinci-landscape-width: 100%;
     --img-davinci-portrait-width: 100%;
 
