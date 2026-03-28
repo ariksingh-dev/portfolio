@@ -400,7 +400,7 @@ figcaption {
     --img-auris-sys-portrait-width: 90%;
 
     /* Vantablack Foil */
-    --img-vantablack-desktop-width: 50%;
+    --img-vantablack-desktop-width: 60%;
     --img-vantablack-landscape-width: 65%;
     --img-vantablack-portrait-width: 90%;
 
@@ -468,6 +468,31 @@ figcaption {
     --img-fergie-final-desktop-width: 70%;
     --img-fergie-final-landscape-width: 75%;
     --img-fergie-final-portrait-width: 100%;
+
+    /* New Unclassed Conversions */
+    --img-vlim-desktop-width: 100%;
+    --img-vlim-landscape-width: 100%;
+    --img-vlim-portrait-width: 100%;
+
+    --img-windchill-desktop-height: 350px;
+    --img-windchill-landscape-height: 350px;
+    --img-windchill-portrait-height: 350px;
+
+    --img-davinci-desktop-width: 50%;
+    --img-davinci-landscape-width: 100%;
+    --img-davinci-portrait-width: 100%;
+
+    --img-optical-housings-desktop-width: 100%;
+    --img-optical-housings-landscape-width: 100%;
+    --img-optical-housings-portrait-width: 100%;
+
+    --img-lapox-cross-section-desktop-width: 100%;
+    --img-lapox-cross-section-landscape-width: 100%;
+    --img-lapox-cross-section-portrait-width: 100%;
+
+    --img-about-desktop-width: 100%;
+    --img-about-landscape-width: 100%;
+    --img-about-portrait-width: 100%;
 }
 
 /* Responsive Image Classes (Desktop Default) */
@@ -485,6 +510,12 @@ figcaption {
 .img-bom-master-track { width: var(--img-bom-master-track-desktop-width); }
 .img-fergie-final { width: var(--img-fergie-final-desktop-width); }
 .img-auris-mpi { width: var(--img-auris-mpi-desktop-width); }
+.img-vlim { width: var(--img-vlim-desktop-width); }
+.img-windchill { max-height: var(--img-windchill-desktop-height); width: auto; }
+.img-davinci { width: var(--img-davinci-desktop-width); }
+.img-optical-housings { width: var(--img-optical-housings-desktop-width); }
+.img-lapox-cross-section { width: var(--img-lapox-cross-section-desktop-width); }
+.img-about { width: var(--img-about-desktop-width); }
 
 .img-bom-template { max-height: var(--img-bom-desktop-height); }
 .img-intraox-sheath { max-height: var(--img-intraox-sheath-desktop-height); width: auto; }
@@ -520,6 +551,12 @@ figcaption {
     .img-bom-master-track { width: var(--img-bom-master-track-landscape-width); }
     .img-fergie-final { width: var(--img-fergie-final-landscape-width); }
     .img-auris-mpi { width: var(--img-auris-mpi-landscape-width); }
+    .img-vlim { width: var(--img-vlim-landscape-width); }
+    .img-windchill { max-height: var(--img-windchill-landscape-height); width: auto; }
+    .img-davinci { width: var(--img-davinci-landscape-width); }
+    .img-optical-housings { width: var(--img-optical-housings-landscape-width); }
+    .img-lapox-cross-section { width: var(--img-lapox-cross-section-landscape-width); }
+    .img-about { width: var(--img-about-landscape-width); }
     
     .img-bom-template { max-height: var(--img-bom-landscape-height); }
     .img-intraox-sheath { max-height: var(--img-intraox-sheath-landscape-height); }
@@ -551,6 +588,12 @@ figcaption {
     .img-bom-master-track { width: var(--img-bom-master-track-portrait-width); }
     .img-fergie-final { width: var(--img-fergie-final-portrait-width); }
     .img-auris-mpi { width: var(--img-auris-mpi-portrait-width); }
+    .img-vlim { width: var(--img-vlim-portrait-width); }
+    .img-windchill { max-height: var(--img-windchill-portrait-height); width: auto; }
+    .img-davinci { width: var(--img-davinci-portrait-width); }
+    .img-optical-housings { width: var(--img-optical-housings-portrait-width); }
+    .img-lapox-cross-section { width: var(--img-lapox-cross-section-portrait-width); }
+    .img-about { width: var(--img-about-portrait-width); }
     
     .img-bom-template, .img-lapox-dvt, .img-it-setup, .img-intraox-sheath {
         max-height: none;
