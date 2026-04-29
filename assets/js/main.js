@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 2. Scroll Animations (Intersection Observer)
     const fadeElements = document.querySelectorAll(".project-card, .about-content, .contact-section, .content-section, figure");
     const observerOptions = {
-        threshold: 0.1,
+        threshold: 0,
         rootMargin: "0px 0px -50px 0px"
     };
 
