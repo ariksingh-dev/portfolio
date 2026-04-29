@@ -96,7 +96,8 @@ document.addEventListener("DOMContentLoaded", () => {
         { url: "BOM_tracking.html", title: "BOM Tracking", category: "Process Improvement", img: "assets/images/project4_title.png" },
         { url: "lap_ox.html", title: "Lap.Ox", category: "Medical Device Design", img: "assets/images/project5_title.png" },
         { url: "IT_setup_procedure.html", title: "IT Laptop Setup Procedure", category: "Process Improvement", img: "assets/images/project6_title.png" },
-        { url: "fergie_robot.html", title: '"Fergie" Robot', category: "Mechatronics", img: "assets/images/project7_title.png" }
+        { url: "fergie_robot.html", title: '"Fergie" Robot', category: "Mechatronics", img: "assets/images/project7_title.png" },
+        { url: "pantryos.html", title: "PantryOS", category: "Internet of Things/PCBA design", img: "assets/images/cropped/project8_title_cropped.webp" }
     ];
 
     const dynamicContainer = document.getElementById("dynamic-more-work");

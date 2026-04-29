@@ -493,6 +493,15 @@ figcaption {
     --img-about-desktop-width: 100%;
     --img-about-landscape-width: 100%;
     --img-about-portrait-width: 100%;
+
+    /* PantryOS */
+    --img-pantryos-node-red-desktop-width: 80%;
+    --img-pantryos-node-red-landscape-width: 90%;
+    --img-pantryos-node-red-portrait-width: 100%;
+
+    --img-pantryos-final-desktop-width: 75%;
+    --img-pantryos-final-landscape-width: 85%;
+    --img-pantryos-final-portrait-width: 100%;
 }
 
 /* Responsive Image Classes (Desktop Default) */
@@ -516,6 +525,8 @@ figcaption {
 .img-optical-housings { width: var(--img-optical-housings-desktop-width); }
 .img-lapox-cross-section { width: var(--img-lapox-cross-section-desktop-width); }
 .img-about { width: var(--img-about-desktop-width); }
+.img-pantryos-node-red { width: var(--img-pantryos-node-red-desktop-width); }
+.img-pantryos-final { width: var(--img-pantryos-final-desktop-width); }
 
 .img-bom-template { max-height: var(--img-bom-desktop-height); }
 .img-intraox-sheath { max-height: var(--img-intraox-sheath-desktop-height); width: auto; }
@@ -557,6 +568,8 @@ figcaption {
     .img-optical-housings { width: var(--img-optical-housings-landscape-width); }
     .img-lapox-cross-section { width: var(--img-lapox-cross-section-landscape-width); }
     .img-about { width: var(--img-about-landscape-width); }
+    .img-pantryos-node-red { width: var(--img-pantryos-node-red-landscape-width); }
+    .img-pantryos-final { width: var(--img-pantryos-final-landscape-width); }
     
     .img-bom-template { max-height: var(--img-bom-landscape-height); }
     .img-intraox-sheath { max-height: var(--img-intraox-sheath-landscape-height); }
@@ -594,6 +607,8 @@ figcaption {
     .img-optical-housings { width: var(--img-optical-housings-portrait-width); }
     .img-lapox-cross-section { width: var(--img-lapox-cross-section-portrait-width); }
     .img-about { width: var(--img-about-portrait-width); }
+    .img-pantryos-node-red { width: var(--img-pantryos-node-red-portrait-width); }
+    .img-pantryos-final { width: var(--img-pantryos-final-portrait-width); }
     
     .img-bom-template, .img-lapox-dvt, .img-it-setup, .img-intraox-sheath {
         max-height: none;
