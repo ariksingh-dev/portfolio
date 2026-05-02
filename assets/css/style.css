@@ -1046,6 +1046,49 @@ figcaption {
         object-fit: contain; /* Ensure exact aspect ratio is maintained without stretching */
     }
 
+    .mobile-paired-figure {
+        padding-inline: 10px;
+    }
+
+    .mobile-paired-figure .image-row-mobile-fill {
+        gap: 4px;
+        width: 100%;
+    }
+
+    .mobile-paired-figure .image-row-mobile-fill img {
+        flex: 1 1 0;
+        width: 0;
+        min-width: 0;
+        max-width: none;
+    }
+
+    .image-row-mobile-ratio {
+        gap: 4px;
+        width: 100%;
+    }
+
+    .image-row-mobile-ratio img {
+        flex: 0 0 auto;
+        min-width: 0;
+        max-width: none;
+    }
+
+    .image-row-mobile-ratio-bom .img-bom-template:first-child {
+        width: calc((100% - 4px) * 0.7394);
+    }
+
+    .image-row-mobile-ratio-bom .img-bom-template:last-child {
+        width: calc((100% - 4px) * 0.2606);
+    }
+
+    .image-row-mobile-ratio-lapox .img-lapox-dvt:first-child {
+        width: calc((100% - 4px) * 0.7966);
+    }
+
+    .image-row-mobile-ratio-lapox .img-lapox-dvt:last-child {
+        width: calc((100% - 4px) * 0.2034);
+    }
+
     /* Use existing mobile percentage variable for contact profile on portrait */
     .profile-photo {
         width: var(--img-vmax-portrait-width);
