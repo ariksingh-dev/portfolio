@@ -1708,35 +1708,35 @@ body.light-theme #theme-toggle .icon-moon {
 
 @media (max-height: 500px) and (orientation: landscape) {
     .container {
-        padding-left: max(16px, var(--safe-inset-left));
-        padding-right: max(16px, var(--safe-inset-right));
+        padding-left: max(8px, var(--safe-inset-left));
+        padding-right: max(8px, var(--safe-inset-right));
     }
 
     header {
-        padding: 14px 0;
+        padding: 10px 0;
     }
 
     .gallery-container {
-        padding-bottom: 72px;
+        padding-bottom: 48px;
     }
 
     .home-hero,
     .contact-section,
     .about-container,
     .more-work-section {
-        padding-top: 28px;
+        padding-top: 18px;
     }
 
     .about-container {
         max-width: none;
-        padding: 28px 16px 72px;
-        padding-left: max(16px, var(--safe-inset-left));
-        padding-right: max(16px, var(--safe-inset-right));
+        padding: 18px 8px 56px;
+        padding-left: max(8px, var(--safe-inset-left));
+        padding-right: max(8px, var(--safe-inset-right));
     }
 
     .home-hero .container,
     .contact-shell {
-        gap: 16px;
+        gap: 10px;
     }
 
     .hero-copy,
@@ -1747,7 +1747,7 @@ body.light-theme #theme-toggle .icon-moon {
     .more-work-section .container,
     .project-meta-card,
     .content-section {
-        padding: 18px;
+        padding: 12px;
     }
 
     .project-meta,
@@ -1755,21 +1755,31 @@ body.light-theme #theme-toggle .icon-moon {
         max-width: none;
     }
 
+    .project-detail-header {
+        padding: 26px 0 16px;
+        margin-bottom: 14px;
+    }
+
+    .project-meta {
+        margin-bottom: 18px;
+    }
+
     .about-content {
-        gap: 18px;
+        gap: 12px;
     }
 
     .about-image {
-        max-width: min(68vw, 500px);
+        max-width: min(74vw, 540px);
     }
 
     figure {
-        padding: 14px;
+        margin: 2rem 0;
+        padding: 8px;
     }
 
     .project-detail-header::after {
-        left: 16px;
-        right: 16px;
+        left: 8px;
+        right: 8px;
     }
 }
 
