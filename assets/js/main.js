@@ -292,7 +292,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (response.ok) {
                     contactForm.reset();
                     const successTarget = contactForm.dataset.successUrl || "thank-you.html";
-                    window.location.assign(new URL(successTarget, window.location.href).toString());
+                    const successUrl = new URL(successTarget, window.location.href);
+                    successUrl.searchParams.set("sent", Date.now().toString());
+                    window.location.assign(successUrl.toString());
                     return;
                 }
 
