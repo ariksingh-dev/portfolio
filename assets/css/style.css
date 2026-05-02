@@ -32,6 +32,8 @@
     --shadow-md: 0 16px 38px rgba(0, 0, 0, 0.16);
     --shadow-sm: 0 8px 22px rgba(0, 0, 0, 0.14);
     --transition-speed: 220ms;
+    --safe-inset-left: env(safe-area-inset-left);
+    --safe-inset-right: env(safe-area-inset-right);
 }
 
 body.light-theme {
@@ -192,7 +194,8 @@ p {
 .container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding-left: max(40px, var(--safe-inset-left));
+    padding-right: max(40px, var(--safe-inset-right));
 }
 
 .section-kicker {
@@ -1309,6 +1312,8 @@ footer .container {
 /* About Page */
 .about-container {
     padding: 60px 20px 96px;
+    padding-left: max(20px, var(--safe-inset-left));
+    padding-right: max(20px, var(--safe-inset-right));
     max-width: 1180px;
 }
 
@@ -1666,7 +1671,8 @@ body.light-theme #theme-toggle .icon-moon {
 
 @media (max-width: 600px) {
     .container {
-        padding: 0 20px;
+        padding-left: max(20px, var(--safe-inset-left));
+        padding-right: max(20px, var(--safe-inset-right));
     }
 
     .home-hero,
@@ -1702,7 +1708,8 @@ body.light-theme #theme-toggle .icon-moon {
 
 @media (max-height: 500px) and (orientation: landscape) {
     .container {
-        padding: 0 16px;
+        padding-left: max(16px, var(--safe-inset-left));
+        padding-right: max(16px, var(--safe-inset-right));
     }
 
     header {
@@ -1723,6 +1730,8 @@ body.light-theme #theme-toggle .icon-moon {
     .about-container {
         max-width: none;
         padding: 28px 16px 72px;
+        padding-left: max(16px, var(--safe-inset-left));
+        padding-right: max(16px, var(--safe-inset-right));
     }
 
     .home-hero .container,
