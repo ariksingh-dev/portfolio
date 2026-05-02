@@ -799,7 +799,7 @@ figcaption {
 
     /* Robotic Surgical System (Auris) */
     --img-auris-sys-desktop-width: 40%;
-    --img-auris-sys-landscape-width: 60%;
+    --img-auris-sys-landscape-width: 30%;
     --img-auris-sys-portrait-width: 90%;
 
     /* Vantablack Foil */
@@ -880,11 +880,11 @@ figcaption {
     --img-vlim-portrait-width: 100%;
 
     --img-windchill-desktop-width: 72%;
-    --img-windchill-landscape-width: 48%;
+    --img-windchill-landscape-width: 100%;
     --img-windchill-portrait-width: 100%;
 
     --img-davinci-desktop-width: 25%;
-    --img-davinci-landscape-width: 100%;
+    --img-davinci-landscape-width: 50%;
     --img-davinci-portrait-width: 100%;
 
     --img-optical-housings-desktop-width: 100%;
@@ -1697,6 +1697,70 @@ body.light-theme #theme-toggle .icon-moon {
     .contact-phone {
         flex-direction: column;
         align-items: flex-start;
+    }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .container {
+        padding: 0 16px;
+    }
+
+    header {
+        padding: 14px 0;
+    }
+
+    .gallery-container {
+        padding-bottom: 72px;
+    }
+
+    .home-hero,
+    .contact-section,
+    .about-container,
+    .more-work-section {
+        padding-top: 28px;
+    }
+
+    .about-container {
+        max-width: none;
+        padding: 28px 16px 72px;
+    }
+
+    .home-hero .container,
+    .contact-shell {
+        gap: 16px;
+    }
+
+    .hero-copy,
+    .hero-panel,
+    .about-content,
+    .contact-intro-card,
+    .contact-form,
+    .more-work-section .container,
+    .project-meta-card,
+    .content-section {
+        padding: 18px;
+    }
+
+    .project-meta,
+    .content-section {
+        max-width: none;
+    }
+
+    .about-content {
+        gap: 18px;
+    }
+
+    .about-image {
+        max-width: min(68vw, 500px);
+    }
+
+    figure {
+        padding: 14px;
+    }
+
+    .project-detail-header::after {
+        left: 16px;
+        right: 16px;
     }
 }
 
