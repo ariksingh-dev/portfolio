@@ -1271,9 +1271,34 @@ figcaption {
     box-shadow: 0 18px 30px rgba(11, 17, 21, 0.18);
 }
 
+.submit-btn:disabled {
+    cursor: wait;
+    opacity: 0.84;
+    transform: none;
+}
+
 .submit-btn:hover {
     transform: translateY(-1px);
     box-shadow: 0 22px 34px rgba(11, 17, 21, 0.2);
+}
+
+.form-status {
+    margin: 0.25rem 0 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+.form-status[data-state="loading"] {
+    color: var(--text-muted);
+}
+
+.form-status[data-state="error"] {
+    color: #ff8f8f;
+}
+
+.contact-form.is-submitting .submit-btn {
+    box-shadow: none;
 }
 
 /* Footer */
@@ -1426,6 +1451,61 @@ footer .container {
 
 .more-work-grid .project-card {
     aspect-ratio: 4 / 3;
+}
+
+/* Thank You Page */
+.thank-you-section {
+    padding: 80px 0 104px;
+}
+
+.thank-you-card {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: clamp(32px, 5vw, 56px);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    background:
+        radial-gradient(circle at top left, rgba(121, 212, 255, 0.14), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(255, 179, 71, 0.12), transparent 28%),
+        var(--surface-color);
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+}
+
+.thank-you-card h1 {
+    margin-bottom: 0.9rem;
+}
+
+.thank-you-lead {
+    margin: 0 auto 1rem;
+    max-width: 32rem;
+    font-size: clamp(1.15rem, 2.2vw, 1.35rem);
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+.thank-you-note {
+    margin: 0 auto 2rem;
+    max-width: 34rem;
+    color: var(--text-soft);
+}
+
+.thank-you-note a {
+    color: var(--link-color);
+    text-decoration: underline;
+    text-underline-offset: 0.16em;
+    font-weight: 700;
+}
+
+.thank-you-note a:hover {
+    color: var(--accent-warm);
+}
+
+.thank-you-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.9rem;
 }
 
 /* Mobile Hamburger Menu */
@@ -1703,6 +1783,22 @@ body.light-theme #theme-toggle .icon-moon {
     .contact-phone {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .thank-you-section {
+        padding-top: 38px;
+    }
+
+    .thank-you-card {
+        padding: 24px 20px;
+    }
+
+    .thank-you-actions {
+        flex-direction: column;
+    }
+
+    .thank-you-actions .button-link {
+        width: 100%;
     }
 }
 
