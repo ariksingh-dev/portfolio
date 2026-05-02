@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Arik Singh</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="canonical" href="https://ariksingh-dev.github.io/portfolio/contact.html">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <meta name="theme-color" content="#0f1417">
+    <link rel="stylesheet" href="assets/css/style.css?v=13">
 
     <meta name="description"
         content="Get in touch with Arik Singh for opportunities in mechanical engineering, product design, and mechatronics.">
@@ -13,9 +16,17 @@
     <meta property="og:description"
         content="Get in touch with Arik Singh for opportunities in mechanical engineering, product design, and mechatronics.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ariksingh-dev.github.io/portfolio/contact.html">
+    <meta property="og:image" content="https://ariksingh-dev.github.io/portfolio/assets/images/project3_title.png">
+    <meta property="og:image:alt" content="Preview of Arik Singh's portfolio website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact | Arik Singh">
+    <meta name="twitter:description"
+        content="Get in touch with Arik Singh for opportunities in mechanical engineering, product design, and mechatronics.">
+    <meta name="twitter:image" content="https://ariksingh-dev.github.io/portfolio/assets/images/project3_title.png">
 </head>
 
-<body>
+<body class="page-contact">
     <header>
         <div class="container">
             <a href="index.html" class="logo">Arik Singh</a>
@@ -41,28 +52,34 @@
     </header>
 
     <main class="container contact-section">
-        <img src="assets/images/cropped/profile_cropped.webp" alt="Arik Singh" class="profile-photo">
-        <h1>Get in Touch</h1>
-        <div class="contact-layout">
-            <div class="contact-details">
-                <a href="mailto:ariksingh@gmail.com" class="contact-link">ariksingh@gmail.com</a>
-                <div class="contact-phone">310-710-4085</div>
-                <a href="https://www.linkedin.com/in/ariksingh/" target="_blank" rel="noopener noreferrer"
-                    class="contact-link linkedin">LinkedIn</a>
-            </div>
+        <div class="contact-shell">
+            <section class="contact-intro-card">
+                <img src="assets/images/cropped/profile_cropped.webp" alt="Arik Singh" class="profile-photo">
+                <div class="contact-heading-block">
+                    <p class="section-kicker">Contact</p>
+                    <h1>Get in Touch</h1>
+                </div>
+                <div class="contact-details">
+                    <a href="mailto:ariksingh@gmail.com" class="contact-link">ariksingh@gmail.com</a>
+                    <a href="tel:+13107104085" class="contact-link">310-710-4085</a>
+                    <a href="https://www.linkedin.com/in/ariksingh/" target="_blank" rel="noopener noreferrer"
+                        class="contact-link linkedin">linkedin.com/in/ariksingh</a>
+                </div>
+            </section>
 
             <form class="contact-form" action="https://formspree.io/f/xlgpdbzw" method="POST">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Your Name">
+                    <input type="text" id="name" name="name" required placeholder="Your Name" autocomplete="name">
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                    <input type="email" id="email" name="email" required placeholder="your.email@example.com"
+                        autocomplete="email">
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required
+                    <textarea id="message" name="message" rows="7" required
                         placeholder="How can I help you?"></textarea>
                 </div>
                 <button type="submit" class="submit-btn" aria-label="Send Message">Send Message</button>
@@ -76,7 +93,7 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js?v=2"></script>
+    <script src="assets/js/main.js?v=6" defer></script>
 </body>
 
 </html>

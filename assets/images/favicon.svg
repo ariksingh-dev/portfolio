@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>Arik Singh favicon</title>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10161c" />
+      <stop offset="100%" stop-color="#1a2631" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#79d4ff" />
+      <stop offset="100%" stop-color="#ffb347" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="url(#bg)" />
+  <path d="M17 49 28.5 15h7L47 49h-7.1l-2.4-7.6H26.4L24 49Zm11-13.5h7.8l-3.9-12.7Z" fill="#f4f7fa" />
+  <rect x="17" y="54" width="30" height="3" rx="1.5" fill="url(#accent)" />
+</svg>

@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arik Singh | Portfolio</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="canonical" href="https://ariksingh-dev.github.io/portfolio/">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <meta name="theme-color" content="#0f1417">
+    <link rel="stylesheet" href="assets/css/style.css?v=13">
 
     <meta name="description"
         content="Portfolio of Arik Singh, a multidisciplinary designer and engineer specializing in medical devices, mechatronics, and intuitive user experiences.">
@@ -13,9 +16,17 @@
     <meta property="og:description"
         content="Portfolio of Arik Singh, a multidisciplinary designer and engineer specializing in medical devices, mechatronics, and intuitive user experiences.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ariksingh-dev.github.io/portfolio/">
+    <meta property="og:image" content="https://ariksingh-dev.github.io/portfolio/assets/images/project3_title.png">
+    <meta property="og:image:alt" content="Preview of Arik Singh's portfolio website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Arik Singh | Portfolio">
+    <meta name="twitter:description"
+        content="Portfolio of Arik Singh, a multidisciplinary designer and engineer specializing in medical devices, mechatronics, and intuitive user experiences.">
+    <meta name="twitter:image" content="https://ariksingh-dev.github.io/portfolio/assets/images/project3_title.png">
 </head>
 
-<body>
+<body class="page-home">
     <header>
         <div class="container">
             <a href="index.html" class="logo">Arik Singh</a>
@@ -41,80 +52,49 @@
     </header>
 
     <main class="gallery-container">
-        <div class="project-grid">
-            <!-- Project 1 -->
-            <a href="max_particle_velocity.html" class="project-card"
-                aria-label="View project: Maximum Particle Velocity in Solids">
-                <div class="card-image" style="background-image: url('assets/images/project1_title.png');"></div>
-                <div class="project-overlay">
-                    <h3>Maximum Particle Velocity in Solids</h3>
-                    <div class="category">Independent Study</div>
+        <section class="home-hero">
+            <div class="container">
+                <div class="hero-copy">
+                    <p class="section-kicker">Portfolio</p>
+                    <h1>Arik Singh</h1>
+                    <p class="lead-intro">Multidisciplinary engineer and product designer currently pursuing a Master’s in Integrated Product Design at the University of Pennsylvania. I build human-centered products at the intersection of engineering, design, and business, with a focus on healthcare and medical device development.</p>
+                    <div class="hero-actions">
+                        <a href="#selected-work" class="button-link">View Selected Work</a>
+                        <a href="contact.html" class="button-link secondary">Get in Touch</a>
+                    </div>
                 </div>
-            </a>
 
-            <!-- Project 2 -->
-            <a href="intra_ox.html" class="project-card" aria-label="View project: Intra.Ox">
-                <div class="card-image" style="background-image: url('assets/images/project2_title.png');"></div>
-                <div class="project-overlay">
-                    <h3>Intra.Ox</h3>
-                    <div class="category">Internship</div>
-                </div>
-            </a>
+                <aside class="hero-panel" aria-label="Selected focus areas">
+                    <div>
+                        <p class="section-kicker">Project Categories</p>
+                        <div class="hero-metric">
+                            <span class="hero-metric-value">8</span>
+                            <span class="hero-metric-label">Projects</span>
+                        </div>
+                    </div>
+                    <ul class="hero-chip-list">
+                        <li>Medical Device Design</li>
+                        <li>Optomechanical Design</li>
+                        <li>Process Improvement</li>
+                        <li>Mechatronics</li>
+                        <li>Internet of Things/PCBA design</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
 
-            <!-- Project 3 -->
-            <a href="auris_viewer_console.html" class="project-card" aria-label="View project: Viewer Console">
-                <div class="card-image" style="background-image: url('assets/images/project3_title.png');"></div>
-                <div class="project-overlay">
-                    <h3>Viewer Console</h3>
-                    <div class="category">Optomechanical Design</div>
+        <section class="work-section" id="selected-work">
+            <div class="container section-heading">
+                <div>
+                    <p class="section-kicker">Selected Work</p>
+                    <h2>Projects</h2>
                 </div>
-            </a>
+            </div>
 
-            <!-- Project 4 -->
-            <a href="BOM_tracking.html" class="project-card" aria-label="View project: BOM Tracking">
-                <div class="card-image" style="background-image: url('assets/images/project4_title.png');"></div>
-                <div class="project-overlay">
-                    <h3>BOM Tracking</h3>
-                    <div class="category">Process Improvement</div>
-                </div>
-            </a>
-
-            <!-- Project 5 -->
-            <a href="lap_ox.html" class="project-card" aria-label="View project: Lap.Ox">
-                <div class="card-image" style="background-image: url('assets/images/project5_title.png');"></div>
-                <div class="project-overlay">
-                    <h3>Lap.Ox</h3>
-                    <div class="category">Medical Device Design</div>
-                </div>
-            </a>
-
-            <!-- Project 6 -->
-            <a href="IT_setup_procedure.html" class="project-card" aria-label="View project: IT Laptop Setup Procedure">
-                <div class="card-image" style="background-image: url('assets/images/project6_title.png');"></div>
-                <div class="project-overlay">
-                    <h3>IT Laptop Setup Procedure</h3>
-                    <div class="category">Process Improvement</div>
-                </div>
-            </a>
-
-            <!-- Project 7 -->
-            <a href="fergie_robot.html" class="project-card" aria-label="View project: Fergie Robot">
-                <div class="card-image" style="background-image: url('assets/images/project7_title.png');"></div>
-                <div class="project-overlay">
-                    <h3>"Fergie" Robot</h3>
-                    <div class="category">Mechatronics</div>
-                </div>
-            </a>
-
-            <!-- Project 8 -->
-            <a href="pantryos.html" class="project-card" aria-label="View project: PantryOS">
-                <div class="card-image" style="background-image: url('assets/images/cropped/project8_title_cropped.webp');"></div>
-                <div class="project-overlay">
-                    <h3>PantryOS</h3>
-                    <div class="category">Internet of Things/PCBA design</div>
-                </div>
-            </a>
-        </div>
+            <div class="container">
+                <div id="selected-work-grid" class="project-grid"></div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -123,7 +103,7 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js?v=2"></script>
+    <script src="assets/js/main.js?v=6" defer></script>
 </body>
 
 </html>
