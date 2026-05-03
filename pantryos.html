@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Head: metadata, SEO, social-preview tags, and shared assets. -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -23,7 +24,9 @@
     <meta name="twitter:image" content="https://ariksingh-dev.github.io/portfolio/assets/images/project8_title.png">
 </head>
 
+<!-- Body: visible page content starts here. -->
 <body class="page-project">
+    <!-- Shared header: logo, theme toggle, mobile nav toggle, and primary navigation. -->
     <header>
         <div class="container">
             <a href="index.html" class="logo">Arik Singh</a>
@@ -46,21 +49,25 @@
         </div>
     </header>
 
+    <!-- Project title banner used at the top of each case-study page. -->
     <div class="container project-detail-header">
         <h1>PantryOS: Internet of Things PCBA</h1>
     </div>
 
+    <!-- Primary case-study narrative content. -->
     <main class="container">
         <div class="project-meta">
             <p><strong>Date:</strong> January–May 2026</p>
         </div>
 
+        <!-- Case-study section. The h2 inside names the topic for this block. -->
         <section class="content-section">
             <h2>Problem statement</h2>
             <p>Another one of the requirements for my Integrated Product Design Master’s degree at University of Pennsylvania is to take a class called: Internet of Things, Edge Computing. The final project in this class is to build an integrated circuit board (with a functionality of our choosing) that uses a Silicon Labs MCU (SIWG917Y121MGABA) to measure ambient environmental information and to communicate back and forth with a custom-built internet dashboard (using Microsoft Azure and Node-RED).</p>
             <p>At a minimum, each team’s system must use at least one I2C sensor, at least one actuator, and communicate with our computer (going both directions; PCBA to internet and internet to PCBA) using Wi-Fi.</p>
         </section>
 
+        <!-- Case-study section. The h2 inside names the topic for this block. -->
         <section class="content-section">
             <h2>My role</h2>
             <p>Each team consisted of two students. The intent of our project, which we called PantryOS, was to create a smart pantry assistant that could sense when a user was interacting with the PCBA, collect environmental information like temperature and humidity (and potentially flag an issue if the temperature gets above 25 °C as items in the pantry may spoil), identify grocery items by barcode, accept metadata from an internet dashboard, and then physically represent the freshness of the pantry contents with a servo-driven output. My role centered on the embedded systems and hardware/software integration portions of the project. In practice, this meant I spent much of the semester defining how the board, sensors, actuator, barcode scanner, Wi-Fi stack, MQTT topics, and dashboard all had to behave together so that the final user experience would feel like one coherent product instead of a loose collection of subsystems.</p>
@@ -86,6 +93,7 @@
             </figure>
         </section>
 
+        <!-- Case-study section. The h2 inside names the topic for this block. -->
         <section class="content-section">
             <h2>Project outcome</h2>
             <p>The final output of the class was a demonstration on April 29. We demonstrated our device functionality to our professor, our teaching assistants, and industry professionals from Altium and Silicon Labs. To our teaching assistants, we had to prove that we could flash code to the MCU both through the debugger board and through our dashboard/over Wi-Fi using a method called over the air (OTA) firmware update.</p>
@@ -94,6 +102,7 @@
 
     </main>
 
+    <!-- Related-project rail shown beneath each case study. -->
     <section class="more-work-section">
         <div class="container">
             <h2>More Work</h2>
@@ -109,12 +118,14 @@
         </div>
     </section>
 
+    <!-- Shared footer: simple copyright wrapper used across the site. -->
     <footer>
         <div class="container">
             <p>&copy; 2026 Arik Singh. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Shared site behavior bundle. -->
     <script src="assets/js/main.js?v=10" defer></script>
 </body>
 

@@ -1,4 +1,12 @@
+// Main site script.
+// Responsibilities:
+// 1. Progressive enhancement for shared navigation and theme controls.
+// 2. Small UX helpers like fade-ins, reading progress, and back-to-top.
+// 3. Rendering project cards from the canonical project directory page.
 document.addEventListener("DOMContentLoaded", () => {
+    // Sanitize card copy before injecting it into template strings.
+    // The content is authored locally, but escaping still keeps the renderer safe
+    // if the project registry text ever changes to include special characters.
     const escapeHtml = value =>
         value
             .replace(/&/g, "&amp;")
@@ -7,7 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
             .replace(/\"/g, "&quot;")
             .replace(/'/g, "&#39;");
 
+    // Use the current filename to avoid rendering the current case study inside
+    // its own "More Work" rail.
     const currentPage = window.location.pathname.split("/").pop();
+
+    // Read project metadata from the project-directory page markup.
+    // This keeps the no-JS fallback list and the JS-rendered card UI in sync.
     const extractProjects = root => {
         const projectLinks = root.querySelectorAll("#project-directory-list a[data-project-card]");
 
@@ -21,6 +34,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }));
     };
 
+    // Load the canonical project registry.
+    // - On project-directory.html itself, we can read the inline list directly.
+    // - Everywhere else, fetch the directory page and parse its project list.
+    // If this fails, the page still has non-JS fallback links in HTML.
     const loadProjectsList = async () => {
         const inlineProjectList = document.getElementById("project-directory-list");
         if (inlineProjectList) {
@@ -39,13 +56,19 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const html = await response.text();
+
+            // Parse the fetched HTML in-memory so we can reuse the same registry
+            // without duplicating project data in this file.
             const parsedDocument = new DOMParser().parseFromString(html, "text/html");
             return extractProjects(parsedDocument);
         } catch (error) {
+            // An empty array intentionally leaves the static HTML fallback in place.
             return [];
         }
     };
 
+    // Shared renderer for homepage cards and "More Work" cards.
+    // The same markup powers both experiences so visual updates stay consistent.
     const renderProjectCard = (proj, extraClasses = "") => {
         const safeTitle = escapeHtml(proj.title);
         const safeCategory = escapeHtml(proj.category);
@@ -65,7 +88,9 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
     };
 
-    // 1. Mobile Hamburger Menu
+    // 1. Mobile navigation toggle.
+    // The nav is always visible on desktop. On smaller screens, JS toggles the
+    // active class and keeps ARIA state synchronized for accessibility.
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector("nav ul");
     const themeColorMeta = document.querySelector('meta[name="theme-color"]');
@@ -96,12 +121,15 @@ document.addEventListener("DOMContentLoaded", () => {
             })
         );
 
+        // If the viewport grows back to desktop width, clear the mobile state
+        // so the nav does not stay visually "stuck" open.
         window.addEventListener("resize", () => {
             if (window.innerWidth > 768) {
                 closeMenu();
             }
         });
 
+        // Let keyboard users dismiss the mobile menu with Escape.
         document.addEventListener("keydown", event => {
             if (event.key === "Escape") {
                 closeMenu();
@@ -111,7 +139,9 @@ document.addEventListener("DOMContentLoaded", () => {
         syncMenuState();
     }
 
-    // 2. Scroll Animations (Intersection Observer)
+    // 2. Scroll-triggered fade-ins.
+    // Elements start hidden, then animate once when they enter the viewport.
+    // This is presentation-only; content remains in the HTML either way.
     const fadeElements = document.querySelectorAll(".project-card, .about-content, .contact-section, .content-section, figure");
     const observerOptions = {
         threshold: 0,
@@ -134,15 +164,18 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
+    // Observe any fade-capable elements that already exist in the DOM at load time.
     observeFadeElements(fadeElements);
 
-    // 3. Back to Top Button
+    // 3. Back-to-top button.
+    // This control is created in JS because it is purely a convenience feature.
     const backToTopBtn = document.createElement("button");
     backToTopBtn.innerHTML = "↑";
     backToTopBtn.setAttribute("id", "back-to-top");
     backToTopBtn.setAttribute("aria-label", "Back to top");
     document.body.appendChild(backToTopBtn);
 
+    // Only show the button once the visitor has meaningfully scrolled.
     window.addEventListener("scroll", () => {
         if (window.pageYOffset > 300) {
             backToTopBtn.classList.add("show");
@@ -158,7 +191,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // 4. Light/Dark Mode Toggle
+    // 4. Light/dark theme toggle.
+    // We persist the user's preference locally and also keep the theme-color meta
+    // tag in sync so browser chrome colors match the active theme.
     const themeToggle = document.getElementById("theme-toggle");
     const applyThemeState = isLightTheme => {
         if (themeToggle) {
@@ -172,7 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // Check for saved user preference
+    // Restore any saved theme before the visitor interacts with the page.
     const savedTheme = localStorage.getItem("portfolio-theme-v2");
     if (savedTheme === "light") {
         document.body.classList.add("light-theme");
@@ -183,7 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
         themeToggle.addEventListener("click", () => {
             document.body.classList.toggle("light-theme");
 
-            // Save preference & toggle title
+            // Persist the current theme so future visits keep the same palette.
             if (document.body.classList.contains("light-theme")) {
                 localStorage.setItem("portfolio-theme-v2", "light");
             } else {
@@ -194,7 +229,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 5. Project quick-scan navigation
+    // 5. Project quick-scan navigation.
+    // On case-study pages, convert section headings into anchor chips so readers
+    // can jump between the problem statement, role, outcome, and related work.
     const projectMeta = document.querySelector(".project-meta");
     if (projectMeta) {
         const sections = [];
@@ -208,17 +245,21 @@ document.addEventListener("DOMContentLoaded", () => {
             sections.push({ id: sectionId, label: heading.textContent.trim() });
         });
 
+        // Treat the "More Work" header like a navigable section as well.
         const moreWorkHeading = document.querySelector(".more-work-section h2");
         if (moreWorkHeading) {
             moreWorkHeading.id = "more-work";
             sections.push({ id: "more-work", label: moreWorkHeading.textContent.trim() });
         }
 
+        // Reuse the date text already authored in HTML rather than duplicating it
+        // in JavaScript. This keeps content ownership inside the page markup.
         const metaText = projectMeta.textContent.replace(/\s+/g, " ").trim();
         const timelineValue = metaText.includes(":")
             ? metaText.split(":").slice(1).join(":").trim()
             : metaText;
 
+        // Replace the plain date line with the richer quick-scan card UI.
         projectMeta.innerHTML = `
             <div class="project-meta-card">
                 <div class="meta-chip">
@@ -236,13 +277,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    // 6. Reading progress
+    // 6. Reading progress bar.
+    // This gives long-form case studies a subtle sense of where the reader is
+    // within the overall page.
     const header = document.querySelector("header");
     if (header && !document.getElementById("reading-progress")) {
         const progressBar = document.createElement("div");
         progressBar.id = "reading-progress";
         header.appendChild(progressBar);
 
+        // Width is derived from scroll position relative to the total scrollable
+        // document height.
         const updateReadingProgress = () => {
             const scrollTop = window.scrollY;
             const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -255,24 +300,34 @@ document.addEventListener("DOMContentLoaded", () => {
         window.addEventListener("resize", updateReadingProgress);
     }
 
-    // 7. Shared Project Card Rendering
+    // 7. Shared project card rendering.
+    // The homepage and each case-study page consume the same registry so the
+    // visual cards, titles, hooks, and themes stay aligned with the fallback
+    // project directory.
     const initializeProjectCards = async () => {
         const projectsList = await loadProjectsList();
         if (projectsList.length === 0) {
+            // If the registry cannot be loaded, leave the static HTML fallback
+            // untouched instead of rendering a broken or partial UI.
             return;
         }
 
+        // Keep the homepage metric derived from the live registry rather than a
+        // hardcoded number in HTML.
         const heroProjectCount = document.querySelector("[data-project-count]");
         if (heroProjectCount) {
             heroProjectCount.textContent = String(projectsList.length);
         }
 
+        // Render the homepage project gallery when present.
         const selectedWorkGrid = document.getElementById("selected-work-grid");
         if (selectedWorkGrid) {
             selectedWorkGrid.innerHTML = projectsList.map(project => renderProjectCard(project, "fade-hidden")).join("");
             observeFadeElements(selectedWorkGrid.querySelectorAll(".fade-hidden"));
         }
 
+        // Render related projects on case-study pages, excluding the page the
+        // visitor is currently reading.
         const dynamicContainer = document.getElementById("dynamic-more-work");
         if (dynamicContainer) {
             const availableProjects = projectsList.filter(project => project.url !== currentPage);
@@ -283,5 +338,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    // Fire and forget; the page already has usable static fallbacks if anything
+    // in the async card-loading path fails.
     void initializeProjectCards();
 });

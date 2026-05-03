@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
 
-/* Global Styles */
+/* Global design tokens.
+   These variables define the default palette, typography, spacing feel,
+   shadows, radii, motion speed, and safe-area hooks for mobile devices. */
 :root {
     color-scheme: dark;
     --blue-light: #79d4ff;
@@ -36,6 +38,9 @@
     --safe-inset-right: env(safe-area-inset-right);
 }
 
+/* Light-theme overrides.
+   Dark mode is the default palette, so only the values that actually change
+   need to be overridden here. */
 body.light-theme {
     color-scheme: light;
     --background-color: #f3f5f7;
@@ -61,11 +66,13 @@ body.light-theme {
     --link-soft-glow: rgba(12, 118, 188, 0.16);
 }
 
+/* Shared link-treatment tokens used by softer interactive borders/glows. */
 :root {
     --link-soft-border: rgba(121, 212, 255, 0.42);
     --link-soft-glow: rgba(121, 212, 255, 0.18);
 }
 
+/* Reset and browser-normalization layer. */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -78,6 +85,9 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Base page canvas.
+   The layered gradients create the ambient background glow used site-wide.
+   overflow-x stays hidden so breakout figures never create a horizontal scrollbar. */
 body {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
@@ -96,6 +106,7 @@ body {
     overflow-x: hidden;
 }
 
+/* Decorative background glows anchored to opposite corners of the viewport. */
 body::before,
 body::after {
     content: "";
@@ -155,7 +166,7 @@ button {
     color: var(--text-color);
 }
 
-/* Typography */
+/* Typography scale and base copy styling. */
 h1,
 h2,
 h3,
@@ -190,8 +201,9 @@ p {
     font-weight: 500;
 }
 
-/* Layout */
+/* Shared layout primitives. */
 .container {
+    /* Safe-area variables protect content from notches and rounded corners. */
     max-width: 1400px;
     margin: 0 auto;
     padding-left: max(40px, var(--safe-inset-left));
@@ -208,6 +220,7 @@ p {
 }
 
 .button-link {
+    /* Primary pill CTA used across the homepage, fallbacks, and thank-you flow. */
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -239,7 +252,7 @@ p {
     color: var(--text-color);
 }
 
-/* Header */
+/* Sticky site header shared by every page. */
 header {
     position: sticky;
     top: 0;
@@ -294,7 +307,7 @@ nav a.active {
     color: var(--text-color);
 }
 
-/* Main Gallery (Index Page) */
+/* Homepage shell and hero. */
 .gallery-container {
     max-width: 100%;
     padding: 0 0 96px;
@@ -343,6 +356,7 @@ nav a.active {
 }
 
 .hero-panel {
+    /* Summary card for category tags and the project count. */
     padding: clamp(24px, 3vw, 34px);
     display: flex;
     flex-direction: column;
@@ -409,14 +423,15 @@ nav a.active {
     margin-bottom: 0;
     color: var(--text-muted);
 }
-
 .project-grid {
+    /* Shared grid used for the homepage gallery. */
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
 }
 
 .project-card {
+    /* Card shell: image background + overlay text that can adapt to light and dark artwork. */
     position: relative;
     aspect-ratio: 4 / 3;
     overflow: hidden;
@@ -554,7 +569,7 @@ nav a.active {
     background: linear-gradient(180deg, rgba(7, 10, 12, 0.18) 16%, rgba(7, 10, 12, 0.96) 100%);
 }
 
-/* Project Detail Pages */
+/* Project detail / case-study layout. */
 .project-detail-header {
     padding: 52px 0 30px;
     margin-bottom: 22px;
@@ -586,6 +601,7 @@ nav a.active {
 }
 
 .project-meta-card {
+    /* Upgrades the plain authored date line into a richer quick-scan overview card. */
     display: grid;
     grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
     gap: 22px;
@@ -681,6 +697,7 @@ nav a.active {
 }
 
 figure {
+    /* Figures intentionally behave like cards so diagrams feel consistent with the site surfaces. */
     margin: 3.5rem 0;
     width: 100%;
     display: flex;
@@ -695,7 +712,7 @@ figure {
     box-shadow: var(--shadow-sm);
 }
 
-/* Break out of content-section constraint on larger screens */
+/* Break figures out wider than the text column on larger screens. */
 @media (min-width: 900px) {
     figure {
         margin: 3.8rem -7vw;
@@ -742,6 +759,7 @@ figcaption {
 }
 
 .image-row {
+    /* Shared horizontal figure layout for paired images. */
     display: flex;
     gap: 20px;
     justify-content: center;
@@ -760,6 +778,7 @@ figcaption {
 }
 
 .image-column {
+    /* Shared vertical figure layout for stacked images. */
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -1098,7 +1117,7 @@ figcaption {
     }
 }
 
-/* Contact Page */
+/* Contact page layout and contact-form styles. */
 .contact-section {
     padding: 60px 0 96px;
 }
@@ -1185,6 +1204,7 @@ figcaption {
 }
 
 .contact-link.linkedin {
+    /* LinkedIn gets the softer "clearly clickable" treatment used elsewhere. */
     color: var(--link-color);
     text-decoration: none;
     border-color: var(--link-soft-border);
@@ -1217,6 +1237,7 @@ figcaption {
 }
 
 .contact-noscript-card {
+    /* Only shown inside <noscript> when the branded JS form flow is unavailable. */
     margin: 0 clamp(24px, 4vw, 34px);
     padding: 1.25rem 1.4rem;
     border-radius: 20px;
@@ -1314,7 +1335,7 @@ figcaption {
     box-shadow: none;
 }
 
-/* Footer */
+/* Shared footer. */
 footer {
     padding: 26px 0 40px;
     text-align: center;
@@ -1327,7 +1348,7 @@ footer .container {
     border-top: 1px solid var(--border-color);
 }
 
-/* 404 Page */
+/* 404 page state. */
 .error-state {
     min-height: calc(100vh - 240px);
     display: flex;
@@ -1347,7 +1368,7 @@ footer .container {
     margin-bottom: 0.35rem;
 }
 
-/* About Page */
+/* About page layout. */
 .about-container {
     padding: 60px 20px 96px;
     padding-left: max(20px, var(--safe-inset-left));
@@ -1432,7 +1453,8 @@ footer .container {
     color: var(--text-soft);
 }
 
-/* More Work Section */
+/* More Work and fallback UI.
+   The fallback card appears when JS-driven project cards cannot render. */
 .more-work-section {
     padding: 72px 0 96px;
 }
@@ -1510,6 +1532,7 @@ footer .container {
 }
 
 .project-directory-section {
+    /* Dedicated fallback directory page and canonical project registry. */
     padding: 78px 0 104px;
 }
 
@@ -1527,7 +1550,7 @@ footer .container {
     margin-top: 1.35rem;
 }
 
-/* Thank You Page */
+/* Thank-you page. */
 .thank-you-section {
     padding: 80px 0 104px;
 }
