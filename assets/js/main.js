@@ -8,16 +8,44 @@ document.addEventListener("DOMContentLoaded", () => {
             .replace(/'/g, "&#39;");
 
     const currentPage = window.location.pathname.split("/").pop();
-    const projectsList = [
-        { url: "max_particle_velocity.html", title: "Maximum Particle Velocity in Solids", category: "Independent Study", hook: "MATLAB Monte Carlo model probing a possible universal particle-velocity limit in solids.", theme: "theme-green", img: "assets/images/cropped/project1_title_cropped.webp" },
-        { url: "intra_ox.html", title: "Intra.Ox", category: "Internship", hook: "Disposable sheath and O-ring design for a handheld tissue oximeter.", theme: "theme-green", img: "assets/images/cropped/project2_title_cropped.webp" },
-        { url: "auris_viewer_console.html", title: "Viewer Console", category: "Optomechanical Design", hook: "Optomechanical console development from prototype builds through DVT manufacturing.", theme: "theme-yellow", img: "assets/images/cropped/project3_title_cropped.webp" },
-        { url: "BOM_tracking.html", title: "BOM Tracking", category: "Process Improvement", hook: "SolidWorks-to-Excel BOM automation for fast, accurate inventory tracking.", theme: "theme-green", img: "assets/images/cropped/project4_title_cropped.webp" },
-        { url: "lap_ox.html", title: "Lap.Ox", category: "Medical Device Design", hook: "Laparoscopic tissue oximeter development spanning CAD, inventory, and DVT builds.", theme: "theme-green", img: "assets/images/cropped/project5_title_cropped.webp" },
-        { url: "IT_setup_procedure.html", title: "IT Laptop Setup Procedure", category: "Process Improvement", hook: "A repeatable Windchill and SolidWorks setup guide adopted by IT.", theme: "theme-green", img: "assets/images/cropped/project6_title_cropped.webp" },
-        { url: "fergie_robot.html", title: '“Fergie” Robot', category: "Mechatronics", hook: "Competition robot built for autonomous navigation, wall-following, and button pressing.", theme: "theme-yellow", img: "assets/images/cropped/project7_title_cropped.webp" },
-        { url: "pantryos.html", title: "PantryOS", category: "Internet of Things/PCBA design", hook: "An IoT pantry assistant with embedded sensing, MQTT syncing, and a live dashboard.", theme: "theme-yellow", img: "assets/images/cropped/project8_title_cropped.webp" }
-    ];
+    const extractProjects = root => {
+        const projectLinks = root.querySelectorAll("#project-directory-list a[data-project-card]");
+
+        return Array.from(projectLinks).map(link => ({
+            url: link.getAttribute("href"),
+            title: link.dataset.title || link.textContent.trim(),
+            category: link.dataset.category || "",
+            hook: link.dataset.hook || "",
+            theme: link.dataset.theme || "",
+            img: link.dataset.img || ""
+        }));
+    };
+
+    const loadProjectsList = async () => {
+        const inlineProjectList = document.getElementById("project-directory-list");
+        if (inlineProjectList) {
+            return extractProjects(document);
+        }
+
+        try {
+            const response = await fetch("project-directory.html", {
+                headers: {
+                    Accept: "text/html"
+                }
+            });
+
+            if (!response.ok) {
+                return [];
+            }
+
+            const html = await response.text();
+            const parsedDocument = new DOMParser().parseFromString(html, "text/html");
+            return extractProjects(parsedDocument);
+        } catch (error) {
+            return [];
+        }
+    };
+
     const renderProjectCard = (proj, extraClasses = "") => {
         const safeTitle = escapeHtml(proj.title);
         const safeCategory = escapeHtml(proj.category);
@@ -228,30 +256,32 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // 7. Shared Project Card Rendering
-    const heroProjectCount = document.querySelector("[data-project-count]");
-    if (heroProjectCount) {
-        heroProjectCount.textContent = String(projectsList.length);
-    }
+    const initializeProjectCards = async () => {
+        const projectsList = await loadProjectsList();
+        if (projectsList.length === 0) {
+            return;
+        }
 
-    const selectedWorkGrid = document.getElementById("selected-work-grid");
-    if (selectedWorkGrid) {
-        selectedWorkGrid.innerHTML = projectsList.map(project => renderProjectCard(project, "fade-hidden")).join("");
-        observeFadeElements(selectedWorkGrid.querySelectorAll(".fade-hidden"));
-    }
+        const heroProjectCount = document.querySelector("[data-project-count]");
+        if (heroProjectCount) {
+            heroProjectCount.textContent = String(projectsList.length);
+        }
 
-    const dynamicContainer = document.getElementById("dynamic-more-work");
+        const selectedWorkGrid = document.getElementById("selected-work-grid");
+        if (selectedWorkGrid) {
+            selectedWorkGrid.innerHTML = projectsList.map(project => renderProjectCard(project, "fade-hidden")).join("");
+            observeFadeElements(selectedWorkGrid.querySelectorAll(".fade-hidden"));
+        }
 
-    if (dynamicContainer) {
-        // Filter out current project
-        const availableProjects = projectsList.filter(p => p.url !== currentPage);
+        const dynamicContainer = document.getElementById("dynamic-more-work");
+        if (dynamicContainer) {
+            const availableProjects = projectsList.filter(project => project.url !== currentPage);
+            dynamicContainer.innerHTML = availableProjects.map(project => renderProjectCard(project, "fade-hidden")).join("");
 
-        // Keep the remaining 7 projects in portfolio order
-        const selectedProjects = availableProjects;
+            const newCards = dynamicContainer.querySelectorAll(".fade-hidden");
+            observeFadeElements(newCards);
+        }
+    };
 
-        dynamicContainer.innerHTML = selectedProjects.map(project => renderProjectCard(project, "fade-hidden")).join("");
-
-        // Re-attach observer for newly injected cards
-        const newCards = dynamicContainer.querySelectorAll(".fade-hidden");
-        observeFadeElements(newCards);
-    }
+    void initializeProjectCards();
 });
