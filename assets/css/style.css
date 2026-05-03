@@ -1216,6 +1216,19 @@ figcaption {
     padding: clamp(24px, 4vw, 34px);
 }
 
+.contact-noscript-card {
+    margin: 0 clamp(24px, 4vw, 34px);
+    padding: 1.25rem 1.4rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    background: var(--surface-strong);
+    box-shadow: var(--shadow-sm);
+}
+
+.contact-noscript-card p:last-child {
+    margin-bottom: 0;
+}
+
 .form-group {
     display: flex;
     flex-direction: column;
@@ -1467,6 +1480,12 @@ footer .container {
     max-width: 42rem;
 }
 
+.project-fallback-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+}
+
 .project-fallback-list {
     list-style: none;
     display: grid;
@@ -1488,6 +1507,24 @@ footer .container {
     color: var(--text-color);
     border-color: var(--accent-color);
     box-shadow: 0 0 0 4px var(--accent-shadow);
+}
+
+.project-directory-section {
+    padding: 78px 0 104px;
+}
+
+.project-directory-card {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: clamp(28px, 4vw, 40px);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    background: var(--surface-color);
+    box-shadow: var(--shadow-md);
+}
+
+.project-directory-card .project-fallback-list {
+    margin-top: 1.35rem;
 }
 
 /* Thank You Page */

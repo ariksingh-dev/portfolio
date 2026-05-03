@@ -8,7 +8,7 @@
     <link rel="canonical" href="https://ariksingh-dev.github.io/portfolio/contact.html">
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <meta name="theme-color" content="#0f1417">
-    <link rel="stylesheet" href="assets/css/style.css?v=21">
+    <link rel="stylesheet" href="assets/css/style.css?v=22">
 
     <meta name="description"
         content="Get in touch with Arik Singh for opportunities in mechanical engineering, product design, and mechatronics.">
@@ -67,6 +67,18 @@
                 </div>
             </section>
 
+            <noscript>
+                <style>
+                    #contact-form {
+                        display: none;
+                    }
+                </style>
+                <section class="contact-noscript-card" aria-label="Contact without JavaScript">
+                    <p class="section-kicker">Direct Contact</p>
+                    <p>JavaScript is required for the branded contact form on this page. Please use the email, phone, or LinkedIn links to the left instead.</p>
+                </section>
+            </noscript>
+
             <form id="contact-form" class="contact-form" action="https://formspree.io/f/xlgpdbzw" method="POST" data-success-url="thank-you.html">
                 <div class="form-group">
                     <label for="name">Name</label>
@@ -94,7 +106,8 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js?v=8" defer></script>
+    <script src="assets/js/contact-form.js?v=1" defer></script>
+    <script src="assets/js/main.js?v=9" defer></script>
 </body>
 
 </html>
