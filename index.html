@@ -8,7 +8,7 @@
     <link rel="canonical" href="https://ariksingh-dev.github.io/portfolio/">
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <meta name="theme-color" content="#0f1417">
-    <link rel="stylesheet" href="assets/css/style.css?v=20">
+    <link rel="stylesheet" href="assets/css/style.css?v=21">
 
     <meta name="description"
         content="Portfolio of Arik Singh, a multidisciplinary designer and engineer specializing in medical devices, mechatronics, and intuitive user experiences.">
@@ -17,13 +17,13 @@
         content="Portfolio of Arik Singh, a multidisciplinary designer and engineer specializing in medical devices, mechatronics, and intuitive user experiences.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ariksingh-dev.github.io/portfolio/">
-    <meta property="og:image" content="https://ariksingh-dev.github.io/portfolio/assets/images/project3_title.png">
-    <meta property="og:image:alt" content="Preview of Arik Singh's portfolio website">
+    <meta property="og:image" content="https://ariksingh-dev.github.io/portfolio/assets/images/project8_title.png">
+    <meta property="og:image:alt" content="Selected projects from Arik Singh's portfolio">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Arik Singh | Portfolio">
     <meta name="twitter:description"
         content="Portfolio of Arik Singh, a multidisciplinary designer and engineer specializing in medical devices, mechatronics, and intuitive user experiences.">
-    <meta name="twitter:image" content="https://ariksingh-dev.github.io/portfolio/assets/images/project3_title.png">
+    <meta name="twitter:image" content="https://ariksingh-dev.github.io/portfolio/assets/images/project8_title.png">
 </head>
 
 <body class="page-home">
@@ -36,13 +36,13 @@
                 <span class="icon-sun">☀️</span>
                 <span class="icon-moon">🌙</span>
             </button>
-            <div class="hamburger" aria-label="Toggle navigation" role="button" tabindex="0">
+            <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
+            </button>
             <nav>
-                <ul>
+                <ul id="site-nav">
                     <li><a href="index.html" class="active" aria-current="page">Work</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -92,7 +92,22 @@
             </div>
 
             <div class="container">
-                <div id="selected-work-grid" class="project-grid"></div>
+                <div id="selected-work-grid" class="project-grid">
+                    <div class="project-fallback-card">
+                        <p class="section-kicker">Project Directory</p>
+                        <p>If the interactive project cards do not load, browse the case studies directly:</p>
+                        <ul class="project-fallback-list">
+                            <li><a href="max_particle_velocity.html">Maximum Particle Velocity in Solids</a></li>
+                            <li><a href="intra_ox.html">Intra.Ox</a></li>
+                            <li><a href="auris_viewer_console.html">Viewer Console</a></li>
+                            <li><a href="BOM_tracking.html">BOM Tracking</a></li>
+                            <li><a href="lap_ox.html">Lap.Ox</a></li>
+                            <li><a href="IT_setup_procedure.html">IT Laptop Setup Procedure</a></li>
+                            <li><a href="fergie_robot.html">Fergie Robot</a></li>
+                            <li><a href="pantryos.html">PantryOS</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -103,7 +118,7 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js?v=7" defer></script>
+    <script src="assets/js/main.js?v=8" defer></script>
 </body>
 
 </html>

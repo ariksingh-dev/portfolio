@@ -53,23 +53,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 
     if (hamburger && navMenu) {
+        const syncMenuState = () => {
+            hamburger.setAttribute("aria-expanded", String(navMenu.classList.contains("active")));
+        };
+
         const toggleMenu = () => {
             hamburger.classList.toggle("active");
             navMenu.classList.toggle("active");
+            syncMenuState();
         };
 
         const closeMenu = () => {
             hamburger.classList.remove("active");
             navMenu.classList.remove("active");
+            syncMenuState();
         };
 
         hamburger.addEventListener("click", toggleMenu);
-        hamburger.addEventListener("keydown", event => {
-            if (event.key === "Enter" || event.key === " ") {
-                event.preventDefault();
-                toggleMenu();
-            }
-        });
 
         // Close menu when a link is clicked
         document.querySelectorAll("nav ul li a").forEach(n =>
@@ -89,6 +89,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 closeMenu();
             }
         });
+
+        syncMenuState();
     }
 
     // 2. Scroll Animations (Intersection Observer)
