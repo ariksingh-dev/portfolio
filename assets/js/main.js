@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Use the current filename to avoid rendering the current case study inside
     // its own "More Work" rail.
+    // This works because the canonical registry stores simple relative URLs
+    // like "pantryos.html" rather than absolute paths.
     const currentPage = window.location.pathname.split("/").pop();
 
     // Read project metadata from the project-directory page markup.

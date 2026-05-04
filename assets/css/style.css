@@ -1102,6 +1102,9 @@ figcaption {
         max-width: none;
     }
 
+    /* These paired portrait-mobile ratios are based on the source image aspect
+       ratios so both images can end up the same visual height without forcing
+       a misleading 50/50 width split. */
     .image-row-mobile-ratio-bom .img-bom-template:first-child {
         width: calc((100% - 4px) * 0.7394);
     }
