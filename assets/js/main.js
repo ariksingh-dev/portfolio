@@ -341,6 +341,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 .sort((left, right) => left.featuredRank - right.featuredRank);
             const additionalProjects = projectsList.filter(project => project.featuredRank === 0);
 
+            // A single featured project should read like one intentional hero
+            // case study rather than occupying one half of a multi-column grid.
+            featuredGrid.classList.toggle("featured-grid-solo", featuredProjects.length === 1);
+
             const featuredMarkup = featuredProjects.length > 0
                 ? featuredProjects
                     .map((project, index) =>

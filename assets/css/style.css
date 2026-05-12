@@ -499,6 +499,16 @@ nav a.active {
     justify-content: flex-start;
 }
 
+.featured-project-grid.featured-grid-solo {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+}
+
+.featured-project-grid.featured-grid-solo .featured-primary {
+    grid-row: span 1;
+    min-height: 520px;
+}
+
 .additional-work-section {
     margin-top: 34px;
 }
