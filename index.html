@@ -9,7 +9,7 @@
     <link rel="canonical" href="https://ariksingh-dev.github.io/portfolio/">
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <meta name="theme-color" content="#0f1417">
-    <link rel="stylesheet" href="assets/css/style.css?v=24">
+    <link rel="stylesheet" href="assets/css/style.css?v=25">
 
     <meta name="description"
         content="Portfolio of Arik Singh, a multidisciplinary designer and engineer specializing in medical devices, mechatronics, and intuitive user experiences.">
@@ -61,12 +61,20 @@
             <div class="container">
                 <div class="hero-copy">
                     <p class="section-kicker">Portfolio</p>
+                    <p class="hero-positioning">Product designer and engineer focused on medical devices, optomechanical systems, and embedded hardware.</p>
                     <h1>Arik Singh</h1>
                     <p class="lead-intro">Multidisciplinary engineer and product designer currently pursuing a Master’s in Integrated Product Design at the University of Pennsylvania. I build human-centered products at the intersection of engineering, design, and business, with a focus on healthcare and medical device development.</p>
                     <div class="hero-actions">
                         <a href="#selected-work" class="button-link">View Selected Work</a>
                         <a href="contact.html" class="button-link secondary">Get in Touch</a>
                     </div>
+                    <ul class="hero-proof-strip" aria-label="Portfolio proof points">
+                        <li>Published research</li>
+                        <li>Medical device internships</li>
+                        <li>Optomechanical design</li>
+                        <li>PCB + embedded systems</li>
+                        <li>Process automation</li>
+                    </ul>
                 </div>
 
                 <aside class="hero-panel" aria-label="Selected focus areas">
@@ -93,12 +101,13 @@
             <div class="container section-heading">
                 <div>
                     <p class="section-kicker">Selected Work</p>
-                    <h2>Projects</h2>
+                    <h2>Featured Case Studies</h2>
+                    <p class="section-subcopy">A curated view of the projects that best represent my work across medical devices, optomechanics, and embedded systems.</p>
                 </div>
             </div>
 
             <div class="container">
-                <div id="selected-work-grid" class="project-grid">
+                <div id="selected-work-featured" class="featured-project-grid">
                     <div class="project-fallback-card">
                         <p class="section-kicker">Project Directory</p>
                         <p>If the interactive project cards do not load, browse the case studies through the direct project directory instead.</p>
@@ -107,6 +116,17 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="container additional-work-section" data-additional-section hidden>
+                <div class="section-heading additional-section-heading">
+                    <div>
+                        <p class="section-kicker">Additional Work</p>
+                        <h2>More Projects</h2>
+                        <p class="section-subcopy">The rest of the portfolio, including research, process improvement, and mechatronics work.</p>
+                    </div>
+                </div>
+                <div id="selected-work-additional" class="project-grid additional-project-grid"></div>
             </div>
         </section>
     </main>
@@ -119,7 +139,7 @@
     </footer>
 
     <!-- Shared site behavior bundle. -->
-    <script src="assets/js/main.js?v=10" defer></script>
+    <script src="assets/js/main.js?v=11" defer></script>
 </body>
 
 </html>

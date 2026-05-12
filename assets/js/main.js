@@ -32,7 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
             category: link.dataset.category || "",
             hook: link.dataset.hook || "",
             theme: link.dataset.theme || "",
-            img: link.dataset.img || ""
+            img: link.dataset.img || "",
+            badges: link.dataset.badges ? link.dataset.badges.split("|").map(badge => badge.trim()).filter(Boolean) : [],
+            featuredRank: Number.parseInt(link.dataset.featuredRank || "0", 10) || 0
         }));
     };
 
@@ -75,6 +77,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const safeTitle = escapeHtml(proj.title);
         const safeCategory = escapeHtml(proj.category);
         const safeHook = escapeHtml(proj.hook);
+        const badgesMarkup = proj.badges.length > 0
+            ? `<div class="project-badges">${proj.badges
+                .map(badge => `<span class="project-badge">${escapeHtml(badge)}</span>`)
+                .join("")}</div>`
+            : "";
         const themeClass = proj.theme ? ` ${proj.theme}` : "";
         const className = `project-card${themeClass}${extraClasses ? ` ${extraClasses}` : ""}`;
 
@@ -82,6 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="${proj.url}" class="${className}" aria-label="View project: ${safeTitle}">
                 <div class="card-image" style="background-image: url('${proj.img}');"></div>
                 <div class="project-overlay">
+                    ${badgesMarkup}
                     <h3>${safeTitle}</h3>
                     <div class="category">${safeCategory}</div>
                     <p class="project-hook">${safeHook}</p>
@@ -322,10 +330,35 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Render the homepage project gallery when present.
-        const selectedWorkGrid = document.getElementById("selected-work-grid");
-        if (selectedWorkGrid) {
-            selectedWorkGrid.innerHTML = projectsList.map(project => renderProjectCard(project, "fade-hidden")).join("");
-            observeFadeElements(selectedWorkGrid.querySelectorAll(".fade-hidden"));
+        // Featured projects get a larger, more editorial treatment while the
+        // rest of the work stays accessible in a secondary grid below.
+        const featuredGrid = document.getElementById("selected-work-featured");
+        const additionalGrid = document.getElementById("selected-work-additional");
+        const additionalSection = document.querySelector("[data-additional-section]");
+        if (featuredGrid) {
+            const featuredProjects = projectsList
+                .filter(project => project.featuredRank > 0)
+                .sort((left, right) => left.featuredRank - right.featuredRank);
+            const additionalProjects = projectsList.filter(project => project.featuredRank === 0);
+
+            const featuredMarkup = featuredProjects.length > 0
+                ? featuredProjects
+                    .map((project, index) =>
+                        renderProjectCard(project, `fade-hidden ${index === 0 ? "featured-primary" : "featured-secondary"}`)
+                    )
+                    .join("")
+                : projectsList.map(project => renderProjectCard(project, "fade-hidden")).join("");
+
+            featuredGrid.innerHTML = featuredMarkup;
+            observeFadeElements(featuredGrid.querySelectorAll(".fade-hidden"));
+
+            if (additionalGrid && additionalSection && additionalProjects.length > 0) {
+                additionalSection.hidden = false;
+                additionalGrid.innerHTML = additionalProjects
+                    .map(project => renderProjectCard(project, "fade-hidden compact"))
+                    .join("");
+                observeFadeElements(additionalGrid.querySelectorAll(".fade-hidden"));
+            }
         }
 
         // Render related projects on case-study pages, excluding the page the
