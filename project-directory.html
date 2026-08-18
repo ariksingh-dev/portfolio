@@ -1,89 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Head: metadata, SEO, social-preview tags, and shared assets. -->
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Project Directory | Arik Singh</title>
-    <link rel="canonical" href="https://ariksingh-dev.github.io/portfolio/project-directory.html">
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-    <meta name="theme-color" content="#0f1417">
-    <link rel="stylesheet" href="assets/css/style.css?v=26">
-
-    <meta name="description" content="Direct links to every project case study in Arik Singh's portfolio.">
-    <meta property="og:title" content="Project Directory | Arik Singh">
-    <meta property="og:description" content="Browse every case study in Arik Singh's portfolio.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ariksingh-dev.github.io/portfolio/project-directory.html">
-    <meta property="og:image" content="https://ariksingh-dev.github.io/portfolio/assets/images/project8_title.png">
-    <meta property="og:image:alt" content="Selected projects from Arik Singh's portfolio">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Project Directory | Arik Singh">
-    <meta name="twitter:description" content="Browse every case study in Arik Singh's portfolio.">
-    <meta name="twitter:image" content="https://ariksingh-dev.github.io/portfolio/assets/images/project8_title.png">
-</head>
-
-<!-- Body: visible page content starts here. -->
-<body class="page-project-directory">
-    <!-- Shared header: logo, theme toggle, mobile nav toggle, and primary navigation. -->
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">Arik Singh</a>
-
-            <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">
-                <span class="icon-sun">☀️</span>
-                <span class="icon-moon">🌙</span>
-            </button>
-            <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            <nav>
-                <ul id="site-nav">
-                    <li><a href="index.html">Work</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Fallback directory page and canonical project registry for JS-rendered cards. -->
-    <main class="container project-directory-section">
-        <section class="project-directory-card">
-            <p class="section-kicker">Project Directory</p>
-            <h1>Browse Every Case Study</h1>
-            <p>If the interactive cards on the homepage or case study pages do not load, use these direct links instead.</p>
-            <!-- This list doubles as both the no-JS project directory and the canonical project registry consumed by main.js. -->
-            <!-- The visible link text is the fallback UX; the data-* fields are the structured card metadata used for the homepage and More Work rails. -->
-            <ul class="project-fallback-list" id="project-directory-list">
-                <li><a href="max_particle_velocity.html" data-project-card data-title="Maximum Particle Velocity in Solids" data-category="Independent Study" data-hook="MATLAB Monte Carlo model probing a possible universal particle-velocity limit in solids." data-theme="theme-green" data-img="assets/images/cropped/project1_title_cropped.webp" data-badges="Published|Research|MATLAB">Maximum Particle Velocity in Solids</a></li>
-                <li><a href="intra_ox.html" data-project-card data-title="Intra.Ox" data-category="Internship" data-hook="Disposable sheath and O-ring design for a handheld tissue oximeter." data-theme="theme-green" data-img="assets/images/cropped/project2_title_cropped.webp" data-badges="Internship|Medical Device|O-Ring Design">Intra.Ox</a></li>
-                <li><a href="auris_viewer_console.html" data-project-card data-title="Viewer Console" data-category="Optomechanical Design" data-hook="Optomechanical console development from prototype builds through DVT manufacturing." data-theme="theme-yellow" data-img="assets/images/cropped/project3_title_cropped.webp" data-badges="Medical Robotics|Optomechanics|DVT">Viewer Console</a></li>
-                <li><a href="BOM_tracking.html" data-project-card data-title="BOM Tracking" data-category="Process Improvement" data-hook="SolidWorks-to-Excel BOM automation for fast, accurate inventory tracking." data-theme="theme-green" data-img="assets/images/cropped/project4_title_cropped.webp" data-badges="Process Adopted|SolidWorks|Excel">BOM Tracking</a></li>
-                <li><a href="lap_ox.html" data-project-card data-title="Lap.Ox" data-category="Medical Device Design" data-hook="Laparoscopic tissue oximeter development spanning CAD, inventory, and DVT builds." data-theme="theme-green" data-img="assets/images/cropped/project5_title_cropped.webp" data-featured-rank="1" data-badges="Medical Device|CAD|DVT">Lap.Ox</a></li>
-                <li><a href="IT_setup_procedure.html" data-project-card data-title="IT Laptop Setup Procedure" data-category="Process Improvement" data-hook="A repeatable Windchill and SolidWorks setup guide adopted by IT." data-theme="theme-green" data-img="assets/images/cropped/project6_title_cropped.webp" data-badges="Process Adopted|Windchill|IT Systems">IT Laptop Setup Procedure</a></li>
-                <li><a href="fergie_robot.html" data-project-card data-title="“Fergie” Robot" data-category="Mechatronics" data-hook="Competition robot built for autonomous navigation, wall-following, and button pressing." data-theme="theme-yellow" data-img="assets/images/cropped/project7_title_cropped.webp" data-badges="Competition|Controls|Mechatronics">“Fergie” Robot</a></li>
-                <li><a href="pantryos.html" data-project-card data-title="PantryOS" data-category="Internet of Things/PCBA design" data-hook="An IoT pantry assistant with embedded sensing, MQTT syncing, and a live dashboard." data-theme="theme-yellow" data-img="assets/images/cropped/project8_title_cropped.webp" data-badges="Embedded|PCB|IoT">PantryOS</a></li>
-            </ul>
-            <div class="project-fallback-actions">
-                <a href="index.html#selected-work" class="button-link">Back to Selected Work</a>
-                <a href="contact.html" class="button-link secondary">Get in Touch</a>
-            </div>
-        </section>
-    </main>
-
-    <!-- Shared footer: simple copyright wrapper used across the site. -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Arik Singh. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Shared site behavior bundle. -->
-    <script src="assets/js/main.js?v=12" defer></script>
-</body>
-
+ <!-- Head: metadata, SEO, social-preview tags, and shared assets. -->
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+  <title>
+   Project Directory | Arik Singh
+  </title>
+  <link href="https://ariksingh-dev.github.io/portfolio/project-directory.html" rel="canonical"/>
+  <link href="assets/images/favicon.svg" rel="icon" type="image/svg+xml"/>
+  <meta content="#0f1417" name="theme-color"/>
+  <link href="assets/css/style.css?v=26" rel="stylesheet"/>
+  <meta content="Direct links to every project case study in Arik Singh's portfolio." name="description"/>
+  <meta content="Project Directory | Arik Singh" property="og:title"/>
+  <meta content="Browse every case study in Arik Singh's portfolio." property="og:description"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://ariksingh-dev.github.io/portfolio/project-directory.html" property="og:url"/>
+  <meta content="https://ariksingh-dev.github.io/portfolio/assets/images/project8_title.png" property="og:image"/>
+  <meta content="Selected projects from Arik Singh's portfolio" property="og:image:alt"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="Project Directory | Arik Singh" name="twitter:title"/>
+  <meta content="Browse every case study in Arik Singh's portfolio." name="twitter:description"/>
+  <meta content="https://ariksingh-dev.github.io/portfolio/assets/images/project8_title.png" name="twitter:image"/>
+ </head>
+ <!-- Body: visible page content starts here. -->
+ <body class="page-project-directory">
+  <!-- Shared header: logo, theme toggle, mobile nav toggle, and primary navigation. -->
+  <header>
+   <div class="container">
+    <a class="logo" href="index.html">
+     Arik Singh
+    </a>
+    <button aria-label="Toggle Light/Dark Mode" id="theme-toggle">
+     <span class="icon-sun">
+      ☀️
+     </span>
+     <span class="icon-moon">
+      🌙
+     </span>
+    </button>
+    <button aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation" class="hamburger" type="button">
+     <span class="bar">
+     </span>
+     <span class="bar">
+     </span>
+     <span class="bar">
+     </span>
+    </button>
+    <nav>
+     <ul id="site-nav">
+      <li>
+       <a href="index.html">
+        Work
+       </a>
+      </li>
+      <li>
+       <a href="about.html">
+        About
+       </a>
+      </li>
+      <li>
+       <a href="contact.html">
+        Contact
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </header>
+  <!-- Fallback directory page and canonical project registry for JS-rendered cards. -->
+  <main class="container project-directory-section">
+   <section class="project-directory-card">
+    <p class="section-kicker">
+     Project Directory
+    </p>
+    <h1>
+     Browse Every Case Study
+    </h1>
+    <p>
+     If the interactive cards on the homepage or case study pages do not load, use these direct links instead.
+    </p>
+    <!-- This list doubles as both the no-JS project directory and the canonical project registry consumed by main.js. -->
+    <!-- The visible link text is the fallback UX; the data-* fields are the structured card metadata used for the homepage and More Work rails. -->
+    <ul class="project-fallback-list" id="project-directory-list">
+     <li>
+      <a data-badges="Published|Research|MATLAB" data-category="Independent Study" data-hook="MATLAB Monte Carlo model probing a possible universal particle-velocity limit in solids." data-img="assets/images/cropped/project1_title_cropped.webp" data-project-card="" data-theme="theme-green" data-title="Maximum Particle Velocity in Solids" href="max_particle_velocity.html">
+       Maximum Particle Velocity in Solids
+      </a>
+     </li>
+     <li>
+      <a data-badges="Internship|Medical Device|O-Ring Design" data-category="Internship" data-hook="Disposable sheath and O-ring design for a handheld tissue oximeter." data-img="assets/images/cropped/project2_title_cropped.webp" data-project-card="" data-theme="theme-green" data-title="Intra.Ox" href="intra_ox.html">
+       Intra.Ox
+      </a>
+     </li>
+     <li>
+      <a data-badges="Medical Robotics|Optomechanics|DVT" data-category="Optomechanical Design" data-hook="Optomechanical console development from prototype builds through DVT manufacturing." data-img="assets/images/cropped/project3_title_cropped.webp" data-project-card="" data-theme="theme-yellow" data-title="Viewer Console" href="auris_viewer_console.html">
+       Viewer Console
+      </a>
+     </li>
+     <li>
+      <a data-badges="Process Adopted|SolidWorks|Excel" data-category="Process Improvement" data-hook="SolidWorks-to-Excel BOM automation for fast, accurate inventory tracking." data-img="assets/images/cropped/project4_title_cropped.webp" data-project-card="" data-theme="theme-green" data-title="BOM Tracking" href="BOM_tracking.html">
+       BOM Tracking
+      </a>
+     </li>
+     <li>
+      <a data-badges="Medical Device|CAD|DVT" data-category="Medical Device Design" data-featured-rank="1" data-hook="Laparoscopic tissue oximeter development spanning CAD, inventory, and DVT builds." data-img="assets/images/cropped/project5_title_cropped.webp" data-project-card="" data-theme="theme-green" data-title="Lap.Ox" href="lap_ox.html">
+       Lap.Ox
+      </a>
+     </li>
+     <li>
+      <a data-badges="Process Adopted|Windchill|IT Systems" data-category="Process Improvement" data-hook="A repeatable Windchill and SolidWorks setup guide adopted by IT." data-img="assets/images/cropped/project6_title_cropped.webp" data-project-card="" data-theme="theme-green" data-title="IT Laptop Setup Procedure" href="IT_setup_procedure.html">
+       IT Laptop Setup Procedure
+      </a>
+     </li>
+     <li>
+      <a data-badges="Competition|Controls|Mechatronics" data-category="Mechatronics" data-hook="Competition robot built for autonomous navigation, wall-following, and button pressing." data-img="assets/images/cropped/project7_title_cropped.webp" data-project-card="" data-theme="theme-yellow" data-title="“Fergie” Robot" href="fergie_robot.html">
+       “Fergie” Robot
+      </a>
+     </li>
+     <li>
+      <a data-badges="Embedded|PCB|IoT" data-category="Internet of Things/PCBA design" data-hook="An IoT pantry assistant with embedded sensing, MQTT syncing, and a live dashboard." data-img="assets/images/cropped/project8_title_cropped.webp" data-project-card="" data-theme="theme-yellow" data-title="PantryOS" href="pantryos.html">
+       PantryOS
+      </a>
+     </li>
+     <li>
+      <a data-badges="Internship|Medical Device|Manufacturing" data-category="Internship" data-hook="Process Development Engineering Internship focused on flexible endoscope manufacturing." data-img="" data-project-card="" data-theme="theme-green" data-title="Neptune Medical Internship" href="neptune_medical.html">
+       Neptune Medical Internship
+      </a>
+     </li>
+    </ul>
+    <div class="project-fallback-actions">
+     <a class="button-link" href="index.html#selected-work">
+      Back to Selected Work
+     </a>
+     <a class="button-link secondary" href="contact.html">
+      Get in Touch
+     </a>
+    </div>
+   </section>
+  </main>
+  <!-- Shared footer: simple copyright wrapper used across the site. -->
+  <footer>
+   <div class="container">
+    <p>
+     © 2026 Arik Singh. All rights reserved.
+    </p>
+   </div>
+  </footer>
+  <!-- Shared site behavior bundle. -->
+  <script defer="" src="assets/js/main.js?v=12">
+  </script>
+ </body>
 </html>

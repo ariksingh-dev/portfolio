@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neptune Medical Internship | Arik Singh</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <meta name="description" content="Process Development Engineering Internship at Neptune Medical.">
+    <meta property="og:title" content="Neptune Medical Internship | Arik Singh">
+    <meta property="og:description" content="Process Development Engineering Internship at Neptune Medical.">
+    <meta property="og:type" content="website">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Arik Singh</a>
+            <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">
+                <span class="icon-sun">☀️</span>
+                <span class="icon-moon">🌙</span>
+            </button>
+            <div class="hamburger" aria-label="Toggle navigation" role="button" tabindex="0">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Work</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container project-detail-header">
+        <h1>Neptune Medical — Process Development Engineering Internship</h1>
+    </div>
+
+    <main class="container">
+        <div class="project-meta">
+            <p><strong>Date:</strong> {date}</p>
+        </div>
+        
+        <section class="content-section">
+            <p><strong>Confidentiality Note:</strong> {confidentiality}</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Problem statement</h2>
+            <p>During the summer of 2026, I worked with Neptune Medical's New Product Introduction (NPI) team supporting the manufacturing development of a flexible endoscope. My work concentrated on three interconnected subassemblies that make up a significant portion of the device's internal endoscope, the reusable portion of the device.</p>
+            <p>When I joined the team, manufacturing processes for these assemblies already existed and technicians were actively building devices. However, several operations still depended heavily on technician technique, manual measurements, temporary fixtures, or assembly methods that had been developed rapidly during earlier stages of product development. These methods were sufficient to build devices, but they also created opportunities to improve repeatability, ergonomics, process control, and efficiency as manufacturing matured.</p>
+            <p>Rather than immediately redesigning individual fixtures, I began by studying the manufacturing process as a whole. I observed technicians building each of the three primary subassemblies and performed a cycle-time study in which I documented the duration of individual assembly steps, how operators interacted with the product and tooling, and which operations required the greatest amount of time, manual dexterity, or rework.</p>
+            <p>The three observed builds took approximately eight hours, three and a half hours, and under two hours respectively, although the longest build was partially estimated because not every operation could be observed during a single shift. The study helped distinguish between processes that were simply time-consuming by nature and processes where improved tooling or process development could meaningfully reduce variation or make the operation easier to perform.</p>
+            <p>From these observations, I identified several areas for further development, including braided-structure cutting, overall device-length measurement, guide-sheath bonding, guide-sheath cleaning and leak performance, string tension management, and repeatable orientation of the distal end during assembly.</p>
+            <p>My summer project therefore evolved from a cycle study into a broader manufacturing-engineering effort: observe a process, identify its failure modes or sources of variation, develop a mechanical or procedural solution, prototype and test that solution, and then translate successful improvements into controlled manufacturing documentation.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>My Role</h2>
+            <p>My role is broken down below by each fixture or subproject that I worked on.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Braided-structure cut-to-length process</h2>
+            <p>One of the first opportunities I investigated involved cutting a long braided internal structure to its required length.</p>
+            <p>The assembly had to be cut using a handheld roll cutter while an internal mandrel supported the braid. The challenge was that the structure needed to rotate through a complete 360-degree cut while simultaneously remaining constrained in the axial and radial directions. If the assembly moved relative to the cutter, the blade could follow an inconsistent path around the circumference.</p>
+            <p>I designed a dedicated roller-based cutting fixture in SolidWorks. Sets of rollers support the assembly on both sides of the cutting location and allow the operator to rotate the structure while maintaining its primary axis. The roll cutter itself is mechanically constrained relative to the assembly so that it cannot translate significantly while the operator completes the circular cut.</p>
+            <p>The internal mandrel remains installed during the operation to prevent the braided structure from deforming or becoming excessively oval at the cutting location.</p>
+            <p>I designed the fixture primarily from commercially available components and incorporated it into a rigid optical-breadboard-style base so the position of the assembly, supports, and cutter remained mechanically referenced to one another.</p>
+            <p>The design was subsequently documented and released through the company's SolidWorks PDM system for continued manufacturing use and development.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Digital overall-length measurement system</h2>
+            <p>Another significant challenge involved measuring the finished length of the internal endoscope structure.</p>
+            <p>The device is more than 1.5 meters long, yet its allowable overall-length variation is only a few millimeters (±2 mm is the specification). The existing process relied on a ruler-style measurement method, which made the reading dependent on how the operator positioned the device and interpreted its endpoints.</p>
+            <p>I helped develop a dedicated measurement system that converted this into a controlled contact measurement.</p>
+            <p>The fixture uses a digital linear measurement device, a dial indicator, a precision linear stage, a known calibration reference, and custom proximal and distal interfaces. Rather than asking the operator to visually determine the two endpoints of a long flexible device, the fixture establishes repeatable physical touch-off surfaces.</p>
+            <p>The measurement process begins with a known reference standard. The operator loads the calibration reference into the fixture and establishes the relationship between the two digital measuring instruments. The calibration reference is then removed and replaced with the endoscope subassembly. The operator advances the linear stage until the distal interface reaches the same controlled touch-off condition used during calibration.</p>
+            <p>I co-developed the accompanying script and graphical user interface with another engineer. The software guides the user through the measurement workflow, records instrument values, and calculates the final assembly length.</p>
+            <p>Once the mechanical fixture and software were functioning together, I performed a 10-run repeatability study using the same device. The purpose was not simply to prove that the system could produce a number; it was to quantify how much measurement variation was introduced when the same assembly was repeatedly removed, reinstalled, and measured.</p>
+            <p>This project gave me experience developing a complete measurement system rather than only a mechanical fixture. The final result depended on mechanical referencing, calibrated instrumentation, software, operator workflow, and statistical evaluation all working together.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Guide-sheath cleanability and disinfection development</h2>
+            <p>I also supported process development for several small internal guide sheaths located near the distal end of the endoscope.</p>
+            <p>Because the product is reusable, the internal geometry of the device must be compatible with its intended cleaning and disinfection processes. The team needed to better understand whether contamination could remain trapped inside difficult-to-access guide-sheath regions after cleaning.</p>
+            <p>I helped develop and execute a study in which representative assemblies were intentionally soiled using a fluorescent contamination surrogate. The sheaths were then cleaned using the proposed manufacturing procedure, embedded within a rigid transparent sample, sectioned, and inspected under ultraviolet illumination.</p>
+            <p>This allowed us to physically examine regions that could not otherwise be seen from the outside of an assembled device.</p>
+            <p>The work helped establish an initial cleanability baseline for the device configuration being investigated and identified areas that would require additional attention as the product progressed toward more demanding disinfection requirements.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Leak-mitigation process development</h2>
+            <p>During the same guide-sheath work, we were dealing with a known leak path in one of the two guide sheaths that runs through the device known as the working channel.</p>
+            <p>For the current device configuration, the working channel guide sheath opening needed to be sealed so that the assembly could successfully complete the required leak-testing workflow, even if it meant completely plugging the hole opening.</p>
+            <p>I helped develop a manufacturing procedure using a precision mechanical plug that could be bonded into the distal-end interface. I worked through the geometry and assembly sequence, coordinated fabrication of the required components, helped determine a repeatable insertion method, and translated the process into manufacturing instructions for future builds.</p>
+            <p>The emphasis was not simply on getting one prototype to stop leaking. The objective was to define a process that another technician could repeat consistently using controlled components and a documented sequence.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Guide-sheath die-bonding development</h2>
+            <p>Another major portion of my summer focused on improving the process used to bond polymer guide sheaths to small metallic hypotubes using PET and a heat-shrinking process known as “die bonding”.</p>
+            <p>The existing process was performed using an Iris die bonder, but the setup offered limited ability to mechanically reference the bond location relative to the end of the hypotube. Because bond position needed to be repeatable from device to device, we decided to transfer the operation to a Beahm 220B die bonder, which provided a better platform for dedicated manufacturing fixturing.</p>
+            <p>I obtained the CAD model of the Beahm 220B directly from the equipment manufacturer, Machine Solutions, and designed custom SolidWorks fixturing around the machine. The fixture uses the mandrel inside the hypotube as a mechanical reference, allowing the guide sheath to be positioned consistently so that the polymer bond occurs at the same location relative to the hypotube end during each build.</p>
+            <p>Once the new fixture was functional, I helped perform an initial process-parameter study comparing the Beahm process with the existing Iris baseline. We held bonding temperature constant while varying dwell time across multiple Beahm samples and evaluated the resulting assemblies through dimensional inspection, braid-protrusion inspection, gross-leak testing, and destructive pullout-force testing.</p>
+            <p>The initial study showed that dwell time meaningfully affected both bond geometry and mechanical strength. One of the shorter Beahm dwell conditions produced the highest pullout force in the initial six-sample screening, while longer dwell times increased visible braid protrusion. Because the sample set was intentionally small and the working-channel guide sheath already had a known leak condition, these results were treated as an initial process screen rather than a finalized manufacturing recipe.</p>
+            <p>The work established a more mechanically controlled die-bonding setup and provided the team with a starting point for continued process optimization on both working-channel and multi-lumen guide-sheath configurations.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>String-tension management</h2>
+            <p>My cycle-study observations also identified an opportunity to improve a spool-based fixture used while assembling what is known as the “stuffing” portion of the endoscope.</p>
+            <p>The existing fixture controlled one long string used during the assembly process to keep key internal components in tension so that assembly is easier. Depending on how the system was positioned, the strings could experience either excess slack or excess tension, creating the possibility of tangling, jamming, or loading sensitive internal components.</p>
+            <p>The fixture also had an awkward support geometry that prevented it from sitting naturally on the technician's workbench, forcing the operator to clamp it to the table at an inconvenient angle.</p>
+            <p>I redesigned the support base so that the fixture could sit securely on a rigid breadboard-style platform without the previous table-clamping arrangement. I also incorporated features that provided a better foundation for controlling the string path and future tension adjustment.</p>
+            <p>The revised components were released through PDM, and updated images and instructions were incorporated into the relevant manufacturing documentation.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Distal-head clamping and angular orientation</h2>
+            <p>Another assembly challenge involved how the distal end of the endoscope was held while long internal components were routed through the device.</p>
+            <p>The existing vise-style clamp could securely hold the distal head, but it did not define its rotational orientation. The operator therefore had to visually estimate the clocking of the component.</p>
+            <p>This mattered because the internal structure and distal head ultimately mate in a keyed orientation. If they were assembled with significant rotational misalignment, the internal structure would have to be twisted afterward to reach its final orientation. Applying that torsional load after assembly could increase the risk of damaging internal components.</p>
+            <p>I designed a custom clamping system that locates the non-circular distal-head geometry and holds it at a repeatable angular orientation.</p>
+            <p>The fixture therefore performs two functions simultaneously: it securely holds the component and establishes an assembly datum.</p>
+            <p>I also incorporated a long reference scale alongside the fixture because several internal components needed to be routed and positioned over distances exceeding two meters.</p>
+            <p>The resulting fixture could support both distal-head assembly work and the subsequent integration process, reducing the need for technicians to recreate the same setup using multiple pieces of general-purpose tooling.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Additional manufacturing fixtures</h2>
+            <p>Throughout the summer, I also designed several smaller manufacturing aids in response to problems I observed on the production floor.</p>
+            <p>One fixture adapted components from two different endoscope configurations so the team could perform laser-weld development without designing an entirely new test setup.</p>
+            <p>Another secured the control buttons for a laser-welding system beneath the workbench. The previous arrangement allowed the controls to move during use and presented an ergonomic and safety concern, so the fixture established a defined and repeatable location.</p>
+            <p>I also designed storage hangers for completed internal endoscope assemblies. These assemblies contain exposed flexible components that could potentially be damaged when placed into conventional storage containers. The new hangers supported the assemblies without placing unnecessary load on those sensitive features and incorporated a simple closure mechanism to keep them secure.</p>
+            <p>While individually small, these fixtures were representative of the overall philosophy of my internship: observe where technicians encounter friction in the manufacturing process and determine whether a relatively simple mechanical change can make that operation safer, easier, or more repeatable.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Project outcome</h2>
+            <p>By the end of the internship, what began as a cycle-time study had developed into a series of interconnected manufacturing improvements spanning three major endoscope subassemblies.</p>
+            <p>Several mechanical fixtures progressed from observation and concept generation through SolidWorks design, prototyping, technician feedback, iteration, and release into SolidWorks PDM. These included tooling for braided-structure cutting, overall-length measurement, spool support and tension management, distal-head orientation, and guide-sheath bonding.</p>
+            <p>The digital length-measurement system also progressed beyond mechanical design into hardware/software integration and an initial 10-run repeatability study.</p>
+            <p>My guide-sheath work combined manufacturing engineering with experimental process development. I helped investigate cleanability, leak mitigation, dimensional variation, bonding parameters, and mechanical pullout strength while translating the resulting processes into manufacturing instructions that could be repeated by technicians.</p>
+            <p>Throughout the internship, I worked directly with NPI engineers, manufacturing technicians, equipment manufacturers, local vendors, and other members of the engineering organization. I regularly updated CAD, PDM records, manufacturing process instructions, BOM information, and other production documentation as the work evolved.</p>
+            <p>The most valuable lesson from the project was that good manufacturing engineering often begins before opening SolidWorks.</p>
+            <p>By spending time watching technicians perform the actual assembly processes, I was able to distinguish between problems that looked significant on paper and the problems that actually created difficulty on the manufacturing floor. That observation-first approach allowed me to develop relatively simple mechanical and process improvements that addressed specific sources of variation rather than designing fixtures simply because a fixture seemed useful.</p>
+            <p>The project strengthened my experience in fixture design, DFM/DFA, process development, measurement-system design, manufacturing documentation, experimental testing, and cross-functional medical-device manufacturing.</p>
+        </section>
+
+    </main>
+
+    <section class="more-work-section">
+        <div class="container">
+            <h2>More Work</h2>
+            <div id="dynamic-more-work" class="more-work-grid">
+                <!-- Dynamically populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Arik Singh. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js?v=2"></script>
+</body>
+
+</html>
