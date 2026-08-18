@@ -44,11 +44,11 @@
 
     <main class="container">
         <div class="project-meta">
-            <p><strong>Date:</strong> {date}</p>
+            <p><strong>Date:</strong> May–August 2026</p>
         </div>
         
         <section class="content-section">
-            <p><strong>Confidentiality Note:</strong> {confidentiality}</p>
+            <p><strong>Confidentiality Note:</strong> This project involved proprietary Neptune Medical device designs and manufacturing processes. To respect company confidentiality, I have intentionally excluded all photographs, CAD screenshots, drawings, and other internal imagery from this project. The written descriptions below have also been generalized where appropriate while preserving the engineering challenges, methods, and contributions that I personally worked on.</p>
         </section>
 
         <section class="content-section">
@@ -67,7 +67,7 @@
         </section>
 
         <section class="content-section">
-            <h2>Braided-structure cut-to-length process</h2>
+            <h3>Braided-structure cut-to-length process</h3>
             <p>One of the first opportunities I investigated involved cutting a long braided internal structure to its required length.</p>
             <p>The assembly had to be cut using a handheld roll cutter while an internal mandrel supported the braid. The challenge was that the structure needed to rotate through a complete 360-degree cut while simultaneously remaining constrained in the axial and radial directions. If the assembly moved relative to the cutter, the blade could follow an inconsistent path around the circumference.</p>
             <p>I designed a dedicated roller-based cutting fixture in SolidWorks. Sets of rollers support the assembly on both sides of the cutting location and allow the operator to rotate the structure while maintaining its primary axis. The roll cutter itself is mechanically constrained relative to the assembly so that it cannot translate significantly while the operator completes the circular cut.</p>
@@ -77,7 +77,7 @@
         </section>
 
         <section class="content-section">
-            <h2>Digital overall-length measurement system</h2>
+            <h3>Digital overall-length measurement system</h3>
             <p>Another significant challenge involved measuring the finished length of the internal endoscope structure.</p>
             <p>The device is more than 1.5 meters long, yet its allowable overall-length variation is only a few millimeters (±2 mm is the specification). The existing process relied on a ruler-style measurement method, which made the reading dependent on how the operator positioned the device and interpreted its endpoints.</p>
             <p>I helped develop a dedicated measurement system that converted this into a controlled contact measurement.</p>
@@ -89,7 +89,7 @@
         </section>
 
         <section class="content-section">
-            <h2>Guide-sheath cleanability and disinfection development</h2>
+            <h3>Guide-sheath cleanability and disinfection development</h3>
             <p>I also supported process development for several small internal guide sheaths located near the distal end of the endoscope.</p>
             <p>Because the product is reusable, the internal geometry of the device must be compatible with its intended cleaning and disinfection processes. The team needed to better understand whether contamination could remain trapped inside difficult-to-access guide-sheath regions after cleaning.</p>
             <p>I helped develop and execute a study in which representative assemblies were intentionally soiled using a fluorescent contamination surrogate. The sheaths were then cleaned using the proposed manufacturing procedure, embedded within a rigid transparent sample, sectioned, and inspected under ultraviolet illumination.</p>
@@ -98,7 +98,7 @@
         </section>
 
         <section class="content-section">
-            <h2>Leak-mitigation process development</h2>
+            <h3>Leak-mitigation process development</h3>
             <p>During the same guide-sheath work, we were dealing with a known leak path in one of the two guide sheaths that runs through the device known as the working channel.</p>
             <p>For the current device configuration, the working channel guide sheath opening needed to be sealed so that the assembly could successfully complete the required leak-testing workflow, even if it meant completely plugging the hole opening.</p>
             <p>I helped develop a manufacturing procedure using a precision mechanical plug that could be bonded into the distal-end interface. I worked through the geometry and assembly sequence, coordinated fabrication of the required components, helped determine a repeatable insertion method, and translated the process into manufacturing instructions for future builds.</p>
@@ -106,7 +106,7 @@
         </section>
 
         <section class="content-section">
-            <h2>Guide-sheath die-bonding development</h2>
+            <h3>Guide-sheath die-bonding development</h3>
             <p>Another major portion of my summer focused on improving the process used to bond polymer guide sheaths to small metallic hypotubes using PET and a heat-shrinking process known as “die bonding”.</p>
             <p>The existing process was performed using an Iris die bonder, but the setup offered limited ability to mechanically reference the bond location relative to the end of the hypotube. Because bond position needed to be repeatable from device to device, we decided to transfer the operation to a Beahm 220B die bonder, which provided a better platform for dedicated manufacturing fixturing.</p>
             <p>I obtained the CAD model of the Beahm 220B directly from the equipment manufacturer, Machine Solutions, and designed custom SolidWorks fixturing around the machine. The fixture uses the mandrel inside the hypotube as a mechanical reference, allowing the guide sheath to be positioned consistently so that the polymer bond occurs at the same location relative to the hypotube end during each build.</p>
@@ -116,7 +116,7 @@
         </section>
 
         <section class="content-section">
-            <h2>String-tension management</h2>
+            <h3>String-tension management</h3>
             <p>My cycle-study observations also identified an opportunity to improve a spool-based fixture used while assembling what is known as the “stuffing” portion of the endoscope.</p>
             <p>The existing fixture controlled one long string used during the assembly process to keep key internal components in tension so that assembly is easier. Depending on how the system was positioned, the strings could experience either excess slack or excess tension, creating the possibility of tangling, jamming, or loading sensitive internal components.</p>
             <p>The fixture also had an awkward support geometry that prevented it from sitting naturally on the technician's workbench, forcing the operator to clamp it to the table at an inconvenient angle.</p>
@@ -125,7 +125,7 @@
         </section>
 
         <section class="content-section">
-            <h2>Distal-head clamping and angular orientation</h2>
+            <h3>Distal-head clamping and angular orientation</h3>
             <p>Another assembly challenge involved how the distal end of the endoscope was held while long internal components were routed through the device.</p>
             <p>The existing vise-style clamp could securely hold the distal head, but it did not define its rotational orientation. The operator therefore had to visually estimate the clocking of the component.</p>
             <p>This mattered because the internal structure and distal head ultimately mate in a keyed orientation. If they were assembled with significant rotational misalignment, the internal structure would have to be twisted afterward to reach its final orientation. Applying that torsional load after assembly could increase the risk of damaging internal components.</p>
@@ -136,7 +136,7 @@
         </section>
 
         <section class="content-section">
-            <h2>Additional manufacturing fixtures</h2>
+            <h3>Additional manufacturing fixtures</h3>
             <p>Throughout the summer, I also designed several smaller manufacturing aids in response to problems I observed on the production floor.</p>
             <p>One fixture adapted components from two different endoscope configurations so the team could perform laser-weld development without designing an entirely new test setup.</p>
             <p>Another secured the control buttons for a laser-welding system beneath the workbench. The previous arrangement allowed the controls to move during use and presented an ergonomic and safety concern, so the fixture established a defined and repeatable location.</p>
