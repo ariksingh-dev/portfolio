@@ -2,17 +2,28 @@
 <html lang="en">
 
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neptune Medical Internship | Arik Singh</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500&display=swap"
-        rel="stylesheet">
+    <link rel="canonical" href="https://ariksingh-dev.github.io/portfolio/neptune_medical.html">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <meta name="theme-color" content="#0f1417">
+    <link rel="stylesheet" href="assets/css/style.css?v=27">
+    
 
     <meta name="description" content="Process Development Engineering Internship at Neptune Medical.">
     <meta property="og:title" content="Neptune Medical Internship | Arik Singh">
     <meta property="og:description" content="Process Development Engineering Internship at Neptune Medical.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ariksingh-dev.github.io/portfolio/neptune_medical.html">
+    <meta property="og:image" content="https://ariksingh-dev.github.io/portfolio/assets/images/cropped/project9_title_cropped.webp">
+    <meta property="og:image:alt" content="Neptune Medical Case Study">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Neptune Medical Internship | Arik Singh">
+    <meta name="twitter:description" content="Process Development Engineering Internship at Neptune Medical.">
+    <meta name="twitter:image" content="https://ariksingh-dev.github.io/portfolio/assets/images/cropped/project9_title_cropped.webp">
 </head>
 
 <body>
@@ -23,13 +34,13 @@
                 <span class="icon-sun">☀️</span>
                 <span class="icon-moon">🌙</span>
             </button>
-            <div class="hamburger" aria-label="Toggle navigation" role="button" tabindex="0">
+            <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
+            </button>
             <nav>
-                <ul>
+                <ul id="site-nav">
                     <li><a href="index.html">Work</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -48,7 +59,7 @@
         </div>
         
         <section class="content-section">
-            <p><strong>Confidentiality Note:</strong> This project involved proprietary Neptune Medical (https://neptunemedical.com/) device designs and manufacturing processes. To respect company confidentiality, I have intentionally excluded all photographs, CAD screenshots, drawings, and other internal imagery from this project. The written descriptions below have also been generalized where appropriate while preserving the engineering challenges, methods, and contributions that I personally worked on.</p>
+            <p><strong>Confidentiality Note:</strong> This project involved proprietary <a href="https://neptunemedical.com/" target="_blank" rel="noopener noreferrer" class="inline-link">Neptune Medical</a> device designs and manufacturing processes. To respect company confidentiality, I have intentionally excluded all photographs, CAD screenshots, drawings, and other internal imagery from this project. The written descriptions below have also been generalized where appropriate while preserving the engineering challenges, methods, and contributions that I personally worked on.</p>
         </section>
 
         <section class="content-section">
@@ -157,8 +168,14 @@
     <section class="more-work-section">
         <div class="container">
             <h2>More Work</h2>
-            <div id="dynamic-more-work" class="more-work-grid">
-                <!-- Dynamically populated by JS -->
+                        <div id="dynamic-more-work" class="more-work-grid">
+                <div class="project-fallback-card">
+                    <p class="section-kicker">Project Directory</p>
+                    <p>If the interactive More Work cards do not load, browse the full project directory instead.</p>
+                    <div class="project-fallback-actions">
+                        <a href="project-directory.html" class="button-link secondary">Open Project Directory</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -169,7 +186,7 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js?v=2"></script>
+    <script src="assets/js/main.js?v=13" defer></script>
 </body>
 
 </html>

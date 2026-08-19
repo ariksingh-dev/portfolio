@@ -245,6 +245,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const projectMeta = document.querySelector(".project-meta");
     if (projectMeta) {
         const sections = [];
+        // Assign IDs to all h2 and h3 elements for direct in-page anchoring.
+        document.querySelectorAll("main .content-section h3").forEach(subHeading => {
+            if (!subHeading.id) {
+                subHeading.id = subHeading.textContent
+                    .trim()
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]+/g, "-")
+                    .replace(/^-|-$/g, "");
+            }
+        });
+
         document.querySelectorAll("main .content-section h2").forEach(heading => {
             const sectionId = heading.textContent
                 .trim()

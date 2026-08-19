@@ -2180,3 +2180,77 @@ body.light-theme #theme-toggle .icon-moon {
         transition: none !important;
     }
 }
+
+/* --------------------------------------------------
+   Print Optimization Stylesheet
+   -------------------------------------------------- */
+@media print {
+    *,
+    *::before,
+    *::after {
+        background: transparent !important;
+        color: #000000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    body {
+        background: #ffffff !important;
+        color: #111111 !important;
+        font-size: 11pt;
+        line-height: 1.5;
+    }
+
+    header,
+    footer,
+    #theme-toggle,
+    .hamburger,
+    .back-to-top,
+    #reading-progress,
+    .more-work-section,
+    .contact-form,
+    #form-status {
+        display: none !important;
+    }
+
+    main {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .content-section,
+    figure {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    figure {
+        border: 1px solid #d0d7de !important;
+        padding: 8px !important;
+        margin: 1.5rem 0 !important;
+    }
+
+    img {
+        max-width: 100% !important;
+        break-inside: avoid;
+    }
+
+    h1, h2, h3 {
+        break-after: avoid;
+        page-break-after: avoid;
+        color: #000000 !important;
+    }
+
+    a {
+        text-decoration: underline !important;
+        color: #000000 !important;
+    }
+
+    .project-meta,
+    .callout {
+        border: 1px solid #d0d7de !important;
+        background: #f6f8fa !important;
+        color: #24292f !important;
+    }
+}
